@@ -1,0 +1,85 @@
+.home {
+    position: relative;
+    row-gap: 5rem;
+    padding: 4rem 0 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home__data {
+    align-self: center;
+    max-width: 400px;
+}
+
+.home__title {
+    font-size: var(--big-font-size);
+    margin-bottom: var(--mb-5);
+}
+
+.home__title-color {
+    color: var(--first-color);
+}
+
+.home__social {
+    display: flex;
+    
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.home__social-icon {
+    
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--second-color);
+    transition: color 0.3s;
+}
+
+.home__social-icon:hover {
+    color: var(--first-color);
+}
+
+.home__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 400px; /* Increase the width */
+}
+
+.home__blob {
+    fill: var(--first-color);
+    width: 100%; /* Ensure the SVG scales with the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.home__blob-img {
+    width: 400px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: .75rem 2.5rem;
+    font-weight: var(--font-semi);
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.button:hover {
+    box-shadow: 0px 10px 36px rgba(0, 0, 0, .15);
+}
+
+.typing-text {
+    display: inline-block;
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
