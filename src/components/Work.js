@@ -26,7 +26,9 @@ const Work = () => {
             <h2 className="section-title">Work</h2>
             <div className="work__container bd-grid">
                 <div className="work__img">
-                    <img src={work1} alt="Work 1" />
+                    <a href='https://multi-converter-app.netlify.app/' >
+                    <img src={work1}  alt="Work 1" />
+                    </a>
                 </div>
                 <div className="work__img">
                     <img src={work2} alt="Work 2" />
