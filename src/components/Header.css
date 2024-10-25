@@ -50,3 +50,17 @@
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.resume-button {
+    background-color: var(--first-color); /* Adjust color to match your theme */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #003d82; /* Darker shade for hover effect */
+}

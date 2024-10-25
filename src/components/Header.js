@@ -4,6 +4,9 @@ import './Header.css'; // Ensure this CSS file contains styles for the header se
 import './Styles/styles.scss';  // Corrected import path
 import logo from './assets/img/logo-transparent-png.png';
 import '../index.css'; 
+// Import your resume file
+const resumePDF = process.env.PUBLIC_URL + '/resume.pdf';
+
 const Header = () => {
     const [menuVisible, setMenuVisible] = useState(false);
 
@@ -13,6 +16,11 @@ const Header = () => {
 
     const handleLinkClick = () => {
         setMenuVisible(false);
+    };
+
+    // Function to handle resume download
+    const handleResumeDownload = () => {
+        window.open(resumePDF, '_blank');
     };
 
     return (
@@ -28,6 +36,9 @@ const Header = () => {
                         <li className="nav__item"><a href="#skills" className="nav__link" onClick={handleLinkClick}>Skills</a></li>
                         <li className="nav__item"><a href="#work" className="nav__link" onClick={handleLinkClick}>Work</a></li>
                         <li className="nav__item"><a href="#contact" className="nav__link" onClick={handleLinkClick}>Contact</a></li>
+                        <li className="nav__item">
+                            <button className="resume-button" onClick={handleResumeDownload}>Resume</button>
+                        </li>
                     </ul>
                 </div>
                 <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
