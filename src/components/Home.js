@@ -44,10 +44,10 @@ function Home() {
     return (
         <section className="home bd-grid" id="home">
             <div className="home__data">
-                <h1 className="home__title">
-                    <span className="typing-text">Hi,</span><br />
-                    <span className="typing-text">I'am <span className="home__title-color">Mohit Shah</span></span><br />
-                    <span className="typing-text">Web Designer</span>
+                <h1 className="home__title ">
+                    <span >Hi,</span><br />
+                    <span className='typing-text' >I'am <span className="home__title-color">Mohit Shah</span></span><br />
+                    <span className='typing-text' >Web Designer</span>
                 </h1>
                 <a href="#contact" className="button">Contact</a>
                 <div className="home__social">
