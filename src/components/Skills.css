@@ -95,3 +95,21 @@
 .skills__img {
     border-radius: .5rem;
 }
+
+@media screen and (max-width: 768px) {
+    .skills__container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills__data {
+        justify-content: space-between;
+    }
+
+    .skills__name {
+        font-size: 0.9rem;
+    }
+
+    .skills__bar {
+        height: 0.2rem;
+    }
+}

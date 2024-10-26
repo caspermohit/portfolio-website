@@ -34,3 +34,18 @@
     width: 200px;
     border-radius: .5rem;
 }
+
+@media screen and (max-width: 768px) {
+    .about__container {
+        grid-template-columns: 1fr;
+    }
+
+    .about__img {
+        width: 50%;
+        margin: 0 auto 2rem;
+    }
+
+    .about__img img {
+        width: 100%;
+    }
+}

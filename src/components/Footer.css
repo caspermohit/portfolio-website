@@ -11,6 +11,12 @@
     margin-bottom: var(--mb-4);
 }
 
+@media screen and (max-width: 768px) {
+    .footer__title {
+        font-size: 1.5rem;
+    }
+}
+
 .footer__social {
     margin-bottom: var(--mb-4);
 }
@@ -19,6 +25,13 @@
     font-size: 1.5rem;
     color: #fff;
     margin: 0 var(--mb-2);
+}
+
+@media screen and (max-width: 768px) {
+    .footer__icon {
+        font-size: 1.2rem;
+        margin: 0 0.5rem;
+    }
 }
 
 .footer__copy {

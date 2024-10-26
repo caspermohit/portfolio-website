@@ -23,3 +23,15 @@
     cursor: pointer;
     margin-left: auto;
 }
+
+@media screen and (max-width: 768px) {
+    .contact__input {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .contact__button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}

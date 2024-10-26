@@ -15,3 +15,16 @@
 .work__img img:hover {
     transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px) {
+    .work__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .work__container {
+        grid-template-columns: 1fr;
+    }
+}
