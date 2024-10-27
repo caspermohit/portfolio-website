@@ -47,7 +47,7 @@ const Header = () => {
                         <li className="nav__item"><a href="#work" className="nav__link" onClick={handleLinkClick}>Work</a></li>
                         <li className="nav__item"><a href="#contact" className="nav__link" onClick={handleLinkClick}>Contact</a></li>
                         <li className="nav__item">
-                            <button className="nav__link resume-button" onClick={handleResumeDownload}>Resume</button>
+                            <button className=" resume-button" onClick={handleResumeDownload}>Resume</button>
                         </li>
                     </ul>
                 </div>
