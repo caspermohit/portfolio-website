@@ -37,7 +37,7 @@ const Header = () => {
         <header className="l-header">
             <nav className="nav bd-grid">
                 <div className="nav__brand">
-                   <img src={logo} alt="" className="nav__logo" />
+                   <img src={logo}  href ="#home" alt="" className="nav__logo" />
                 </div>
                 <div className={`nav__menu ${menuVisible ? 'show' : ''}`} id="nav-menu">
                     <ul className="nav__list">
