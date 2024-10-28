@@ -44,7 +44,7 @@
 }
 
 .nav__link:hover {
-    color: #4070F4;
+    color: var(--first-color);
 }
 
 .resume-button {
@@ -58,7 +58,7 @@
 }
 
 .resume-button:hover {
-    background-color: #003d82;
+    background-color: var(--first-color);
 }
 
 .nav__toggle {
