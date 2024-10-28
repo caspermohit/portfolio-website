@@ -48,7 +48,7 @@
 }
 
 .resume-button {
-    background-color: #0056b3;
+    background-color: var(--first-color);
     color: white;
     border: none;
     padding: 8px 16px;

@@ -15,23 +15,26 @@
     box-shadow: 0 0 0 3px rgba(76, 140, 140, 0.2); /* Add a subtle shadow for focus */
 }
 
-.contact__button {
-    display: block;
+.resume-button  {
+    
+    background-color: var(--first-color);
+    color: white;
     border: none;
-    outline: none;
-    font-size: var(--normal-font-size);
+    padding: 8px 16px;
+    border-radius: 4px;
     cursor: pointer;
-    margin-left: auto;
+    transition: background-color 0.3s ease;
+    justify-content: right;
 }
 
-@media screen and (max-width: 768px) {
-    .contact__input {
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
 
-    .contact__button {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+
+@media screen and (min-width: 768px) {
+    .contact__form {
+        width: 360px;
+        padding-top: 2rem;
+    }
+    .contact__container {
+        justify-items: center;
     }
 }

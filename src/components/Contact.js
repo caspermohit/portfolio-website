@@ -26,6 +26,7 @@ const Contact = () => {
             .then((result) => {
                 console.log('Email sent:', result.text);
                 alert('Message sent successfully!');
+                form.current.reset();
             }, (error) => {
                 console.error('Email send error:', error.text);
                 alert('Failed to send the message, please try again.');
@@ -40,7 +41,9 @@ const Contact = () => {
                     <input type="text" name="user_name" placeholder="Name" className="contact__input" required />
                     <input type="email" name="user_email" placeholder="Email" className="contact__input" required />
                     <textarea name="message" cols="0" rows="10" placeholder="Message" className="contact__input" required></textarea>
-                    <input type="submit" value="Send" placeholder="send"className="contact__button button" />
+                    <button type="submit" className="resume-button">
+                        Send Message
+                    </button>
                 </form>
             </div>
         </section>
