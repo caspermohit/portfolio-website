@@ -38,8 +38,8 @@ const Contact = () => {
             <h2 className="section-title">Contact</h2>
             <div className="contact__container bd-grid">
                 <form ref={form} onSubmit={sendEmail} className="contact__form">
-                    <input type="text" name="user_name" placeholder="Name" className="contact__input" required />
-                    <input type="email" name="user_email" placeholder="Email" className="contact__input" required />
+                    <input type="text" name="your_name" placeholder="Your Name" className="contact__input" required />
+                    <input type="email" name="your_email" placeholder="Your Email" className="contact__input" required />
                     <textarea name="message" cols="0" rows="10" placeholder="Message" className="contact__input" required></textarea>
                     <button type="submit" className="resume-button">
                         Send Message

@@ -70,7 +70,7 @@
 }
 
 .button:hover {
-    background-color: var(--first-color-alt);
+    background-color: var(--first-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
