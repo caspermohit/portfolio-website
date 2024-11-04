@@ -27,11 +27,14 @@ const About = () => {
                     <h2 className="about__subtitle">I'am Mohit</h2>
                     <p className="about__text">
                          Passionate and ambitious, solid foundation in graphic design, web development, and virtual reality.
-                          Gained experience in creating visually appealing designs, developing user-friendly websites, and exploring the potential of immersive VR experiences through academic projects and personal work.
-                            Proficient in using various design software, coding languages,
-                             and VR tools, with knowledge in JavaScript, React, Laravel, PHP, HTML5, CSS, and API integration. Focused on front-end development and website design,
-                             aiming to build responsive and engaging user interfaces that enhance the user experience (UX).
-                             Eager to collaborate with teams and clients to contribute fresh perspectives and creative ideas. Committed to learning and growing in the fast-evolving fields of digital and virtual technology.
+                          Gained experience in creating visually appealing designs, developing user-friendly websites,
+                         and exploring the potential of immersive VR experiences through academic projects and personal work.
+                         Proficient in using various design software, coding languages,
+                         and VR tools, with knowledge in JavaScript, React, Laravel, PHP, HTML5, CSS, and API integration. 
+                         Focused on front-end development and website design,
+                         aiming to build responsive and engaging user interfaces that enhance the user experience (UX).
+                         Eager to collaborate with teams and clients to contribute fresh perspectives and creative ideas. 
+                         Committed to learning and growing in the fast-evolving fields of digital and virtual technology.
                     </p>
                 </div>
             </div>
