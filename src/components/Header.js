@@ -5,7 +5,7 @@ import './Styles/styles.scss';  // Corrected import path
 import logo from './assets/img/logo-transparent-png.png';
 import '../index.css'; 
 // Import your resume file
-const resumePDF = process.env.PUBLIC_URL + '/resume.pdf';
+const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV.pdf';
 
 const Header = () => {
     const [menuVisible, setMenuVisible] = useState(false);
