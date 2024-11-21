@@ -1,11 +1,11 @@
 // src/components/Header.js
 import React, { useState, useEffect } from 'react';
-import './Header.css'; // Ensure this CSS file contains styles for the header section
-import './Styles/styles.scss';  // Corrected import path
+import './Header.css'; 
+import './Styles/styles.scss';  
 import logo from './assets/img/logo-transparent-png.png';
 import '../index.css'; 
 // Import your resume file
-const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV.pdf';
+const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV .pdf';
 
 const Header = () => {
     const [menuVisible, setMenuVisible] = useState(false);
