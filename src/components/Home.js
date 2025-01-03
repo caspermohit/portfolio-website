@@ -7,44 +7,25 @@ import ScrollReveal from 'scrollreveal';
 import profile from './assets/img/image.png'; // Import your image here
 
 function Home() {
-    const [typingComplete, setTypingComplete] = useState(false);
+    const roles = [
+        "Web Designer",
+        "UI/UX Designer",
+        "Product Designer",
+        "Game Designer"
+    ];
+    const [currentRole, setCurrentRole] = useState(roles[0]);
 
+    // Set currentRole to the first role without typing effect
     useEffect(() => {
-        ScrollReveal().reveal('.home__data, .home__social, .home__img', {
-            origin: 'top',
-            distance: '30px',
-            duration: 2000,
-            interval: 200,
-            reset: true
-        });
+        const roleChangeInterval = setInterval(() => {
+            setCurrentRole((prevRole) => {
+                const currentIndex = roles.indexOf(prevRole);
+                const nextIndex = (currentIndex + 1) % roles.length;
+                return roles[nextIndex];
+            });
+        }, 2000); // Change role every 2 seconds
 
-        const typingElements = document.querySelectorAll('.typing-text');
-        let currentElementIndex = 0;
-        let currentIndex = 0;
-
-        function typeNextCharacter() {
-            if (currentElementIndex < typingElements.length) {
-                const element = typingElements[currentElementIndex];
-                const text = element.getAttribute('data-text') || element.textContent;
-                element.setAttribute('data-text', text);
-                element.textContent = text.substring(0, currentIndex + 1);
-                currentIndex++;
-
-                if (currentIndex < text.length) {
-                    setTimeout(typeNextCharacter, 100);
-                } else {
-                    currentElementIndex++;
-                    currentIndex = 0;
-                    if (currentElementIndex < typingElements.length) {
-                        setTimeout(typeNextCharacter, 500);
-                    } else {
-                        setTypingComplete(true);
-                    }
-                }
-            }
-        }
-
-        typeNextCharacter();
+        return () => clearInterval(roleChangeInterval);
     }, []);
 
     return (
@@ -53,10 +34,10 @@ function Home() {
                 <h1 className="home__title">
                     <span>Hi,</span><br />
                     <span className='typing-text'>I'm <span className="home__title-color">Mohit Shah</span></span><br />
-                    <span className='typing-text'>Web Designer</span>
+                    <span className='typing-text'>{currentRole}</span>
                 </h1>
-                <a href="#contact" className={`button ${typingComplete ? 'fade-in' : ''}`}>Contact</a>
-                <div className={`home__social ${typingComplete ? 'fade-in' : ''}`}>
+                <a href="#contact" className="button fade-in">Contact</a>
+                <div className="home__social fade-in">
                     <a href="https://linkedin.com" className="home__social-icon" target="_blank" rel="noopener noreferrer">
                         <i className='bx bxl-linkedin'></i>
                     </a>
