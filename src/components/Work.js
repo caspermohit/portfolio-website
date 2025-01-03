@@ -44,7 +44,7 @@ const Work = () => {
                     <ul>
                         <li><a href="https://gogadgets77.wordpress.com/2024/04/19/the-best-fast-chargers-of-2024-a-comprehensive-review/" target="_blank" rel="noopener noreferrer">best fast charger 2024</a></li>
                         <li><a href="https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/" target="_blank" rel="noopener noreferrer">Essential accessories</a></li>
-                         <li><a href=" <li><a href="https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/" target="_blank" rel="noopener noreferrer">best back-to-school accessories</a></li>
+                         <li><a href="https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/" target="_blank" rel="noopener noreferrer">best back-to-school accessories</a></li>
                     </ul>`;
                 break;
             case 'Level Design':
@@ -52,6 +52,9 @@ const Work = () => {
                     <ul>
                         <li><a href="https://www.behance.net/gallery/215923707/Enviroment-design" target="_blank" rel="noopener noreferrer">Enviroment design</a></li>
                         <li><a href="https://www.behance.net/gallery/215922739/client-branding-poster" target="_blank" rel="noopener noreferrer">Client branding poster</a></li>
+                        <li><a href="https://www.behance.net/gallery/204814325/360-fliming" target="_blank" rel="noopener noreferrer">360 Flim making</a></li>
+                        <li><a href="https://www.behance.net/gallery/202959411/Arbys-promotion" target="_blank" rel="noopener noreferrer">Arby's promotion</a></li>
+                        <li><a href="https://www.behance.net/gallery/215939795/Royal-bank-logo-redesign" target="_blank" rel="noopener noreferrer">logo redesign</a></li>
                     </ul>`;
                 break;
             case 'Mobile App Development':
@@ -61,7 +64,7 @@ const Work = () => {
                         <li><a href="https://your-mobile-app-project-link-2.com" target="_blank" rel="noopener noreferrer">Mobile App Project 2</a></li>
                     </ul>`;
                 break;
-            case 'Technical Support':
+            case 'Game and Animation':
                 links = `
                     <ul>
                         <li><a href="https://your-technical-support-project-link.com" target="_blank" rel="noopener noreferrer">Support Project 1</a></li>
