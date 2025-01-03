@@ -1,5 +1,5 @@
 // src/components/Home.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import './Home.css'; // Ensure this CSS file contains styles for the home section
 import './Styles/styles.scss';
 import '../index.css'; // Corrected import path
@@ -7,12 +7,14 @@ import ScrollReveal from 'scrollreveal';
 import profile from './assets/img/image.png'; // Import your image here
 
 function Home() {
-    const roles = [
+    // Memoize the roles array to prevent it from changing on every render
+    const roles = useMemo(() => [
         "Web Designer",
         "UI/UX Designer",
         "Product Designer",
         "Game Designer"
-    ];
+    ], []);
+
     const [currentRole, setCurrentRole] = useState(roles[0]);
 
     // Set currentRole to the first role without typing effect
@@ -26,6 +28,25 @@ function Home() {
         }, 2000); // Change role every 2 seconds
 
         return () => clearInterval(roleChangeInterval);
+    }, [roles]);
+
+    // Initialize ScrollReveal
+    useEffect(() => {
+        const sr = ScrollReveal({
+            origin: 'bottom', // Change the origin as needed
+            distance: '50px',
+            duration: 1000,
+            delay: 200,
+            reset: true // Set to true if you want the animation to happen every time the element comes into view
+        });
+
+        sr.reveal('.home__data', { delay: 300 });
+        sr.reveal('.home__img', { delay: 400 });
+
+        // Cleanup function
+        return () => {
+            sr.destroy(); // Clean up ScrollReveal instance
+        };
     }, []);
 
     return (
