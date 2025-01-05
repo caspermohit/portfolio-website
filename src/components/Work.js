@@ -35,8 +35,8 @@ const Work = () => {
             case 'UI/UX Design':
                 links = `
                     <ul>
-                        <li><a href="https://your-uiux-project-link.com" target="_blank" rel="noopener noreferrer">UI/UX Project 1</a></li>
-                        <li><a href="https://your-uiux-project-link-2.com" target="_blank" rel="noopener noreferrer">UI/UX Project 2</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">UI/UX Project 1</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">UI/UX Project 2</a></li>
                     </ul>`;
                 break;
             case 'Content Writing':
@@ -58,8 +58,8 @@ const Work = () => {
             case 'Mobile App Development':
                 links = `
                     <ul>
-                        <li><a href="https://your-mobile-app-project-link.com" target="_blank" rel="noopener noreferrer">Mobile App Project 1</a></li>
-                        <li><a href="https://your-mobile-app-project-link-2.com" target="_blank" rel="noopener noreferrer">Mobile App Project 2</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Mobile App Project 1</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Mobile App Project 2</a></li>
                     </ul>`;
                 break;
             case 'Illustration and Animation':
@@ -89,7 +89,9 @@ const Work = () => {
             <div className="work__container">
                 <div className="work__item" onClick={() => handleProjectClick('UI/UX Design')}>
                     <FontAwesomeIcon icon={faDesktop} size="3x" />
+                    <p>*needs to get updated</p>
                     <h3>UI/UX Design</h3>
+            
                     <p>Great UI/UX enhances user experience, making websites intuitive and engaging.</p>
 
                 </div>
@@ -111,11 +113,12 @@ const Work = () => {
                 </div>
                 <div className="work__item" onClick={() => handleProjectClick('Mobile App Development')}>
                     <FontAwesomeIcon icon={faMobileAlt} size="3x" />
+                    <p>*needs to get updated</p>
                     <h3>Mobile App Development</h3>
                     <p>Create responsive, user-friendly mobile apps tailored to your needs.</p>
 
                 </div>
-                <div className="work__item" onClick={() => handleProjectClick('Technical Support')}>
+                <div className="work__item" onClick={() => handleProjectClick('Illustration and Animation')}>
                     <FontAwesomeIcon icon={faPenToSquare} size="3x" />
                     <h3>Illustration and Animation</h3>
                     <p>Bring ideas to life with captivating visuals and dynamic animations that enhance storytelling.</p>
