@@ -7,7 +7,7 @@ import ScrollReveal from 'scrollreveal';
 import Swal from 'sweetalert2'; // Import SweetAlert
 // Importing icons from Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDesktop, faCode, faPen, faChartLine, faMobileAlt, faCogs } from '@fortawesome/free-solid-svg-icons';
+import { faDesktop, faCode, faPen, faGamepad, faMobileAlt,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Work = () => {
     useEffect(() => {
@@ -51,10 +51,8 @@ const Work = () => {
                 links = `
                     <ul>
                         <li><a href="https://www.behance.net/gallery/215923707/Enviroment-design" target="_blank" rel="noopener noreferrer">Enviroment design</a></li>
-                        <li><a href="https://www.behance.net/gallery/215922739/client-branding-poster" target="_blank" rel="noopener noreferrer">Client branding poster</a></li>
-                        <li><a href="https://www.behance.net/gallery/204814325/360-fliming" target="_blank" rel="noopener noreferrer">360 Flim making</a></li>
-                        <li><a href="https://www.behance.net/gallery/202959411/Arbys-promotion" target="_blank" rel="noopener noreferrer">Arby's promotion</a></li>
-                        <li><a href="https://www.behance.net/gallery/215939795/Royal-bank-logo-redesign" target="_blank" rel="noopener noreferrer">logo redesign</a></li>
+                        <li><a href="https://www.behance.net/gallery/215970037/Game-build-for-VR-devices" target="_blank" rel="noopener noreferrer">Games Teaser</a></li>
+                        
                     </ul>`;
                 break;
             case 'Mobile App Development':
@@ -64,11 +62,13 @@ const Work = () => {
                         <li><a href="https://your-mobile-app-project-link-2.com" target="_blank" rel="noopener noreferrer">Mobile App Project 2</a></li>
                     </ul>`;
                 break;
-            case 'Game and Animation':
+            case 'Illustration and Animation':
                 links = `
                     <ul>
-                        <li><a href="https://your-technical-support-project-link.com" target="_blank" rel="noopener noreferrer">Support Project 1</a></li>
-                        <li><a href="https://your-technical-support-project-link-2.com" target="_blank" rel="noopener noreferrer">Support Project 2</a></li>
+                        <li><a href="https://www.behance.net/gallery/215922739/client-branding-poster" target="_blank" rel="noopener noreferrer">Client branding poster</a></li>
+                        <li><a href="https://www.behance.net/gallery/204814325/360-fliming" target="_blank" rel="noopener noreferrer">360 Flim making</a></li>
+                        <li><a href="https://www.behance.net/gallery/202959411/Arbys-promotion" target="_blank" rel="noopener noreferrer">Arby's promotion</a></li>
+                        <li><a href="https://www.behance.net/gallery/215939795/Royal-bank-logo-redesign" target="_blank" rel="noopener noreferrer">logo redesign</a></li>
                     </ul>`;
                 break;
             default:
@@ -90,7 +90,8 @@ const Work = () => {
                 <div className="work__item" onClick={() => handleProjectClick('UI/UX Design')}>
                     <FontAwesomeIcon icon={faDesktop} size="3x" />
                     <h3>UI/UX Design</h3>
-                    <p>SEO improves website visibility, rankings, and organic traffic online.</p>
+                    <p>Great UI/UX enhances user experience, making websites intuitive and engaging.</p>
+
                 </div>
                 <div className="work__item" onClick={() => handleProjectClick('Website Design & Development')}>
                     <FontAwesomeIcon icon={faCode} size="3x" />
@@ -103,19 +104,22 @@ const Work = () => {
                     <p>Delivers engaging, informative, and valuable content for audiences.</p>
                 </div>
                 <div className="work__item" onClick={() => handleProjectClick('Level Design')}>
-                    <FontAwesomeIcon icon={faChartLine} size="3x" />
+                    <FontAwesomeIcon icon={faGamepad} size="3x" />
                     <h3>Level Design</h3>
-                    <p>Enhance your website's visibility and ranking on search engines.</p>
+                    <p>Create immersive environments and strategic layouts to enhance gameplay and player engagement.</p>
+
                 </div>
                 <div className="work__item" onClick={() => handleProjectClick('Mobile App Development')}>
                     <FontAwesomeIcon icon={faMobileAlt} size="3x" />
                     <h3>Mobile App Development</h3>
-                    <p>Build responsive and user-friendly mobile applications.</p>
+                    <p>Create responsive, user-friendly mobile apps tailored to your needs.</p>
+
                 </div>
                 <div className="work__item" onClick={() => handleProjectClick('Technical Support')}>
-                    <FontAwesomeIcon icon={faCogs} size="3x" />
-                    <h3>Technical Support</h3>
-                    <p>Provide ongoing support and maintenance for your projects.</p>
+                    <FontAwesomeIcon icon={faPenToSquare} size="3x" />
+                    <h3>Illustration and Animation</h3>
+                    <p>Bring ideas to life with captivating visuals and dynamic animations that enhance storytelling.</p>
+
                 </div>
             </div>
         </section>
