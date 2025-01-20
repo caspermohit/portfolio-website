@@ -4,6 +4,8 @@ import './Header.css';
 import './Styles/styles.scss';  
 import logo from './assets/img/logo-transparent-png.png';
 import '../index.css'; 
+// Import your resume file
+const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV .pdf';
 
 const Header = () => {
     const [menuVisible, setMenuVisible] = useState(false);
@@ -26,6 +28,11 @@ const Header = () => {
         setMenuVisible(false);
     };
 
+    // Function to handle resume download
+    const handleResumeDownload = () => {
+        window.open(resumePDF, '_blank');
+    };
+
     return (
         <header className="l-header">
             <nav className="nav bd-grid">
@@ -39,6 +46,12 @@ const Header = () => {
                         <li className="nav__item"><a href="#skills" className="nav__link" onClick={handleLinkClick}>Skills</a></li>
                         <li className="nav__item"><a href="#work" className="nav__link" onClick={handleLinkClick}>Work</a></li>
                         <li className="nav__item"><a href="#contact" className="nav__link" onClick={handleLinkClick}>Contact</a></li>
+                        <li className="nav__item">
+                            
+                          <button className=" resume-button" onClick={handleResumeDownload}>Resume</button>
+                           
+                        </li>
+                        
                     </ul>
                 </div>
                 {isMobile && (
