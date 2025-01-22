@@ -41,9 +41,7 @@ const Header = () => {
                         <li className="nav__item"><a href="#skills" className="nav__link" onClick={handleLinkClick}>Skills</a></li>
                         <li className="nav__item"><a href="#work" className="nav__link" onClick={handleLinkClick}>Work</a></li>
                         <li className="nav__item"><a href="#contact" className="nav__link" onClick={handleLinkClick}>Contact</a></li>
-                        <li className="nav__item">
-                            <a href="https://www.foodbooking.com/api/fb/p_g_w3_d" className="nav__link" target="_blank" rel="noopener noreferrer">Buy Now</a>
-                        </li>
+                        
                     </ul>
                 </div>
                 {isMobile && (
