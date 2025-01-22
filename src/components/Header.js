@@ -4,8 +4,8 @@ import './Header.css';
 import './Styles/styles.scss';  
 import logo from './assets/img/logo-transparent-png.png';
 import '../index.css'; 
-// Import your resume file
-const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV .pdf';
+// Removed unused variable resumePDF
+// const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV.pdf';
 
 const Header = () => {
     const [menuVisible, setMenuVisible] = useState(false);
