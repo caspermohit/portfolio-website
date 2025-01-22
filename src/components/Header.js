@@ -28,11 +28,6 @@ const Header = () => {
         setMenuVisible(false);
     };
 
-    // Function to handle resume download
-    const handleResumeDownload = () => {
-        window.open(resumePDF, '_blank');
-    };
-
     return (
         <header className="l-header">
             <nav className="nav bd-grid">
@@ -47,11 +42,8 @@ const Header = () => {
                         <li className="nav__item"><a href="#work" className="nav__link" onClick={handleLinkClick}>Work</a></li>
                         <li className="nav__item"><a href="#contact" className="nav__link" onClick={handleLinkClick}>Contact</a></li>
                         <li className="nav__item">
-                            
-                         {/* <button className=" resume-button" onClick={handleResumeDownload}>Resume</button> */}
-                           
+                            <a href="https://www.foodbooking.com/api/fb/p_g_w3_d" className="nav__link" target="_blank" rel="noopener noreferrer">Buy Now</a>
                         </li>
-                        
                     </ul>
                 </div>
                 {isMobile && (
