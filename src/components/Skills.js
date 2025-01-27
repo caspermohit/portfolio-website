@@ -31,9 +31,7 @@ const Skills = () => {
                             <span className="skills__name">HTML5</span>
                         </div>
                         <div className="skills__bar skills__html"></div>
-                        <div>
-                            <span className="skills__percentage">95%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -41,9 +39,7 @@ const Skills = () => {
                             <span className="skills__name">CSS3</span>
                         </div>
                         <div className="skills__bar skills__css"></div>
-                        <div>
-                            <span className="skills__percentage">85%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -51,9 +47,7 @@ const Skills = () => {
                             <span className="skills__name">JavaScript</span>
                         </div>
                         <div className="skills__bar skills__js"></div>
-                        <div>
-                            <span className="skills__percentage">85%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -61,9 +55,7 @@ const Skills = () => {
                             <span className="skills__name">UX/UI</span>
                         </div>
                         <div className="skills__bar skills__ux"></div>
-                        <div>
-                            <span className="skills__percentage">85%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -71,9 +63,7 @@ const Skills = () => {
                             <span className="skills__name">Unity</span>
                         </div>
                         <div className="skills__bar skills__unity"></div>
-                        <div>
-                            <span className="skills__percentage">70%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -81,9 +71,7 @@ const Skills = () => {
                             <span className="skills__name">sass</span>
                         </div>
                         <div className="skills__bar skills__sass"></div>
-                        <div>
-                            <span className="skills__percentage">40%</span>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -94,9 +82,7 @@ const Skills = () => {
                             <span className="skills__name">React.js</span>
                         </div>
                         <div className="skills__bar skills__react"></div>
-                        <div>
-                            <span className="skills__percentage">70%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -104,9 +90,7 @@ const Skills = () => {
                             <span className="skills__name">php</span>
                         </div>
                         <div className="skills__bar skills__php"></div>
-                        <div>
-                            <span className="skills__percentage">65%</span>
-                        </div>
+                       
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -114,9 +98,7 @@ const Skills = () => {
                             <span className="skills__name">Tailwind CSS</span>
                         </div>
                         <div className="skills__bar skills__tailwind"></div>
-                        <div>
-                            <span className="skills__percentage">70%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -124,9 +106,7 @@ const Skills = () => {
                             <span className="skills__name">Figma</span>
                         </div>
                         <div className="skills__bar skills__figma"></div>
-                        <div>
-                            <span className="skills__percentage">70%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -134,9 +114,7 @@ const Skills = () => {
                             <span className="skills__name">Photoshop</span>
                         </div>
                         <div className="skills__bar skills__photoshop"></div>
-                        <div>
-                            <span className="skills__percentage">70%</span>
-                        </div>
+                        
                     </div>
                     <div className="skills__data">
                         <div className="skills__names">
@@ -144,9 +122,7 @@ const Skills = () => {
                             <span className="skills__name">Blender</span>
                         </div>
                         <div className="skills__bar skills__blender"></div>
-                        <div>
-                            <span className="skills__percentage">70%</span>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

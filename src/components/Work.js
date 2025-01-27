@@ -35,8 +35,8 @@ const Work = () => {
             case 'UI/UX Design':
                 links = `
                     <ul>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">UI/UX Project 1</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">UI/UX Project 2</a></li>
+                        <li><a href="https://www.behance.net/gallery/216561365/Donate-Nest" target="_blank" rel="noopener noreferrer">UI/UX Project "Donate Nest"</a></li>
+                        <li><a href="https://www.behance.net/gallery/216560557/glu-care" target="_blank" rel="noopener noreferrer">UI/UX Project "glu care"</a></li>
                     </ul>`;
                 break;
             case 'Content Writing':
@@ -89,7 +89,6 @@ const Work = () => {
             <div className="work__container">
                 <div className="work__item" onClick={() => handleProjectClick('UI/UX Design')}>
                     <FontAwesomeIcon icon={faDesktop} size="3x" />
-                    <p>*needs to get updated</p>
                     <h3>UI/UX Design</h3>
             
                     <p>Great UI/UX enhances user experience, making websites intuitive and engaging.</p>

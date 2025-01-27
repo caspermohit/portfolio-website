@@ -4,7 +4,7 @@ import './About.css'; // Ensure this CSS file contains styles for the about sect
 import './Styles/styles.scss';
 import '../index.css'; // Correct import path
 import ScrollReveal from 'scrollreveal';
-import profile from './assets/img/image2.JPG';
+import profile from './assets/img/image2.JPEG';
 
 const About = () => {
     useEffect(() => {
@@ -24,7 +24,7 @@ const About = () => {
                     <img src={profile} alt="About" />
                 </div>
                 <div>
-                    <h2 className="about__subtitle">I'am Mohit</h2>
+                    <h2 className="about__subtitle">I am Mohit</h2>
                     <p className="about__text">
                          Passionate and ambitious, solid foundation in graphic design, web development, and virtual reality.
                           Gained experience in creating visually appealing designs, developing user-friendly websites,
