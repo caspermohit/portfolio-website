@@ -10,7 +10,7 @@ function Home() {
     // Memoize the roles array to prevent it from changing on every render
     const roles = useMemo(() => [
         "Web Designer",
-        "UI/UX Designer",
+        "UX/UI Designer",
         "Product Designer",
         "Game Designer"
     ], []);

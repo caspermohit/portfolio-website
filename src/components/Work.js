@@ -89,9 +89,9 @@ const Work = () => {
             <div className="work__container">
                 <div className="work__item" onClick={() => handleProjectClick('UI/UX Design')}>
                     <FontAwesomeIcon icon={faDesktop} size="3x" />
-                    <h3>UI/UX Design</h3>
+                    <h3>UX/UI Design</h3>
             
-                    <p>Great UI/UX enhances user experience, making websites intuitive and engaging.</p>
+                    <p>Great UX/UI enhances user experience, making websites intuitive and engaging.</p>
 
                 </div>
                 <div className="work__item" onClick={() => handleProjectClick('Website Design & Development')}>
