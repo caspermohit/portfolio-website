@@ -1,0 +1,22 @@
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8;
+    background-color: transparent;
+}
+
+/* Add this to your App.css or index.css */
+:root {
+    --accent-rgb: 52, 152, 219; /* Make sure this matches your accent color */
+}
+
+/* Ensure the canvas container is properly positioned */
+#root {
+    position: relative;
+    min-height: 100vh;
+} 

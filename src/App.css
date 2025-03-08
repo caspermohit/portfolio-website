@@ -38,3 +38,20 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+    /* Add RGB values for your accent color */
+    --accent-rgb: 52, 152, 219; /* This should match your accent color */
+}
+
+/* Hide default cursor */
+* {
+    cursor: none;
+}
+
+/* Show default cursor on mobile */
+@media (max-width: 768px) {
+    * {
+        cursor: auto;
+    }
+}

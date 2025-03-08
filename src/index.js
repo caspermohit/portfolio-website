@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './components/Styles/styles.scss'; // Updated path
+import './styles/main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'boxicons/css/boxicons.min.css';

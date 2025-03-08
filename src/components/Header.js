@@ -2,54 +2,80 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css'; 
 import './Styles/styles.scss';  
-import logo from './assets/img/logo-transparent-png.png';
-import '../index.css'; 
-// Removed unused variable resumePDF
+import AnimatedBackground from './AnimatedBackground';
 // const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV.pdf';
 
 const Header = () => {
-    const [menuVisible, setMenuVisible] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
         };
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => {
-        setMenuVisible(!menuVisible);
-    };
+    // Close menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (isMenuOpen && !e.target.closest('.header__nav') && !e.target.closest('.header__menu-btn')) {
+                setIsMenuOpen(false);
+            }
+        };
 
-    const handleLinkClick = () => {
-        setMenuVisible(false);
-    };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [isMenuOpen]);
+
+    // Prevent scroll when menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isMenuOpen]);
 
     return (
-        <header className="l-header">
-            <nav className="nav bd-grid">
-                <div className="nav__brand">
-                  <a href="#home"> <img src={logo}  alt="" className="nav__logo" /></a>
-                </div>
-                <div className={`nav__menu ${menuVisible ? 'show' : ''}`} id="nav-menu">
-                    <ul className="nav__list">
-                        <li className="nav__item"><a href="#home" className="nav__link" onClick={handleLinkClick}>Home</a></li>
-                        <li className="nav__item"><a href="#about" className="nav__link" onClick={handleLinkClick}>About</a></li>
-                        <li className="nav__item"><a href="#skills" className="nav__link" onClick={handleLinkClick}>Skills</a></li>
-                        <li className="nav__item"><a href="#work" className="nav__link" onClick={handleLinkClick}>Work</a></li>
-                        <li className="nav__item"><a href="#contact" className="nav__link" onClick={handleLinkClick}>Contact</a></li>
-                        
+        <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
+            <div className="header__background">
+                <AnimatedBackground 
+                    color="var(--accent-color)"
+                    particleCount={300}
+                    particleSize={2}
+                    speed={0.8}
+                    zIndex={-1}
+                />
+            </div>
+
+            <div className="container header__container">
+                <a href="/" className="header__logo" data-cursor-text="Home">
+                    MS.
+                </a>
+
+                <button 
+                    className={`header__menu-btn ${isMenuOpen ? 'active' : ''}`}
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav className={`header__nav ${isMenuOpen ? 'active' : ''}`}>
+                    <ul className="header__nav-list">
+                        <li><a href="#home" className="header__nav-link" data-cursor-text="Home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+                        <li><a href="#about" className="header__nav-link" data-cursor-text="About Me" onClick={() => setIsMenuOpen(false)}>About</a></li>
+                        <li><a href="#work" className="header__nav-link" data-cursor-text="My Work" onClick={() => setIsMenuOpen(false)}>Work</a></li>
+                        <li><a href="#skills" className="header__nav-link" data-cursor-text="My Skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
+                        <li><a href="#contact" className="header__nav-link" data-cursor-text="Get in Touch" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
                     </ul>
-                </div>
-                {isMobile && (
-                    <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
-                        <i className='bx bx-menu'></i>
-                    </div>
-                )}
-            </nav>
+                </nav>
+            </div>
         </header>
     );
 };

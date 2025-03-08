@@ -4,127 +4,126 @@ import './Work.css'; // Ensure this CSS file contains styles for the work sectio
 import './Styles/styles.scss';
 import '../index.css';  // Corrected import path
 import ScrollReveal from 'scrollreveal';
-import Swal from 'sweetalert2'; // Import SweetAlert
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 // Importing icons from Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faCode, faPen, faGamepad, faMobileAlt,faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Work = () => {
     useEffect(() => {
-        ScrollReveal().reveal('.work__container', {
+        ScrollReveal().reveal('.work__grid', {
             origin: 'bottom',
             distance: '50px',
-            duration: 2000,
-            delay: 200,
+            duration: 1000,
+            delay: 200
         });
     }, []);
 
-    const handleProjectClick = (projectName) => {
-        let text = `some of my  ${projectName}.`;
-        let links = '';
-
-        switch (projectName) {
-            case 'Website Design & Development':
-                links = `
-                    <ul>
-                        <li><a href="https://weather-news7-app.netlify.app/" target="_blank" rel="noopener noreferrer">Weather News App</a></li>
-                        <li><a href="https://multi-converter-app.netlify.app/" target="_blank" rel="noopener noreferrer">multi-converter</a></li>
-                         <li><a href="https://ai-voice-chat.netlify.app" target="_blank" rel="noopener noreferrer">Ai voice chat</a></li>
-                    </ul>`;
-                break;
-            case 'UI/UX Design':
-                links = `
-                    <ul>
-                        <li><a href="https://www.behance.net/gallery/216561365/Donate-Nest" target="_blank" rel="noopener noreferrer">UI/UX Project "Donate Nest"</a></li>
-                        <li><a href="https://www.behance.net/gallery/216560557/glu-care" target="_blank" rel="noopener noreferrer">UI/UX Project "glu care"</a></li>
-                    </ul>`;
-                break;
-            case 'Content Writing':
-                links = `
-                    <ul>
-                        <li><a href="https://gogadgets77.wordpress.com/2024/04/19/the-best-fast-chargers-of-2024-a-comprehensive-review/" target="_blank" rel="noopener noreferrer">best fast charger 2024</a></li>
-                        <li><a href="https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/" target="_blank" rel="noopener noreferrer">Essential accessories</a></li>
-                         <li><a href="https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/" target="_blank" rel="noopener noreferrer">best back-to-school accessories</a></li>
-                    </ul>`;
-                break;
-            case 'Level Design':
-                links = `
-                    <ul>
-                        <li><a href="https://www.behance.net/gallery/215923707/Enviroment-design" target="_blank" rel="noopener noreferrer">Enviroment design</a></li>
-                        <li><a href="https://www.behance.net/gallery/215970037/Game-build-for-VR-devices" target="_blank" rel="noopener noreferrer">Games Teaser</a></li>
-                        
-                    </ul>`;
-                break;
-            case 'Mobile App Development':
-                links = `
-                    <ul>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">Mobile App Project 1</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">Mobile App Project 2</a></li>
-                    </ul>`;
-                break;
-            case 'Illustration and Animation':
-                links = `
-                    <ul>
-                        <li><a href="https://www.behance.net/gallery/215922739/client-branding-poster" target="_blank" rel="noopener noreferrer">Client branding poster</a></li>
-                        <li><a href="https://www.behance.net/gallery/204814325/360-fliming" target="_blank" rel="noopener noreferrer">360 Flim making</a></li>
-                        <li><a href="https://www.behance.net/gallery/202959411/Arbys-promotion" target="_blank" rel="noopener noreferrer">Arby's promotion</a></li>
-                        <li><a href="https://www.behance.net/gallery/215939795/Royal-bank-logo-redesign" target="_blank" rel="noopener noreferrer">logo redesign</a></li>
-                    </ul>`;
-                break;
-            default:
-                break;
+    const projects = [
+        {
+            title: 'UX/UI Design',
+            description: 'Great UX/UI enhances user experience, making websites intuitive and engaging.',
+            icon: faDesktop,
+            links: [
+                { url: 'https://www.behance.net/gallery/216561365/Donate-Nest', text: 'UI/UX Project "Donate Nest"' },
+                { url: 'https://www.behance.net/gallery/216560557/glu-care', text: 'UI/UX Project "glu care"' }
+            ]
+        },
+        {
+            title: 'Website Development',
+            description: 'Create functional, engaging, and user-friendly websites.',
+            icon: faCode,
+            links: [
+                { url: 'https://weather-news7-app.netlify.app/', text: 'Weather News App' },
+                { url: 'https://multi-converter-app.netlify.app/', text: 'Multi-converter' },
+                { url: 'https://ai-voice-chat.netlify.app', text: 'AI Voice Chat' }
+            ]
+        },
+        {
+            title: 'Content Writing',
+            description: 'Delivers engaging, informative, and valuable content for audiences.',
+            icon: faPen,
+            links: [
+                { url: 'https://gogadgets77.wordpress.com/2024/04/19/the-best-fast-chargers-of-2024-a-comprehensive-review/', text: 'Best Fast Charger 2024' },
+                { url: 'https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/', text: 'Essential Accessories' },
+                { url: 'https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/', text: 'Back-to-School Accessories' }
+            ]
+        },
+        {
+            title: 'Level Design',
+            description: 'Create immersive environments and strategic layouts to enhance gameplay.',
+            icon: faGamepad,
+            links: [
+                { url: 'https://www.behance.net/gallery/215923707/Enviroment-design', text: 'Environment Design' },
+                { url: 'https://www.behance.net/gallery/215970037/Game-build-for-VR-devices', text: 'Games Teaser' }
+            ]
+        },
+        {
+            title: 'Mobile App Development',
+            description: 'Create responsive, user-friendly mobile apps tailored to your needs.',
+            icon: faMobileAlt,
+            links: [
+                { url: '#', text: 'Coming Soon' }
+            ]
+        },
+        {
+            title: 'Illustration and Animation',
+            description: 'Bring ideas to life with captivating visuals and dynamic animations.',
+            icon: faPenToSquare,
+            links: [
+                { url: 'https://www.behance.net/gallery/215922739/client-branding-poster', text: 'Client Branding Poster' },
+                { url: 'https://www.behance.net/gallery/204814325/360-fliming', text: '360 Film Making' },
+                { url: 'https://www.behance.net/gallery/202959411/Arbys-promotion', text: "Arby's Promotion" },
+                { url: 'https://www.behance.net/gallery/215939795/Royal-bank-logo-redesign', text: 'Logo Redesign' }
+            ]
         }
-
-        Swal.fire({
-            title: projectName,
-            html: `${text} ${links}`, // Use 'html' to allow HTML content
-            icon: 'info',
-            confirmButtonText: 'Close',
-        });
-    };
+    ];
 
     return (
-        <section className="work section" id="work">
-            <h2 className="section-title">My works</h2>
-            <div className="work__container">
-                <div className="work__item" onClick={() => handleProjectClick('UI/UX Design')}>
-                    <FontAwesomeIcon icon={faDesktop} size="3x" />
-                    <h3>UX/UI Design</h3>
-            
-                    <p>Great UX/UI enhances user experience, making websites intuitive and engaging.</p>
-
+        <ParallaxProvider>
+            <section className="work section" id="work">
+                <div className="container">
+                    <Parallax translateY={[-20, 20]} className="work__header">
+                        <h2 className="section__title">Selected Work</h2>
+                        <p className="section__subtitle">
+                            A showcase of my latest projects and creative endeavors
+                        </p>
+                    </Parallax>
+                    
+                    <div className="work__grid">
+                        {projects.map((project, index) => (
+                            <Parallax 
+                                key={index}
+                                translateY={[30, -30]}
+                                scale={[0.9, 1.1]}
+                                easing="easeInQuad"
+                                className="work__card"
+                                data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s"
+                            >
+                                <div className="work__card-icon">
+                                    <FontAwesomeIcon icon={project.icon} />
+                                </div>
+                                <h3 className="work__card-title">{project.title}</h3>
+                                <p className="work__card-description">{project.description}</p>
+                                <div className="work__card-links">
+                                    {project.links.map((link, linkIndex) => (
+                                        <a 
+                                            key={linkIndex}
+                                            href={link.url}
+                                            className="work__card-link"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {link.text}
+                                        </a>
+                                    ))}
+                                </div>
+                            </Parallax>
+                        ))}
+                    </div>
                 </div>
-                <div className="work__item" onClick={() => handleProjectClick('Website Design & Development')}>
-                    <FontAwesomeIcon icon={faCode} size="3x" />
-                    <h3>Website Design & Development</h3>
-                    <p>Create functional, engaging, and user-friendly websites.</p>
-                </div>
-                <div className="work__item" onClick={() => handleProjectClick('Content Writing')}>
-                    <FontAwesomeIcon icon={faPen} size="3x" />
-                    <h3>Content Writing</h3>
-                    <p>Delivers engaging, informative, and valuable content for audiences.</p>
-                </div>
-                <div className="work__item" onClick={() => handleProjectClick('Level Design')}>
-                    <FontAwesomeIcon icon={faGamepad} size="3x" />
-                    <h3>Level Design</h3>
-                    <p>Create immersive environments and strategic layouts to enhance gameplay and player engagement.</p>
-
-                </div>
-                <div className="work__item" onClick={() => handleProjectClick('Mobile App Development')}>
-                    <FontAwesomeIcon icon={faMobileAlt} size="3x" />
-                    <p>*needs to get updated</p>
-                    <h3>Mobile App Development</h3>
-                    <p>Create responsive, user-friendly mobile apps tailored to your needs.</p>
-
-                </div>
-                <div className="work__item" onClick={() => handleProjectClick('Illustration and Animation')}>
-                    <FontAwesomeIcon icon={faPenToSquare} size="3x" />
-                    <h3>Illustration and Animation</h3>
-                    <p>Bring ideas to life with captivating visuals and dynamic animations that enhance storytelling.</p>
-
-                </div>
-            </div>
-        </section>
+            </section>
+        </ParallaxProvider>
     );
 };
 

@@ -1,0 +1,176 @@
+// Variables
+:root {
+    // Modern color palette inspired by DashDigital
+    --background-color: #0f0f0f;
+    --text-color: #ffffff;
+    --accent-color: #3498db;
+    --secondary-color: #2c2c2c;
+    --gradient-start: #1a1a1a;
+    --gradient-end: #000000;
+    
+    // Typography
+    --heading-font: 'Helvetica Neue', sans-serif;
+    --body-font: 'Inter', sans-serif;
+    --h1-size: 4.5rem;
+    --h2-size: 2.5rem;
+    --h3-size: 1.75rem;
+    --body-size: 1rem;
+}
+
+// Global Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    line-height: 1.6;
+}
+
+// Modern Container
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+// Typography
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+// Modern Button Style
+.button {
+    background: var(--accent-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background: #2980b9; // Darker shade of the accent color
+        transform: translateY(-2px);
+    }
+}
+
+// Grid System
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+}
+
+// Section Styling
+.section {
+    padding: 8rem 0;
+    
+    &--dark {
+        background-color: var(--secondary-color);
+    }
+}
+
+// Animation Classes
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    :root {
+        --h1-size: 3rem;
+        --h2-size: 2rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Skills specific styles
+.skills {
+    &__container {
+        display: grid;
+        gap: 2rem;
+        padding: 0 1rem;
+        
+        @media screen and (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+        }
+        
+        @media screen and (min-width: 1024px) {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+    }
+
+    &__category {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &__subtitle {
+        color: var(--first-color);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__item {
+        margin-bottom: 1.5rem;
+    }
+
+    &__names {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    &__name {
+        font-size: 0.938rem;
+        font-weight: 500;
+    }
+
+    &__bar {
+        background-color: #f1f1f1;
+        height: 0.5rem;
+        border-radius: 0.25rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__percentage {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        background-color: var(--first-color);
+        border-radius: 0.25rem;
+        transition: width 1s ease-in-out;
+    }
+
+    &__percentage-number {
+        font-size: 0.75rem;
+        text-align: right;
+        margin-top: 0.25rem;
+    }
+}

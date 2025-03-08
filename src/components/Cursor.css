@@ -1,0 +1,67 @@
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(var(--accent-rgb), 0.5);
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease-in-out;
+}
+
+.cursor-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    color: var(--text-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-dot.hidden,
+.cursor-ring.hidden {
+    opacity: 0;
+}
+
+.cursor-dot.clicked {
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+.cursor-ring.clicked {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.5;
+}
+
+.cursor-ring.hovered {
+    width: 80px;
+    height: 80px;
+    border-color: var(--accent-color);
+    background: rgba(var(--accent-rgb), 0.1);
+}
+
+.cursor-ring.hovered .cursor-text {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .cursor-dot,
+    .cursor-ring {
+        display: none;
+    }
+} 

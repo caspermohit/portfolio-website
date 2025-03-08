@@ -7,12 +7,16 @@ import Skills from './components/Skills';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Cursor from './components/Cursor';
+import AnimatedBackground from './components/AnimatedBackground';
 import './App.css'; // Main CSS file
 import './components/Styles/styles.scss';  // Correct import path
 
 const App = () => {
     return (
-        <div>
+        <>
+            <Cursor />
+            <AnimatedBackground />
             <Header />
             <main className="l-main">
                 <Home />
@@ -22,7 +26,7 @@ const App = () => {
                 <Contact />
             </main>
             <Footer />
-        </div>
+        </>
     );
 };
 

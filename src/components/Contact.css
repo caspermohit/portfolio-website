@@ -1,40 +1,114 @@
-.contact__input {
+.contact {
+    background-color: var(--background-color);
+    padding: 8rem 0;
+}
+
+.contact__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact__info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.contact__info-icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.contact__info-item h3 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact__info-item p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact__form-group input,
+.contact__form-group textarea {
     width: 100%;
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-semi);
     padding: 1rem;
-    border-radius: .5rem;
-    border: 1.5px solid var(--first-color); /* Ensure this color contrasts with the background */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact__form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact__form-group input:focus,
+.contact__form-group textarea:focus {
     outline: none;
-    margin-bottom: var(--mb-4);
-    transition: border-color 0.3s; /* Smooth transition for border color */
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.contact__input:focus {
-    border-color: var(--first-color); /* Change border color on focus */
-    box-shadow: 0 0 0 3px rgba(76, 140, 140, 0.2); /* Add a subtle shadow for focus */
-}
-
-.resume-button  {
-    
-    background-color: var(--first-color);
-    color: white;
+.contact__form-button {
+    padding: 1rem 2rem;
+    background: var(--accent-color);
+    color: var(--text-color);
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    justify-content: right;
+    transition: all 0.3s ease;
 }
 
+.contact__form-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
 
+.contact__form-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
 
-@media screen and (min-width: 768px) {
-    .contact__form {
-        width: 360px;
-        padding-top: 2rem;
-    }
-    .contact__container {
-        justify-items: center;
+.contact__form-success {
+    color: #2ecc71;
+    text-align: center;
+}
+
+.contact__form-error {
+    color: #e74c3c;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 }

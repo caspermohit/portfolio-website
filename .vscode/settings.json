@@ -10,5 +10,6 @@
         "noreferrer",
         "photoshop",
         "scrollreveal"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
