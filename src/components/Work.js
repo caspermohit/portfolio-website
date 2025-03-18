@@ -36,7 +36,8 @@ const Work = () => {
             links: [
                 { url: 'https://weather-news7-app.netlify.app/', text: 'Weather News App' },
                 { url: 'https://multi-converter-app.netlify.app/', text: 'Multi-converter' },
-                { url: 'https://ai-voice-chat.netlify.app', text: 'AI Voice Chat' }
+                { url: 'https://ai-voice-chat.netlify.app', text: 'AI Voice Chat' },
+                { url: 'https://entertainment-review.netlify.app/', text: 'Entertainment Review' }
             ]
         },
         {
@@ -84,7 +85,7 @@ const Work = () => {
             <section className="work section" id="work">
                 <div className="container">
                     <Parallax translateY={[-20, 20]} className="work__header">
-                        <h2 className="section__title">Selected Work</h2>
+                        <h2 className="section__title">My Work</h2>
                         <p className="section__subtitle">
                             A showcase of my latest projects and creative endeavors
                         </p>
