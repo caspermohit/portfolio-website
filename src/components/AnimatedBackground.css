@@ -6,17 +6,35 @@
     height: 100vh;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.9;
     background-color: transparent;
 }
 
-/* Add this to your App.css or index.css */
+/* Variables for animation colors */
 :root {
-    --accent-rgb: 52, 152, 219; /* Make sure this matches your accent color */
+    --accent-rgb: 52, 152, 219; /* Blue accent */
+    --secondary-rgb: 44, 62, 80; /* Dark accent color */
+    --background-rgb: 10, 10, 10; /* Dark background color */
+}
+
+/* Add hover effect to waves on desktop */
+@media (hover: hover) {
+    .animated-background:hover {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+}
+
+/* Improve performance on mobile devices */
+@media (max-width: 768px) {
+    .animated-background {
+        opacity: 0.7;
+    }
 }
 
 /* Ensure the canvas container is properly positioned */
 #root {
     position: relative;
     min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 } 

@@ -10,7 +10,8 @@ import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 import AnimatedBackground from './components/AnimatedBackground';
 import './App.css'; // Main CSS file
-import './components/Styles/styles.scss';  // Correct import path
+import './components/Styles/styles.scss';
+import './components/styles.css';
 
 const App = () => {
     return (

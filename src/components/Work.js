@@ -25,7 +25,7 @@ const Work = () => {
             description: 'Great UX/UI enhances user experience, making websites intuitive and engaging.',
             icon: faDesktop,
             links: [
-                { url: 'https://www.behance.net/gallery/216561365/Donate-Nest', text: 'UI/UX Project "Donate Nest"' },
+                { url: 'https://sharecare-case-study.netlify.app/', text: 'UI/UX Project "Sharecare"' },
                 { url: 'https://www.behance.net/gallery/216560557/glu-care', text: 'UI/UX Project "glu care"' }
             ]
         },
@@ -64,7 +64,7 @@ const Work = () => {
             description: 'Create responsive, user-friendly mobile apps tailored to your needs.',
             icon: faMobileAlt,
             links: [
-                { url: '#', text: 'Coming Soon' }
+                { url: '#', text: 'working on it' }
             ]
         },
         {
@@ -114,6 +114,8 @@ const Work = () => {
                                             className="work__card-link"
                                             target="_blank"
                                             rel="noopener noreferrer"
+                                            data-cursor-text="View" 
+                                            data-cursor-info={`${project.title} | ${project.technologies}`}
                                         >
                                             {link.text}
                                         </a>

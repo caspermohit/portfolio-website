@@ -1,25 +1,27 @@
 .cursor-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 6px;
     background-color: var(--accent-color);
     position: fixed;
-    border-radius: 50%;
+    border-radius: 12px;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+    transition: opacity 0.05s ease;
+    will-change: transform;
 }
 
 .cursor-ring {
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(var(--accent-rgb), 0.5);
+    width: 60px;
+    height: 26px;
+    border: 2px solid rgba(97, 218, 251, 0.5);
     position: fixed;
-    border-radius: 50%;
+    border-radius: 20px;
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    transition: all 0.15s ease-in-out;
+    transition: width 0.1s ease, height 0.1s ease, opacity 0.1s ease;
+    will-change: transform, width, height;
 }
 
 .cursor-text {
@@ -31,7 +33,26 @@
     white-space: nowrap;
     color: var(--text-color);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.1s ease;
+}
+
+.cursor-info {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    max-width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cursor-dot.hidden,
@@ -44,18 +65,19 @@
 }
 
 .cursor-ring.clicked {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.7;
 }
 
 .cursor-ring.hovered {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 36px;
     border-color: var(--accent-color);
-    background: rgba(var(--accent-rgb), 0.1);
+    background: rgba(97, 218, 251, 0.05);
 }
 
-.cursor-ring.hovered .cursor-text {
+.cursor-ring.hovered .cursor-text,
+.cursor-ring.hovered .cursor-info {
     opacity: 1;
 }
 

@@ -7,10 +7,12 @@ import ScrollReveal from 'scrollreveal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faEnvelope, 
-    faMapMarker, 
-    faPhone, 
+    faHandshake,
+    faBriefcase,
+    faPaintBrush, 
     faStar, 
-    faRocket
+    faRocket,
+    faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import emailjs from 'emailjs-com';
 
@@ -22,8 +24,18 @@ const Contact = () => {
     });
     const [status, setStatus] = useState('');
     const [isAnimated, setIsAnimated] = useState(false);
+    const [emailjsEnabled, setEmailjsEnabled] = useState(false);
 
     useEffect(() => {
+        // Try to initialize EmailJS
+        try {
+            emailjs.init('QXLzBsqnZ2lujJnZD');
+            setEmailjsEnabled(true);
+        } catch (error) {
+            console.log("EmailJS initialization failed, using fallback method");
+            setEmailjsEnabled(false);
+        }
+        
         ScrollReveal().reveal('.contact__content', {
             origin: 'bottom',
             distance: '50px',
@@ -50,21 +62,43 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setStatus('sending');
+        
+        if (emailjsEnabled) {
+            setStatus('sending');
+            
+            // Make sure formData matches EmailJS template parameters
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                message: formData.message,
+                to_name: "Portfolio Owner"
+            };
+    
+            emailjs.send(
+                'service_7z6hd6v',
+                'template_y8sv6na',
+                templateParams,
+                'QXLzBsqnZ2lujJnZD'
+            )
+            .then(() => {
+                setStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+            })
+            .catch((error) => {
+                console.error("EmailJS Error:", error);
+                setStatus('error');
+                openMailClient();
+            });
+        } else {
+            // Fallback to direct email client
+            openMailClient();
+        }
+    };
 
-        emailjs.send(
-            'YOUR_SERVICE_ID',
-            'YOUR_TEMPLATE_ID',
-            formData,
-            'YOUR_USER_ID'
-        )
-        .then(() => {
-            setStatus('success');
-            setFormData({ name: '', email: '', message: '' });
-        })
-        .catch(() => {
-            setStatus('error');
-        });
+    const openMailClient = () => {
+        const subject = encodeURIComponent(`Portfolio Contact - ${formData.name}`);
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage: ${formData.message}`);
+        window.open(`mailto:mohitshah.ms77@gmail.com?subject=${subject}&body=${body}`);
     };
 
     const handleChange = (e) => {
@@ -95,32 +129,32 @@ const Contact = () => {
                     <div className="contact__info">
                         <div className="contact__info-item animate-on-scroll">
                             <div className="info-icon-wrapper">
-                                <FontAwesomeIcon icon={faEnvelope} className="contact__info-icon" />
+                                <FontAwesomeIcon icon={faPaintBrush} className="contact__info-icon" />
                             </div>
                             <div className="info-content">
-                                <h3>Ready to Connect?</h3>
-                                <p>your.email@example.com</p>
-                                <span className="info-description">Drop me a line anytime!</span>
+                                <h3>Design & Strategy</h3>
+                                <p>Creative Solutions</p>
+                                <span className="info-description">Innovative designs that align with your business goals</span>
                             </div>
                         </div>
                         <div className="contact__info-item animate-on-scroll">
                             <div className="info-icon-wrapper">
-                                <FontAwesomeIcon icon={faPhone} className="contact__info-icon" />
+                                <FontAwesomeIcon icon={faBriefcase} className="contact__info-icon" />
                             </div>
                             <div className="info-content">
-                                <h3>Let's Talk</h3>
-                                <p>+1 234 567 890</p>
-                                <span className="info-description">Available Mon-Fri, 9AM-6PM</span>
+                                <h3>Development</h3>
+                                <p>Technical Excellence</p>
+                                <span className="info-description">Clean, efficient code built for performance</span>
                             </div>
                         </div>
                         <div className="contact__info-item animate-on-scroll">
                             <div className="info-icon-wrapper">
-                                <FontAwesomeIcon icon={faMapMarker} className="contact__info-icon" />
+                                <FontAwesomeIcon icon={faHandshake} className="contact__info-icon" />
                             </div>
                             <div className="info-content">
-                                <h3>Visit Me</h3>
-                                <p>Your City, Country</p>
-                                <span className="info-description">Let's meet for coffee!</span>
+                                <h3>Collaboration</h3>
+                                <p>Smooth Partnership</p>
+                                <span className="info-description">Transparent communication throughout the project</span>
                             </div>
                         </div>
                     </div>
@@ -162,13 +196,22 @@ const Contact = () => {
                                 className="animated-input"
                             ></textarea>
                         </div>
-                        <button 
-                            type="submit" 
-                            className={`contact__form-button ${status}`}
-                            disabled={status === 'sending'}
-                        >
-                            {status === 'sending' ? 'Making Magic Happen...' : 'Start Our Journey Together →'}
-                        </button>
+                        <div className="contact__buttons">
+                            <button 
+                                type="submit" 
+                                className={`contact__form-button ${status}`}
+                                disabled={status === 'sending'}
+                            >
+                                {status === 'sending' ? 'Making Magic Happen...' : 'Send Message →'}
+                            </button>
+                            <button 
+                                type="button"
+                                className="contact__email-button"
+                                onClick={openMailClient}
+                            >
+                                <FontAwesomeIcon icon={faEnvelope} /> Open Email Client <FontAwesomeIcon icon={faExternalLinkAlt} size="xs" />
+                            </button>
+                        </div>
                         {status === 'success' && (
                             <p className="contact__form-success">
                                 <FontAwesomeIcon icon={faStar} /> 
@@ -176,7 +219,9 @@ const Contact = () => {
                             </p>
                         )}
                         {status === 'error' && (
-                            <p className="contact__form-error">Oops! Let's try that again. Great things take persistence!</p>
+                            <p className="contact__form-error">
+                                There was an issue sending your message. You can try using the direct email button instead.
+                            </p>
                         )}
                     </form>
                 </div>
