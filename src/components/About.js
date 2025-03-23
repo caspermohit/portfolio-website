@@ -10,8 +10,7 @@ import {
     faGraduationCap, 
     faBriefcase, 
     faUser, 
-    faCertificate,
-    faCode
+    faCertificate
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 

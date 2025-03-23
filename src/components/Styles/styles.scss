@@ -14,7 +14,7 @@
     --light-font-color: #ffffff; // White for text on dark backgrounds
 
     /*===== Fuente y tipografia =====*/
-    --body-font: 'arial', 'serif', sans-serif;
+    --body-font: 'Avenir', 'Nunito', 'arial', sans-serif;
 
     --big-font-size: 2rem;
     --h2-font-size: 1.25rem;
@@ -48,7 +48,7 @@ html{
 }
 body{
     margin: var(--header-height) 0 0 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--second-color);
 }
