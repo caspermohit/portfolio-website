@@ -15,6 +15,7 @@ import {
     faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import emailjs from 'emailjs-com';
+import logo from './assets/img/logo.png';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -159,71 +160,77 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <form className={`contact__form ${isAnimated ? 'form-animated' : ''}`} onSubmit={handleSubmit}>
-                        <div className="form-header">
-                            <h3>Share Your Vision</h3>
-                            <p>Every great project begins with a message</p>
+                    <div className="contact__form-container">
+                        <form className={`contact__form ${isAnimated ? 'form-animated' : ''}`} onSubmit={handleSubmit}>
+                            <div className="form-header">
+                                <h3>Share Your Vision</h3>
+                                <p>Every great project begins with a message</p>
+                            </div>
+                            <div className="contact__form-group">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="What's your name?"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                    className="animated-input"
+                                />
+                            </div>
+                            <div className="contact__form-group">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Where can I reach you?"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="animated-input"
+                                />
+                            </div>
+                            <div className="contact__form-group">
+                                <textarea
+                                    name="message"
+                                    placeholder="Tell me about your amazing idea..."
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                    className="animated-input"
+                                ></textarea>
+                            </div>
+                            <div className="contact__buttons">
+                                <button 
+                                    type="submit" 
+                                    className={`contact__form-button ${status}`}
+                                    disabled={status === 'sending'}
+                                >
+                                    {status === 'sending' ? 'Making Magic Happen...' : 'Send Message →'}
+                                </button>
+                                <button 
+                                    type="button"
+                                    className="contact__email-button"
+                                    onClick={openMailClient}
+                                >
+                                    <FontAwesomeIcon icon={faEnvelope} /> Open Email Client <FontAwesomeIcon icon={faExternalLinkAlt} size="xs" />
+                                </button>
+                            </div>
+                            {status === 'success' && (
+                                <p className="contact__form-success">
+                                    <FontAwesomeIcon icon={faStar} /> 
+                                    Message received! Let's create something extraordinary!
+                                </p>
+                            )}
+                            {status === 'error' && (
+                                <p className="contact__form-error">
+                                    There was an issue sending your message. You can try using the direct email button instead.
+                                </p>
+                            )}
+                        </form>
+                        
+                        <div className="contact__logo-container animate-on-scroll">
+                            <img src={logo} alt="Logo" className="contact__logo" />
                         </div>
-                        <div className="contact__form-group">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="What's your name?"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                                className="animated-input"
-                            />
-                        </div>
-                        <div className="contact__form-group">
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Where can I reach you?"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                                className="animated-input"
-                            />
-                        </div>
-                        <div className="contact__form-group">
-                            <textarea
-                                name="message"
-                                placeholder="Tell me about your amazing idea..."
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                                className="animated-input"
-                            ></textarea>
-                        </div>
-                        <div className="contact__buttons">
-                            <button 
-                                type="submit" 
-                                className={`contact__form-button ${status}`}
-                                disabled={status === 'sending'}
-                            >
-                                {status === 'sending' ? 'Making Magic Happen...' : 'Send Message →'}
-                            </button>
-                            <button 
-                                type="button"
-                                className="contact__email-button"
-                                onClick={openMailClient}
-                            >
-                                <FontAwesomeIcon icon={faEnvelope} /> Open Email Client <FontAwesomeIcon icon={faExternalLinkAlt} size="xs" />
-                            </button>
-                        </div>
-                        {status === 'success' && (
-                            <p className="contact__form-success">
-                                <FontAwesomeIcon icon={faStar} /> 
-                                Message received! Let's create something extraordinary!
-                            </p>
-                        )}
-                        {status === 'error' && (
-                            <p className="contact__form-error">
-                                There was an issue sending your message. You can try using the direct email button instead.
-                            </p>
-                        )}
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>

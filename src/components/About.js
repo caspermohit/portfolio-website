@@ -10,8 +10,10 @@ import {
     faGraduationCap, 
     faBriefcase, 
     faUser, 
-    faCertificate 
+    faCertificate,
+    faCode
 } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const About = () => {
     const imageRef = useRef(null);
@@ -99,18 +101,24 @@ const About = () => {
                         Adept at building scalable systems, enhancing UI/UX, and improving system efficiency to drive business growth. Passionate about accessibility, automation, and optimizing web technologies to improve user experience. 
                         Strong problem-solving skills with a keen ability to collaborate across multidisciplinary teams.
                         </p>
+                        
+                        <div className="about__github">
+                            <h3><FontAwesomeIcon icon={faGithub} /> GitHub Contributions</h3>
+                            <p>While I'm currently working as a developer at professional companies, I also maintain an active GitHub presence with various personal projects. Check out my repositories at <a href="https://github.com/caspermohit" target="_blank" rel="noopener noreferrer">github.com/caspermohit</a>.</p>
+                        </div>
+                        
                         <div className="about__stats">
                             <div className="about__stat">
                                 <span className="about__stat-number">4+</span>
                                 <span className="about__stat-text">Years Experience</span>
                             </div>
                             <div className="about__stat">
-                                <span className="about__stat-number">50+</span>
+                                <span className="about__stat-number">29+</span>
                                 <span className="about__stat-text">Projects Completed</span>
                             </div>
                             <div className="about__stat">
-                                <span className="about__stat-number">20+</span>
-                                <span className="about__stat-text">Happy Clients</span>
+                                <span className="about__stat-number">8</span>
+                                <span className="about__stat-text">GitHub Contributions</span>
                             </div>
                         </div>
                     </>
@@ -122,7 +130,7 @@ const About = () => {
                         <div className="resume__item">
                             <div className="resume__title">
                                 <h3>Front-End Web Developer</h3>
-                                <p className="resume__place">Indigo Strategies - Sep 2021 to Aug 2023</p>
+                                <p className="resume__place">Guruinfosys - Sep 2021 to Aug 2023</p>
                             </div>
                             <ul className="resume__list">
                                 <li>Developed responsive enterprise-level solutions from scratch and added a highly customizable project management module, increasing sales by 43%.</li>
@@ -134,7 +142,7 @@ const About = () => {
                         <div className="resume__item">
                             <div className="resume__title">
                                 <h3>E-commerce Web Developer</h3>
-                                <p className="resume__place">Pixel Digital Agency - Sep 2019 to Aug 2021</p>
+                                <p className="resume__place">Green Computing - Sep 2019 to Aug 2021</p>
                             </div>
                             <ul className="resume__list">
                                 <li>Built an ERP system from scratch, acquiring 1.1 million users.</li>

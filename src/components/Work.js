@@ -24,6 +24,7 @@ const Work = () => {
             title: 'UX/UI Design',
             description: 'Great UX/UI enhances user experience, making websites intuitive and engaging.',
             icon: faDesktop,
+            technologies: 'Figma, Adobe XD, Sketch',
             links: [
                 { url: 'https://sharecare-case-study.netlify.app/', text: 'UI/UX Project "Sharecare"' },
                 { url: 'https://www.behance.net/gallery/216560557/glu-care', text: 'UI/UX Project "glu care"' }
@@ -33,6 +34,7 @@ const Work = () => {
             title: 'Website Development',
             description: 'Create functional, engaging, and user-friendly websites.',
             icon: faCode,
+            technologies: 'HTML, CSS, JavaScript, React',
             links: [
                 { url: 'https://weather-news7-app.netlify.app/', text: 'Weather News App' },
                 { url: 'https://multi-converter-app.netlify.app/', text: 'Multi-converter' },
@@ -44,6 +46,7 @@ const Work = () => {
             title: 'Content Writing',
             description: 'Delivers engaging, informative, and valuable content for audiences.',
             icon: faPen,
+            technologies: 'SEO, Copywriting, Blogging',
             links: [
                 { url: 'https://gogadgets77.wordpress.com/2024/04/19/the-best-fast-chargers-of-2024-a-comprehensive-review/', text: 'Best Fast Charger 2024' },
                 { url: 'https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/', text: 'Essential Accessories' },
@@ -54,6 +57,7 @@ const Work = () => {
             title: 'Level Design',
             description: 'Create immersive environments and strategic layouts to enhance gameplay.',
             icon: faGamepad,
+            technologies: 'Unity, Unreal Engine, Blender',
             links: [
                 { url: 'https://www.behance.net/gallery/215923707/Enviroment-design', text: 'Environment Design' },
                 { url: 'https://www.behance.net/gallery/215970037/Game-build-for-VR-devices', text: 'Games Teaser' }
@@ -63,6 +67,7 @@ const Work = () => {
             title: 'Mobile App Development',
             description: 'Create responsive, user-friendly mobile apps tailored to your needs.',
             icon: faMobileAlt,
+            technologies: 'React Native, Flutter, Swift',
             links: [
                 { url: '#', text: 'working on it' }
             ]
@@ -71,6 +76,7 @@ const Work = () => {
             title: 'Illustration and Animation',
             description: 'Bring ideas to life with captivating visuals and dynamic animations.',
             icon: faPenToSquare,
+            technologies: 'Adobe Illustrator, After Effects, Photoshop',
             links: [
                 { url: 'https://www.behance.net/gallery/215922739/client-branding-poster', text: 'Client Branding Poster' },
                 { url: 'https://www.behance.net/gallery/204814325/360-fliming', text: '360 Film Making' },
@@ -115,7 +121,7 @@ const Work = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             data-cursor-text="View" 
-                                            data-cursor-info={`${project.title} | ${project.technologies}`}
+                                            data-cursor-info={`${project.title}: ${project.technologies}`}
                                         >
                                             {link.text}
                                         </a>

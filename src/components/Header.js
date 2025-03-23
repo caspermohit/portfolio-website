@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.css'; 
 import './Styles/styles.scss';  
 import AnimatedBackground from './AnimatedBackground';
-// const resumePDF = process.env.PUBLIC_URL + '/Mohit_shah_CV.pdf';
+
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
