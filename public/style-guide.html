@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>Mohit Shah - Style Guide</title>
+    <meta name="description" content="Portfolio Style Guide for Mohit Shah">
+    <meta name="author" content="Mohit Shah">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Styles -->
+    <style>
+        :root {
+            /* Color Palette */
+            --background-color: #0f0f0f;
+            --text-color: #ffffff;
+            --accent-color: #3498db;
+            --secondary-color: #2c2c2c;
+            --gradient-start: #1a1a1a;
+            --gradient-end: #000000;
+            
+            /* Typography */
+            --heading-font: 'Avenir', 'Nunito', 'Helvetica Neue', sans-serif;
+            --body-font: 'Avenir', 'Nunito', 'Inter', sans-serif;
+            --h1-size: 4rem;
+            --h2-size: 2.5rem;
+            --h3-size: 1.75rem;
+            --body-size: 1rem;
+        }
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: var(--h1-size); }
+        h2 { font-size: var(--h2-size); }
+        h3 { font-size: var(--h3-size); }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: var(--body-size);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        /* Grid */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+        }
+
+        .column {
+            flex: 1;
+            padding: 0 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .column-half {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 1rem;
+        }
+
+        .column-third {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding: 0 1rem;
+        }
+
+        /* Components */
+        .button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+        }
+
+        .button-outline:hover {
+            background: var(--accent-color);
+        }
+
+        /* Color Swatches */
+        .color-swatch {
+            height: 100px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .color-label {
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            padding: 0.5rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+
+        /* Code */
+        pre {
+            background: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+            margin-bottom: 1.5rem;
+        }
+
+        code {
+            font-family: monospace;
+            background: var(--secondary-color);
+            padding: 0.2rem 0.4rem;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .column-half, .column-third {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+        }
+
+        /* Font Examples */
+        .font-example {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--secondary-color);
+            border-radius: 4px;
+        }
+        
+        .font-name {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* UI Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--secondary-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--text-color);
+            font-family: var(--body-font);
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* Skill Bars */
+        .skill-bar {
+            height: 10px;
+            background: var(--secondary-color);
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 5px;
+        }
+        
+        /* Navigation */
+        .nav {
+            margin-top: 1rem;
+        }
+        
+        .nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav li {
+            margin-right: 2rem;
+        }
+        
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="header container">
+        <a href="/" class="logo">MS.</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section container">
+            <h1>Style Guide</h1>
+            <p>This style guide showcases the visual elements and components used throughout my portfolio website. It demonstrates typography, colors, buttons, and other UI elements that make up my digital presence.</p>
+            
+            <div class="row">
+                <div class="column">
+                    <hr style="margin: 2rem 0; border: none; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                </div>
+            </div>
+            
+            <!-- Color Palette -->
+            <h2>Color Palette</h2>
+            <p>These colors form the foundation of the visual identity across my portfolio.</p>
+            
+            <div class="row">
+                <div class="column-third">
+                    <div class="color-swatch" style="background-color: #0f0f0f;">
+                        <div class="color-label">#0f0f0f - Background</div>
+                    </div>
+                </div>
+                <div class="column-third">
+                    <div class="color-swatch" style="background-color: #ffffff;">
+                        <div class="color-label" style="color: #000;">#ffffff - Text</div>
+                    </div>
+                </div>
+                <div class="column-third">
+                    <div class="color-swatch" style="background-color: #3498db;">
+                        <div class="color-label">#3498db - Accent</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="column-third">
+                    <div class="color-swatch" style="background-color: #2c2c2c;">
+                        <div class="color-label">#2c2c2c - Secondary</div>
+                    </div>
+                </div>
+                <div class="column-third">
+                    <div class="color-swatch" style="background: linear-gradient(to bottom, #1a1a1a, #000000);">
+                        <div class="color-label">#1a1a1a to #000000 - Gradient</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Typography -->
+            <h2>Typography</h2>
+            <p>Typography plays a crucial role in establishing the personality and readability of the portfolio.</p>
+            
+            <div class="row">
+                <div class="column-half">
+                    <div class="font-example">
+                        <div class="font-name">Heading Font: Avenir / Nunito</div>
+                        <h1>Heading 1 (4rem)</h1>
+                        <h2>Heading 2 (2.5rem)</h2>
+                        <h3>Heading 3 (1.75rem)</h3>
+                    </div>
+                </div>
+                <div class="column-half">
+                    <div class="font-example">
+                        <div class="font-name">Body Font: Avenir / Nunito / Inter</div>
+                        <p style="font-size: 1rem;">Body text (1rem) - The quick brown fox jumps over the lazy dog.</p>
+                        <p style="font-size: 0.875rem;">Small text (0.875rem) - The quick brown fox jumps over the lazy dog.</p>
+                        <p style="font-weight: 700;">Bold text - The quick brown fox jumps over the lazy dog.</p>
+                        <p style="font-style: italic;">Italic text - The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons & UI Elements -->
+            <h2>Buttons & UI Elements</h2>
+            <p>Consistent button styles help users navigate and interact with the portfolio.</p>
+            
+            <div class="row">
+                <div class="column">
+                    <button class="button">Primary Button</button>
+                    <button class="button button-outline">Outline Button</button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="column-half">
+                    <h3>Form Elements</h3>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Your message"></textarea>
+                    </div>
+                </div>
+                <div class="column-half">
+                    <h3>Skills Visualization</h3>
+                    <p>HTML</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                    <p>CSS</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%;"></div>
+                    </div>
+                    <p>JavaScript</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%;"></div>
+                    </div>
+                    <p>React</p>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Code Examples -->
+            <h2>Code Display</h2>
+            <p>Code snippets are displayed with appropriate styling for readability.</p>
+            
+            <pre><code>// Variables
+:root {
+    --background-color: #0f0f0f;
+    --text-color: #ffffff;
+    --accent-color: #3498db;
+    --secondary-color: #2c2c2c;
+}
+
+// Modern Button Style
+.button {
+    background: var(--accent-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}</code></pre>
+            
+            <!-- Logo -->
+            <h2>Logo</h2>
+            <p>The logo is a minimalist representation of my personal brand.</p>
+            
+            <div style="font-size: 5rem; font-weight: 700; margin: 2rem 0;">MS.</div>
+            
+            <!-- Imagery Guidelines -->
+            <h2>Imagery</h2>
+            <p>Images across the portfolio follow these guidelines:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                <li>Dark, modern aesthetic</li>
+                <li>High contrast visuals</li>
+                <li>Clean, minimalist approach</li>
+                <li>Technology-focused imagery</li>
+            </ul>
+            
+            <!-- Tone of Voice -->
+            <h2>Tone of Voice</h2>
+            <p>The communication style across the portfolio is:</p>
+            <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                <li>Professional and confident</li>
+                <li>Clear and concise</li>
+                <li>Technical but accessible</li>
+                <li>Modern and forward-thinking</li>
+            </ul>
+            
+            <!-- Spacing -->
+            <h2>Spacing</h2>
+            <p>Consistent spacing helps create rhythm and hierarchy in the layout.</p>
+            
+            <div class="row">
+                <div class="column">
+                    <div style="background: var(--secondary-color); height: 50px; margin-bottom: 0.5rem;"></div>
+                    <p>Small (0.5rem)</p>
+                </div>
+                <div class="column">
+                    <div style="background: var(--secondary-color); height: 50px; margin-bottom: 1rem;"></div>
+                    <p>Medium (1rem)</p>
+                </div>
+                <div class="column">
+                    <div style="background: var(--secondary-color); height: 50px; margin-bottom: 2rem;"></div>
+                    <p>Large (2rem)</p>
+                </div>
+                <div class="column">
+                    <div style="background: var(--secondary-color); height: 50px; margin-bottom: 4rem;"></div>
+                    <p>Extra Large (4rem)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container">
+        <p>&copy; 2024 Mohit Shah. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
