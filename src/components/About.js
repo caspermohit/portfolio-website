@@ -128,7 +128,7 @@ const About = () => {
                         <h2 className="section__title">Professional Experience</h2>
                         <div className="resume__item">
                             <div className="resume__title">
-                                <h3>Front-End Web Developer</h3>
+                                <h3> Web Developer</h3>
                                 <p className="resume__place">Guruinfosys - Sep 2021 to Aug 2023</p>
                             </div>
                             <ul className="resume__list">
@@ -140,7 +140,7 @@ const About = () => {
                         </div>
                         <div className="resume__item">
                             <div className="resume__title">
-                                <h3>E-commerce Web Developer</h3>
+                                <h3>Full Stack Web Developer</h3>
                                 <p className="resume__place">Green Computing - Sep 2019 to Aug 2021</p>
                             </div>
                             <ul className="resume__list">

@@ -39,7 +39,8 @@ const Work = () => {
                 { url: 'https://weather-news7-app.netlify.app/', text: 'Weather News App' },
                 { url: 'https://multi-converter-app.netlify.app/', text: 'Multi-converter' },
                 { url: 'https://ai-voice-chat.netlify.app', text: 'AI Voice Chat' },
-                { url: 'https://entertainment-review.netlify.app/', text: 'Entertainment Review' }
+                { url: 'https://entertainment-review.netlify.app/', text: 'Entertainment Review' },
+                { url: 'https://mchessgame.netlify.app/', text: 'Chess Game' }
             ]
         },
         {
