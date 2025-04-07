@@ -168,7 +168,7 @@ const About = () => {
                         </div>
                         <div className="resume__item">
                             <div className="resume__title">
-                                <h3>Advanced Diploma, Virtual and Augmented Reality Production</h3>
+                                <h3>Postgraduate Degree, Virtual and Augmented Reality Production</h3>
                                 <p className="resume__place">Conestoga College - Sep 2023 to Apr 2024</p>
                             </div>
                             <ul className="resume__list">

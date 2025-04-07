@@ -1,5 +1,6 @@
 // src/components/Header.js
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css'; 
 import './Styles/styles.scss';  
 import AnimatedBackground from './AnimatedBackground';
@@ -52,9 +53,9 @@ const Header = () => {
             </div>
 
             <div className="container header__container">
-                <a href="/" className="header__logo" data-cursor-text="Home">
+                <Link to="/" className="header__logo" data-cursor-text="Home">
                     MS.
-                </a>
+                </Link>
 
                 <button 
                     className={`header__menu-btn ${isMenuOpen ? 'active' : ''}`}
@@ -68,10 +69,11 @@ const Header = () => {
 
                 <nav className={`header__nav ${isMenuOpen ? 'active' : ''}`}>
                     <ul className="header__nav-list">
-                        <li><a href="#home" className="header__nav-link" data-cursor-text="Home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+                        <li><Link to="/" className="header__nav-link" data-cursor-text="Home" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
                         <li><a href="#about" className="header__nav-link" data-cursor-text="About Me" onClick={() => setIsMenuOpen(false)}>About</a></li>
                         <li><a href="#work" className="header__nav-link" data-cursor-text="My Work" onClick={() => setIsMenuOpen(false)}>Work</a></li>
                         <li><a href="#skills" className="header__nav-link" data-cursor-text="My Skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
+                        <li><Link to="/client-guide" className="header__nav-link" data-cursor-text="Client Guide" onClick={() => setIsMenuOpen(false)}>Client Guide</Link></li>
                         <li><a href="#contact" className="header__nav-link" data-cursor-text="Get in Touch" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
                     </ul>
                 </nav>
