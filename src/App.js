@@ -38,7 +38,7 @@ const App = () => {
     return (
         <Router>
             <Cursor />
-            <AnimatedBackground />
+            
             <main className="l-main">
                 <Routes>
                     <Route path="/" element={<MainPage />} />

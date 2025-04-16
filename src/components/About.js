@@ -1,10 +1,10 @@
 // src/components/About.js
 import React, { useEffect, useRef, useState } from 'react';
-import './About.css'; // Ensure this CSS file contains styles for the about section
+import './About.css';
 import './Styles/styles.scss';
-import '../index.css'; // Correct import path
+import '../index.css';
 import ScrollReveal from 'scrollreveal';
-import aboutImg from './assets/img/image2.JPEG'; // Make sure this path is correct
+import aboutImg from './assets/img/image2.JPEG';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faGraduationCap, 
@@ -12,12 +12,48 @@ import {
     faUser, 
     faCertificate
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 
 const About = () => {
     const imageRef = useRef(null);
     const sectionRef = useRef(null);
     const [activeTab, setActiveTab] = useState('about');
+    const [githubStats, setGithubStats] = useState({
+        repositories: '--', // Default loading state
+        stars: 4,          // Keep stars static for now due to API limitations
+        contributions: 200, // Keep contributions static
+        forks: 20,          // Keep forks static
+        loading: true,
+        error: null,
+    });
+
+    // Fetch GitHub User Data
+    useEffect(() => {
+        const fetchGithubData = async () => {
+            try {
+                const response = await fetch('https://api.github.com/users/caspermohit');
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+                const data = await response.json();
+                setGithubStats(prevStats => ({
+                    ...prevStats,
+                    repositories: data.public_repos,
+                    loading: false,
+                }));
+            } catch (error) {
+                console.error("Failed to fetch GitHub data:", error);
+                setGithubStats(prevStats => ({
+                    ...prevStats,
+                    repositories: 32, // Fallback
+                    loading: false,
+                    error: error.message,
+                }));
+            }
+        };
+        fetchGithubData();
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,27 +63,23 @@ const About = () => {
             const viewportHeight = window.innerHeight;
             const scrollProgress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
             
-            // Calculate slide-in effect
-            const slideRange = 200; // Total slide range in pixels
+            const slideRange = 200;
             const translateY = Math.max(-slideRange, Math.min(0, -slideRange + (scrollProgress * slideRange * 2)));
             
-            // Calculate scale to fit
             const startScale = 1.2;
             const endScale = 1;
             const scale = startScale - (scrollProgress * (startScale - endScale));
             
-            // Apply transforms
             imageRef.current.style.transform = `
                 translate3d(0, ${translateY}px, 0)
                 scale(${scale})
             `;
             
-            // Adjust opacity for fade-in
             imageRef.current.style.opacity = Math.min(1, scrollProgress * 2);
         };
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Initial check
+        handleScroll();
         
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -59,9 +91,7 @@ const About = () => {
             duration: 1000,
             delay: 200
         });
-    }, []);
 
-    useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach(entry => {
@@ -70,9 +100,7 @@ const About = () => {
                     }
                 });
             },
-            {
-                threshold: 0.1
-            }
+            { threshold: 0.1 }
         );
 
         const section = document.querySelector('.about');
@@ -102,22 +130,37 @@ const About = () => {
                         </p>
                         
                         <div className="about__github">
-                            <h3><FontAwesomeIcon icon={faGithub} /> GitHub Contributions</h3>
-                            <p>While I'm currently working as a developer at professional companies, I also maintain an active GitHub presence with various personal projects. Check out my repositories at <a href="https://github.com/caspermohit" target="_blank" rel="noopener noreferrer">github.com/caspermohit</a>.</p>
-                        </div>
-                        
-                        <div className="about__stats">
-                            <div className="about__stat">
-                                <span className="about__stat-number">4+</span>
-                                <span className="about__stat-text">Years Experience</span>
+                            <div className="about__github-header">
+                                <h3><FaGithub /> GitHub Activity</h3>
+                                <a href="https://github.com/caspermohit" target="_blank" rel="noopener noreferrer">
+                                    GitHub Profile <FiExternalLink />
+                                </a>
                             </div>
-                            <div className="about__stat">
-                                <span className="about__stat-number">29+</span>
-                                <span className="about__stat-text">Projects Completed</span>
-                            </div>
-                            <div className="about__stat">
-                                <span className="about__stat-number">8</span>
-                                <span className="about__stat-text">GitHub Contributions</span>
+                            
+                            <p>Actively contributing to open-source projects and building various applications. You can explore my work and collaborations on GitHub.</p>
+                            {githubStats.error && <p style={{color: 'red', fontSize: '0.9em'}}>Could not load live GitHub stats.</p>}
+
+                            <div className="about__github-stats">
+                                <div className="about__stat">
+                                    <span className="about__stat-number">4+</span>
+                                    <span className="about__stat-text">Years Experience</span>
+                                </div>
+                                <div className="github-stat">
+                                    <div className="github-stat__number">{githubStats.loading ? '...' : githubStats.repositories}</div>
+                                    <div className="github-stat__label">Repositories</div>
+                                </div>
+                                <div className="github-stat">
+                                    <div className="github-stat__number">{githubStats.contributions}+</div>
+                                    <div className="github-stat__label">Contributions (Est.)</div>
+                                </div>
+                                <div className="github-stat">
+                                    <div className="github-stat__number">{githubStats.stars}</div>
+                                    <div className="github-stat__label">Stars (Static)</div>
+                                </div>
+                                <div className="github-stat">
+                                    <div className="github-stat__number">{githubStats.forks}+</div>
+                                    <div className="github-stat__label">Forks (Est.)</div>
+                                </div>
                             </div>
                         </div>
                     </>
@@ -159,7 +202,7 @@ const About = () => {
                         <div className="resume__item">
                             <div className="resume__title">
                                 <h3>Postgraduate Degree, Interactive Media Management - Interaction Design</h3>
-                                <p className="resume__place">Conestoga College - Sep 2024 to Mar 2025</p>
+                                <p className="resume__place">Conestoga College </p>
                             </div>
                             <ul className="resume__list">
                                 <li>Designed user-centered, visually appealing interfaces.</li>
@@ -169,7 +212,7 @@ const About = () => {
                         <div className="resume__item">
                             <div className="resume__title">
                                 <h3>Postgraduate Degree, Virtual and Augmented Reality Production</h3>
-                                <p className="resume__place">Conestoga College - Sep 2023 to Apr 2024</p>
+                                <p className="resume__place">Conestoga College </p>
                             </div>
                             <ul className="resume__list">
                                 <li>Developed immersive 3D applications using Unity, Unreal Engine, and Blender.</li>
@@ -179,7 +222,7 @@ const About = () => {
                         <div className="resume__item">
                             <div className="resume__title">
                                 <h3>Bachelor of Science (Hons) in Computing</h3>
-                                <p className="resume__place">Leeds Beckett University - Sep 2017 to Nov 2021</p>
+                                <p className="resume__place">Leeds Beckett University </p>
                             </div>
                             <ul className="resume__list">
                                 <li>Designed information systems using industry-standard accessibility best practices.</li>
@@ -195,15 +238,15 @@ const About = () => {
                         <div className="certifications__grid">
                             <div className="certification__item">
                                 <h3 className="certification__title">W3C Accessibility Certificate</h3>
-                                <p className="certification__date">Feb 2023</p>
+                                
                             </div>
                             <div className="certification__item">
                                 <h3 className="certification__title">AODA (Accessibility for Ontarians with Disabilities Act) Certificate</h3>
-                                <p className="certification__date">Apr 2023</p>
+                                
                             </div>
                             <div className="certification__item">
                                 <h3 className="certification__title">TCPS2 Core Certificate </h3>
-                                <p className="certification__date">Sep 2023</p>
+                                
                             </div>
                         </div>
                     </>

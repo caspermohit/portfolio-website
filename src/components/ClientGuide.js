@@ -129,7 +129,7 @@ const ClientGuide = () => {
                         </div>
                         <div className="pricing-card featured">
                             <h4>Standard Package</h4>
-                            <p className="pricing-amount">$ $950+/project</p>
+                            <p className="pricing-amount">$950+/project</p>
                             <p className="pricing-description">Ideal for businesses looking for full design and development support.</p>
                             <ul>
                                 <li>Complete UX/UI design</li>

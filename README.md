@@ -1,43 +1,28 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built with React.js, featuring a sleek design, smooth animations, and an interactive skills showcase.
+A modern, responsive portfolio website built with React.js and CSS3/SCSS. This project showcases my skills, projects, and provides a platform for potential clients to learn about my services and get in touch.
 
-![Portfolio Preview](public/preview.png)
+## Features
 
-## 🌟 Features
+- Modern, clean design with dark theme
+- Responsive layout for all devices
+- Interactive elements and animations
+- Skills showcase with category filtering
+- Client guide with pricing and services
+- Contact form for project inquiries
+- Performance optimized
 
-- **Modern Design**: Clean, minimalist interface with a dark theme
-- **Responsive Layout**: Fully responsive design that works on all devices
-- **Interactive Elements**: 
-  - Smooth scroll animations
-  - Parallax effects
-  - Hover animations
-  - Custom cursor
-- **Skills Showcase**: 
-  - Grid layout with categories
-  - Interactive skill cards
-  - Visual progress indicators
-- **Contact Form**: Integrated contact form with validation
-- **Performance Optimized**: Fast loading times and smooth transitions
+## Technologies Used
 
-## 🛠️ Technologies Used
+- React.js
+- CSS3/SCSS
+- React Router
+- React Icons
+- CSS Animations
+- Responsive Design
+- Modern JavaScript (ES6+)
 
-- **Frontend Framework**: React.js
-- **Styling**: 
-  - CSS3/SCSS
-  - CSS Variables
-  - Flexbox & Grid
-- **Animations**: 
-  - ScrollReveal
-  - CSS Transitions
-  - Custom Parallax
-- **Icons**: Font Awesome
-- **Development Tools**:
-  - Vite
-  - ESLint
-  - Prettier
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -46,94 +31,102 @@ A modern, responsive portfolio website built with React.js, featuring a sleek de
 
 ### Installation
 
-1. Clone the repository
+1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/portfolio-website.git
+git clone https://github.com/mohitshah/portfolio-website.git
 ```
 
-2. Navigate to the project directory
+2. Navigate to the project directory:
 ```bash
 cd portfolio-website
 ```
 
-3. Install dependencies
+3. Install dependencies:
 ```bash
 npm install
 # or
 yarn install
 ```
 
-4. Start the development server
+4. Start the development server:
 ```bash
-npm run dev
+npm start
 # or
-yarn dev
+yarn start
 ```
 
-5. Open [http://localhost:5173](http://localhost:5173) in your browser
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio-website/
 ├── public/
-│   ├── assets/
-│   │   └── images/
-│   └── favicon.ico
+│   ├── index.html
+│   ├── favicon.ico
+│   └── assets/
 ├── src/
 │   ├── components/
 │   │   ├── About.js
 │   │   ├── Contact.js
-│   │   ├── Footer.js
 │   │   ├── Header.js
-│   │   ├── Home.js
+│   │   ├── Hero.js
+│   │   ├── Projects.js
 │   │   ├── Skills.js
-│   │   └── Work.js
+│   │   ├── ClientGuide.js
+│   │   └── ClientGuideForm.js
 │   ├── styles/
-│   │   ├── main.scss
-│   │   └── variables.scss
+│   │   ├── About.css
+│   │   ├── Contact.css
+│   │   ├── Header.css
+│   │   ├── Hero.css
+│   │   ├── Projects.css
+│   │   ├── Skills.css
+│   │   ├── ClientGuide.css
+│   │   └── ClientGuideForm.css
 │   ├── App.js
-│   └── main.js
+│   ├── index.js
+│   └── index.css
 ├── package.json
 └── README.md
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Colors
-The color scheme can be customized by modifying the CSS variables in `src/styles/variables.scss`:
+The website uses CSS variables for easy color customization. Update the following variables in `src/index.css`:
 
-```scss
+```css
 :root {
-  --background-color: #0f0f0f;
-  --text-color: #ffffff;
-  --accent-color: #3498db;
-  --secondary-color: #2c2c2c;
+    --primary-color: #00ff88;
+    --secondary-color: #00b8ff;
+    --background-color: #0a192f;
+    --text-color: #ffffff;
+    --accent-color: #00ff88;
 }
 ```
 
 ### Content
-- Update personal information in respective component files
-- Modify skills in `src/components/Skills.js`
-- Update work projects in `src/components/Work.js`
-- Edit contact information in `src/components/Contact.js`
+Update the content in respective component files:
+- `src/components/About.js` - Personal information
+- `src/components/Skills.js` - Skills and categories
+- `src/components/Projects.js` - Project showcase
+- `src/components/ClientGuide.js` - Services and pricing
 
-## 📱 Responsive Design
+## Responsive Design
 
 The website is fully responsive with breakpoints at:
-- Mobile: < 480px
-- Tablet: < 768px
-- Laptop: < 992px
-- Desktop: ≥ 992px
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-## 🔧 Performance Optimization
+## Performance Optimization
 
-- Lazy loading of images
-- Optimized animations
-- Minified CSS/JS
-- Efficient component rendering
+- Lazy loading of components
+- Optimized images
+- CSS animations for smooth transitions
+- Minimal dependencies
+- Code splitting
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -141,21 +134,17 @@ The website is fully responsive with breakpoints at:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👤 Author
+## Author
 
-**Mohit Shah**
-- GitHub: [@caspermohit](https://github.com/caspermohit)
-- LinkedIn: [Mohit Shah](https://www.linkedin.com/in/mohitshah7/)
-- Twitter: [@mohitsh54078806](https://x.com/mohitsh54078806)
-- Instagram: [@mohit__shahh](https://www.instagram.com/mohit__shahh/)
+**Mohit Shah** - [GitHub](https://github.com/mohitshah) | [LinkedIn](https://linkedin.com/in/mohitshah) | [Twitter](https://twitter.com/mohitshah)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- [React.js](https://reactjs.org/)
-- [Font Awesome](https://fontawesome.com/)
-- [ScrollReveal](https://scrollrevealjs.org/)
-- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [React Icons](https://react-icons.github.io/react-icons/) - Popular icons for React projects
+- [Google Fonts](https://fonts.google.com/) - Typography
+- [Unsplash](https://unsplash.com/) - High-quality images
