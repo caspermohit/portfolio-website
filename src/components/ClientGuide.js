@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPalette, FaMobile, FaCode, FaFileAlt, FaImage, FaComments, FaSearch, FaPencilAlt, FaCodeBranch, FaRocket, FaQuestionCircle, FaEnvelope } from 'react-icons/fa';
+import { FaCode, FaFileAlt, FaCodeBranch, FaRocket, FaQuestionCircle, FaEnvelope } from 'react-icons/fa';
 import './ClientGuide.css';
 
 const ClientGuide = () => {
