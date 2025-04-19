@@ -10,7 +10,6 @@ import Work from './components/Work';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
-import AnimatedBackground from './components/AnimatedBackground';
 import ClientGuide from './components/ClientGuide';
 import './App.css'; // Main CSS file
 import './components/Styles/styles.scss';

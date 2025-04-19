@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaCode, FaPalette, FaMobile, FaFileAlt, FaImages, FaComments, FaSearch, FaPencilRuler, FaCodeBranch, FaCheckCircle, FaClock, FaQuestionCircle } from 'react-icons/fa';
-import ClientGuideForm from './ClientGuideForm';
+import { FaPalette, FaMobile, FaCode, FaFileAlt, FaImage, FaComments, FaSearch, FaPencilAlt, FaCodeBranch, FaRocket, FaQuestionCircle, FaEnvelope } from 'react-icons/fa';
 import './ClientGuide.css';
 
 const ClientGuide = () => {
@@ -114,7 +113,7 @@ const ClientGuide = () => {
 
                 {/* Pricing & Timeline */}
                 <div className="client-guide__section" id="pricing">
-                    <h3><FaClock /> Pricing & Timeline</h3>
+                    <h3><FaRocket /> Pricing & Timeline</h3>
                     <div className="pricing-info">
                         <div className="pricing-card">
                             <h4>Basic Package</h4>
@@ -179,9 +178,11 @@ const ClientGuide = () => {
                     </div>
                 </div>
 
-                {/* Project Request Form */}
+                {/* Contact CTA */}
                 <div className="client-guide__section" id="contact">
-                    <ClientGuideForm />
+                    <h3><FaEnvelope /> Ready to Start Your Project?</h3>
+                    <p>Get in touch to discuss your project requirements and get a free quote.</p>
+                    <a href="/contact" className="cta-button">Contact Me</a>
                 </div>
             </div>
         </section>
