@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaCode, FaFileAlt, FaCodeBranch, FaRocket, FaQuestionCircle, FaEnvelope } from 'react-icons/fa';
+import { FaCode, FaFileAlt, FaCodeBranch, FaRocket, FaQuestionCircle } from 'react-icons/fa';
+import ClientGuideForm from './ClientGuideForm';
 import './ClientGuide.css';
 
 const ClientGuide = () => {
@@ -178,11 +179,9 @@ const ClientGuide = () => {
                     </div>
                 </div>
 
-                {/* Contact CTA */}
+                {/* Project Request Form */}
                 <div className="client-guide__section" id="contact">
-                    <h3><FaEnvelope /> Ready to Start Your Project?</h3>
-                    <p>Get in touch to discuss your project requirements and get a free quote.</p>
-                    <a href="/contact" className="cta-button">Contact Me</a>
+                    <ClientGuideForm />
                 </div>
             </div>
         </section>
