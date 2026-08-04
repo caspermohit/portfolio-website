@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "generated_at": "2026-08-04T15:28:57.167846+00:00",
+    "directive": "Redesign Work as a physical sticky-note corkboard with handwritten pen ink. Keep Mohit project data and site brand colors (#1a1a1a / #3498db / #61dafb)."
+  },
+  "concept": {
+    "name": "Desk sticky board",
+    "one_liner": "A dark desk surface scattered with pastel sticky notes, titles written in pen handwriting, existing pen assets as the writing tool motif.",
+    "why": "Ties Work to Mohit's unique pen-split Skills motif \u2014 craft / sketch / think \u2014 instead of generic tech cards or cinematic media tiles."
+  },
+  "keep": {
+    "projects": [
+      "UX/UI Design",
+      "Website Development",
+      "Content Writing",
+      "Level Design",
+      "Mobile App Development",
+      "Illustration and Animation"
+    ],
+    "links": "All existing Behance / Netlify / WordPress URLs unchanged",
+    "site_colors": {
+      "--bg": "#1a1a1a",
+      "--bg-deep": "#0f0f0f",
+      "--brand": "#3498db",
+      "--brand-bright": "#61dafb"
+    },
+    "assets": [
+      "src/components/assets/img/wholepen.png",
+      "src/components/assets/img/penled.png"
+    ]
+  },
+  "visual_system": {
+    "surface": "Dark desk (#0f0f0f) with subtle cork/fiber grain \u2014 not flat purple",
+    "sticky_palette": {
+      "note_yellow": "#F6E58D",
+      "note_sky": "#A8D8F0",
+      "note_mint": "#B8E0C8",
+      "note_blush": "#F2C4B8",
+      "note_lilac": "#D4C4F0",
+      "note_cream": "#F0E6C8",
+      "rule": "Pastels are PAPER only \u2014 ink uses brand blue + near-black, never terracotta/purple-theme"
+    },
+    "typography": {
+      "hand": "Caveat (Google) \u2014 titles + scribbled captions",
+      "ink_body": "Instrument Serif italic for short descriptions (optional) OR Caveat at smaller size",
+      "meta": "IBM Plex Mono for tiny #ms-000n codes only"
+    },
+    "chrome": [
+      "Slight random rotate per note (\u22126deg\u20266deg)",
+      "Soft drop shadow + lifted hover (rotate settles toward 0, translateY \u22128px)",
+      "Washi-tape strip or pin dot at top of each note",
+      "Hand-drawn underline on hover for links (SVG stroke or border-image feel)",
+      "Floating wholepen.png / penled.png as section decoration (absolute, parallax light)"
+    ]
+  },
+  "layout": {
+    "desktop": "Irregular masonry / scattered board \u2014 3 columns with staggered offsets, not a rigid equal card grid. Notes overlap the desk atmosphere slightly.",
+    "mobile": "Single column stack, still rotated \u00b13deg, drag optional",
+    "section_header": "Handwritten 'Work' in Caveat large; mono subtitle 'pinned ideas \u2192 projects'; small ink doodle line"
+  },
+  "motion": {
+    "enter": "Notes flutter in (opacity + rotate from larger angle \u2192 resting tilt), stagger 60\u201390ms",
+    "hover": "Note lifts, tape peels slightly, title ink darkens to --brand",
+    "pen": "Pen asset drifts slowly (CSS float) as if resting on the desk",
+    "reduced_motion": "No flutter \u2014 notes appear at rest angles only"
+  },
+  "implementation": {
+    "files": [
+      "src/components/Work.js",
+      "src/components/Work.css",
+      "src/styles/fonts.css"
+    ],
+    "structure": "section.work > .work__desk > header + .work__board > article.work__note \u00d7 N + .work__pen",
+    "note_fields": [
+      "code",
+      "title (hand)",
+      "description",
+      "technologies",
+      "links[]"
+    ],
+    "a11y": "Preserve semantic list of links; don't rely on color alone; respect reduced-motion"
+  },
+  "anti_patterns": [
+    "Glassmorphism tech cards",
+    "Equal 3-column bootstrap grid of identical notes",
+    "Inter/Roboto on sticky titles",
+    "Copying wodniack video strip for this mode",
+    "Warm cream page background replacing dark site chrome"
+  ]
+}

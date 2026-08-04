@@ -4,98 +4,112 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    background: rgba(15, 15, 15, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: padding 0.3s ease, background 0.3s ease;
 }
 
 .client-guide-header--scrolled {
-    background: rgba(0, 0, 0, 0.95);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(15, 15, 15, 0.94);
 }
 
 .client-guide-header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 1.15rem 0;
 }
 
 .client-guide-header__logo {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent-color);
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--ink);
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 
 .client-guide-header__logo:hover {
-    transform: scale(1.05);
+    color: var(--brand-bright);
 }
 
 .client-guide-header__menu-btn {
     display: none;
+    flex-direction: column;
+    gap: 6px;
     background: none;
     border: none;
-    cursor: pointer;
-    padding: 0.5rem;
+    padding: 8px;
     z-index: 1001;
 }
 
 .client-guide-header__menu-btn span {
     display: block;
-    width: 25px;
-    height: 2px;
-    background: var(--accent-color);
-    margin: 5px 0;
-    transition: all 0.3s ease;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .client-guide-header__nav-list {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.75rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .client-guide-header__nav-link {
-    color: var(--text-color);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--muted);
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.client-guide-header__nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
-.client-guide-header__nav-link:hover::after {
-    width: 100%;
+    transition: color 0.25s ease;
 }
 
 .client-guide-header__nav-link:hover {
-    color: var(--accent-color);
+    color: var(--ink);
 }
 
-/* Mobile Menu Styles */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .client-guide-header__menu-btn {
-        display: block;
+        display: flex;
+    }
+
+    .client-guide-header__nav {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 15, 15, 0.97);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+    }
+
+    .client-guide-header__nav.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .client-guide-header__nav-list {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .client-guide-header__nav-link {
+        font-size: 1.05rem;
     }
 
     .client-guide-header__menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: translateY(7.5px) rotate(45deg);
     }
 
     .client-guide-header__menu-btn.active span:nth-child(2) {
@@ -103,31 +117,6 @@
     }
 
     .client-guide-header__menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: translateY(-7.5px) rotate(-45deg);
     }
-
-    .client-guide-header__nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 6rem 2rem 2rem;
-        transition: right 0.3s ease;
-    }
-
-    .client-guide-header__nav.active {
-        right: 0;
-    }
-
-    .client-guide-header__nav-list {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .client-guide-header__nav-link {
-        font-size: 1.2rem;
-    }
-} 
+}

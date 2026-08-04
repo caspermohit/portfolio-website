@@ -1,0 +1,397 @@
+{
+  "meta": {
+    "generated_at": "2026-08-04T14:41:41.514877+00:00",
+    "reference": "https://wodniack.dev/?ref=uiuxshowcase.com",
+    "target": "http://localhost:3000",
+    "directive": "Adopt wodniack.dev design language, animation, and composition. Preserve Mohit Shah content + existing color system."
+  },
+  "color_remap": {
+    "wodniack_primary_#f40c3f": "#3498db",
+    "wodniack_secondary_#160000": "#0f0f0f",
+    "wodniack_surface_#fff0eb": "#1a1a1a",
+    "wodniack_ink_on_field": "#ffffff",
+    "highlight_secondary": "#61dafb",
+    "optional_accent_spark": "#a742e6",
+    "css_tokens_to_author": {
+      "--bg": "#1a1a1a",
+      "--bg-deep": "#0f0f0f",
+      "--ink": "#ffffff",
+      "--brand": "#3498db",
+      "--brand-bright": "#61dafb",
+      "--surface": "#2c2c2c",
+      "--accent-rgb": "52, 152, 219"
+    }
+  },
+  "typography_plan": {
+    "keep_content_voice": true,
+    "replace_generic_stack": true,
+    "recommended_pairing": {
+      "display": "Syne or Clash Display or unrestricted Bigger Display-class (Google: Syne)",
+      "body": "Instrument Serif or Newsreader (Editorial New stand-in)",
+      "mono_ui": "IBM Plex Mono or JetBrains Mono (Fraktion Mono stand-in)"
+    },
+    "hero": {
+      "copy": "DIGITAL DESIGNER\n& DEVELOPER",
+      "brand_above": "Mohit Shah / MS.",
+      "treatment": "uppercase, huge clamp, tight leading, letter-stagger intro",
+      "supporting_line": "Available for freelance & product work \u2192 Contact"
+    },
+    "nav": {
+      "items": [
+        "About",
+        "Work",
+        "Skills",
+        "Contact"
+      ],
+      "style": "uppercase mono 14px, tracking 0.05em, sparse \u2014 drop Client Guide to footer or secondary"
+    }
+  },
+  "information_architecture": {
+    "first_viewport": [
+      "MS. brand mark (hero-level)",
+      "One headline: DIGITAL DESIGNER & DEVELOPER",
+      "One status sentence + Hire/Contact link",
+      "One dominant motif: binary/canvas field using --brand tones (not red)"
+    ],
+    "forbid_in_hero": [
+      "Dual CTA button pair",
+      "Stats / GitHub numbers",
+      "Card grids",
+      "Particle header competing with headline"
+    ],
+    "sections_order": [
+      {
+        "id": "home",
+        "job": "Brand + role as one composition"
+      },
+      {
+        "id": "about",
+        "job": "Two paragraphs of biography \u2014 typographic, no tabs"
+      },
+      {
+        "id": "experience",
+        "job": "Resume as quiet list (optional collapse from current tabs)"
+      },
+      {
+        "id": "work",
+        "job": "Horizontal full-bleed project media strip"
+      },
+      {
+        "id": "skills",
+        "job": "Mono chip rows or single column \u2014 not card tiles"
+      },
+      {
+        "id": "contact",
+        "job": "Oversized typographic CTA + minimal form"
+      }
+    ],
+    "data_sources": {
+      "about_copy": "src/components/About.js",
+      "work_projects": "src/components/Work.js projects[]",
+      "skills": "src/components/Skills.js skillCategories",
+      "contact": "src/components/Contact.js"
+    }
+  },
+  "motion_plan": {
+    "add": [
+      {
+        "name": "smooth_scroll",
+        "lib": "@studio-freight/lenis or lenis",
+        "why": "Match wodniack inertia feel"
+      },
+      {
+        "name": "hero_letter_stagger",
+        "lib": "GSAP SplitText-equivalent or custom spans + CSS",
+        "why": "Signature first-impression motion"
+      },
+      {
+        "name": "section_inview",
+        "lib": "IntersectionObserver \u2192 .is-in-view",
+        "why": "Replace generic ScrollReveal with class-driven choreography"
+      },
+      {
+        "name": "work_horizontal_scrub",
+        "lib": "GSAP ScrollTrigger or CSS scroll-snap + drag",
+        "why": "Core wodniack work interaction"
+      },
+      {
+        "name": "binary_field",
+        "lib": "Canvas 2D or DOM grid of 0/1 using accent color",
+        "why": "Atmosphere motif remapped to blue accents"
+      }
+    ],
+    "retire_or_demote": [
+      "Header AnimatedBackground 300-particle field (too noisy for brand-first hero)",
+      "ScrollReveal as primary motion system",
+      "Dual competing cursor + particles"
+    ],
+    "keep": [
+      "Custom cursor (refine, don't remove) \u2014 quieter",
+      "Skills pen-split parallax (unique to Mohit \u2014 signature secondary motion)"
+    ],
+    "reduced_motion": "Gate all stagger / scrub / lenis behind prefers-reduced-motion"
+  },
+  "work_strip_spec": {
+    "from": "6 icon cards with link lists",
+    "to": "Horizontal media cells \u2014 one cell per project category or featured case study",
+    "cell": {
+      "media": "screenshot / looping mp4 / static art (use existing Behance & Netlify URLs)",
+      "label": "Title + tech mono caption",
+      "code_motif": "#ms-000n / total \u2014 decorative project index like wodniack #3vva-0000/34",
+      "chrome": "No rounded card chrome; edge-to-edge media with ink overlay on hover"
+    },
+    "projects_map": [
+      "UX/UI Design",
+      "Website Development",
+      "Content Writing",
+      "Level Design",
+      "Mobile App Development",
+      "Illustration and Animation"
+    ]
+  },
+  "component_rewrite_order": [
+    "1. Design tokens (styles.css / main.scss) \u2014 unify on canonical dark+blue set",
+    "2. Home.js / Home.css \u2014 brand-first hero + letter stagger + binary motif",
+    "3. Header.js \u2014 sparse mono nav, kill particle takeover",
+    "4. Work.js \u2014 horizontal strip from projects[]",
+    "5. About.js \u2014 typographic about; demote tabs",
+    "6. Skills.js \u2014 quieter layout; keep pen motif",
+    "7. Contact.js \u2014 oversized CTA typography",
+    "8. Motion shell \u2014 Lenis + inview observer + GSAP optional"
+  ],
+  "anti_patterns_to_avoid": [
+    "Purple-on-white / purple-indigo gradients",
+    "Warm cream #F4F1EA + terracotta (wodniack surface is warm but we KEEP dark)",
+    "Broadsheet hairline newspaper columns",
+    "Rounded-full pill clusters & stat strips in hero",
+    "Copying wodniack red literally",
+    "Copying Antoine's biography / awards / project names"
+  ],
+  "success_criteria": [
+    "First viewport passes brand test: remove nav \u2192 still unmistakably Mohit Shah",
+    "Colors match existing blue/dark tokens pixel-close",
+    "All existing project links & bio facts preserved",
+    "\u22653 intentional motions: intro stagger, section enter, work scrub",
+    "Desktop + mobile both load; reduced-motion respected"
+  ],
+  "evidence": {
+    "reference_live": {
+      "title": "AW - Creative Developer Freelance - France",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Creative Developer"
+        },
+        {
+          "level": "h2",
+          "text": "About"
+        },
+        {
+          "level": "h2",
+          "text": "Awards"
+        },
+        {
+          "level": "h2",
+          "text": "W O R K"
+        }
+      ],
+      "nav_like_links": [
+        "/",
+        "#about",
+        "#work",
+        "#contact",
+        "/cdn-cgi/l/email-protection#deb6bbb2b2b19ea9b1bab0b7bfbdb5f0babba8",
+        "/cdn-cgi/l/email-protection#4a222f2626250a3d252e24232b2921642e2f3c",
+        "#",
+        "#",
+        "/cdn-cgi/l/email-protection#bfd7dad3d3d0ffc8d0dbd1d6dedcd491dbdac9",
+        "/"
+      ],
+      "external_scripts": [
+        "/_astro/hoisted.BvNyQ0G_.js",
+        "/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+        "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
+      ],
+      "stylesheets": [
+        "/_astro/index.MJ9FiCyD.css"
+      ],
+      "meta": {
+        "description": "Creative Developer with 15+ years and 140+ projects, specializing in animation-driven, high-impact websites. Partnering with designers to craft memorable UX.",
+        "viewport": "width=device-width",
+        "generator": "Astro v4.15.9",
+        "apple-mobile-web-app-title": "AW Dev",
+        "theme-color": "#160000",
+        "msapplication-navbutton-color": "#160000",
+        "apple-mobile-web-app-status-bar-style": "#160000",
+        "og:locale": "en_GB",
+        "og:type": "website",
+        "og:title": "AW - Creative Developer Freelance - France",
+        "og:description": "Creative Developer with 15+ years and 140+ projects, specializing in animation-driven, high-impact websites. Partnering with designers to craft memorable UX.",
+        "og:url": "https://wodniack.dev/",
+        "og:site_name": "AW - Creative Developer Freelance - France",
+        "og:image": "https://wodniack.dev/images/aw-creative-developer.png",
+        "og:image:width": "1200",
+        "og:image:height": "675",
+        "twitter:card": "summary_large_image",
+        "twitter:image": "https://wodniack.dev/images/aw-creative-developer.png"
+      },
+      "html_bytes": 92657,
+      "video_tags": 34,
+      "canvas_tags": 2,
+      "mentions_lenis": false,
+      "mentions_gsap": true
+    },
+    "local_live": {},
+    "local_css_scan": {
+      "files_scanned": 21,
+      "key_vars": {
+        "--primary-color": "#4a90e2",
+        "--accent-color": "#3498db",
+        "--background-color": "#0f0f0f",
+        "--text-color": "#ffffff",
+        "--first-color": "#3498db",
+        "--body-font": "'Avenir', 'Nunito', 'arial', sans-serif",
+        "--heading-font": "'Avenir', 'Nunito', 'Helvetica Neue', sans-serif"
+      }
+    },
+    "wodniack_deep": {
+      "url": "https://wodniack.dev/",
+      "stack": {
+        "framework": "Astro",
+        "smooth_scroll": "Lenis (html.lenis)",
+        "motion": "Custom JS + CSS (GSAP-class scroll choreography)",
+        "media": "34 autoplay muted work videos + 2 canvas layers",
+        "contrast_toggle": true
+      },
+      "color": {
+        "primary": "#f40c3f",
+        "secondary": "#160000",
+        "shadow": "#540000",
+        "surface": "#fff0eb",
+        "notes": "Bold monochrome-accent system: one saturated brand field, near-black ink, warm off-white surface. Contrast toggle swaps field \u2194 ink. NOT a purple/cream AI clich\u00e9 \u2014 high-chroma red."
+      },
+      "typography": {
+        "display": "\"Bigger Display\", sans-serif",
+        "body": "\"Editorial New\", serif",
+        "mono_ui": "\"Fraktion Mono\", monospace",
+        "hero": {
+          "text": "CREATIVE DEVELOPER",
+          "size_vw": "~clamp(4rem, 18vw, 16rem)",
+          "weight": 700,
+          "transform": "uppercase",
+          "tracking": "-0.025em",
+          "line_height": "~0.8",
+          "split": "letter / word stagger on load"
+        },
+        "nav": {
+          "size": "14px",
+          "transform": "uppercase",
+          "tracking": "0.05em",
+          "family": "mono"
+        }
+      },
+      "layout": {
+        "ia": [
+          "sticky brand + About/Work/Contact",
+          "hero",
+          "about + awards",
+          "horizontal WORK strip",
+          "personal archive / my-way",
+          "CTA / contact"
+        ],
+        "hero_budget": "Brand (name), one headline (Creative Developer), one status line (available \u2192 Hire me), one dominant visual motif (QR + generative binary field). No stats, cards, or dual CTAs in first viewport.",
+        "work": "Horizontal scroll / marquee of large media cells \u2014 each cell is a project with looping video preview, project code (#xxxx-000n/34), and title. Full-bleed edge-to-edge, not a card grid.",
+        "about": "Two short paragraphs + awards list as typographic columns \u2014 no icon tabs, no GitHub stat cards.",
+        "decoration": [
+          "Binary 0/1 generative fields behind/beside sections",
+          "QR code as brand object",
+          "Star / SVG ornaments",
+          "Section-out-of-view classes driving enter animations"
+        ]
+      },
+      "motion": {
+        "scroll": "Lenis inertia scroll (html.is-loaded, is-scroll-blocked on intro)",
+        "section_enter": "is-out-of-view \u2192 in-view class flip (translate + opacity)",
+        "hero": "Letter-split stagger + binary field shimmer",
+        "work": "Horizontal scrub / drag + video autoplay on visibility",
+        "cta": "Oversized typographic GO / LET'S ROCK lettering animation",
+        "principles": [
+          "Motion creates hierarchy, not noise",
+          "2\u20134 signature motions max (intro, section enter, work scrub, CTA)",
+          "Respect prefers-reduced-motion"
+        ]
+      },
+      "composition_rules": [
+        "One composition per viewport \u2014 not a dashboard",
+        "Brand is a hero-level signal (name + monogram)",
+        "No cards in hero; cards only when interaction requires a container",
+        "Full-bleed media plane for work, not inset rounded cards",
+        "Expressive custom fonts \u2014 never Inter/Roboto/system default",
+        "Atmosphere via generative motif (binary/QR/canvas), not flat fill alone"
+      ]
+    },
+    "portfolio_keep": {
+      "brand": {
+        "name": "Mohit Shah",
+        "monogram": "MS.",
+        "role": "Digital Designer & Developer",
+        "tagline": "Crafting innovative digital experiences through design and development. Specializing in UI/UX design, web development, and creative solutions.",
+        "github": "caspermohit",
+        "email_form": true
+      },
+      "colors_canonical": {
+        "background": "#1a1a1a",
+        "background_deep": "#0f0f0f",
+        "text": "#ffffff",
+        "primary": "#4a90e2",
+        "accent": "#3498db",
+        "accent_bright": "#61dafb",
+        "secondary_purple": "#a742e6",
+        "surface": "#2c2c2c",
+        "accent_rgb": "52, 152, 219",
+        "rule": "NEVER adopt wodniack red (#f40c3f) or cream (#fff0eb). Remap every pattern onto these tokens."
+      },
+      "sections": [
+        "Home",
+        "About",
+        "Skills",
+        "Work",
+        "Contact",
+        "Client Guide"
+      ],
+      "work_categories": [
+        "UX/UI Design",
+        "Website Development",
+        "Content Writing",
+        "Level Design",
+        "Mobile App Development",
+        "Illustration and Animation"
+      ],
+      "current_stack": [
+        "React 18 + react-scripts",
+        "react-router-dom",
+        "ScrollReveal",
+        "react-scroll-parallax",
+        "custom Cursor + AnimatedBackground (particles)",
+        "Font Awesome / react-icons",
+        "Sass"
+      ],
+      "pain_points": [
+        "Hero is centered text + dual CTAs + soft radial gradient \u2014 dashboard-adjacent, weak brand plane",
+        "Work is a 6-card icon grid \u2014 opposite of wodniack full-bleed media strip",
+        "About uses icon tabs + GitHub stat cards \u2014 dense, card-heavy",
+        "Fonts lean Avenir/Nunito/Roboto \u2014 generic vs expressive display+mono pairing",
+        "Motion is mostly ScrollReveal fade-ups \u2014 no signature intro / horizontal scrub / letter stagger",
+        "Custom cursor + particle header compete with content hierarchy"
+      ]
+    }
+  },
+  "fetch_notes": {
+    "reference": [
+      "Live HTML fetched successfully"
+    ],
+    "local": [
+      "Local server offline \u2014 blueprint uses codebase scan + PORTFOLIO_KEEP"
+    ]
+  }
+}

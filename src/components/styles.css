@@ -1,13 +1,14 @@
 :root {
-    /* Colors */
+    /* Colors — aligned with canonical dark + blue system */
     --primary-color:     #4a90e2;
-    --secondary-color:   #a742e6;
-    --accent-color:      #61dafb;
+    --secondary-color:   #2c2c2c;
+    --secondary-purple:  #a742e6;
+    --accent-color:      #3498db;
     --text-color:        #ffffff;
     --background-color:  #1a1a1a;
     
     /* Typography */
-    --font-family:       'Avenir', 'Nunito', 'Roboto', sans-serif;
+    --font-family:       var(--font-body, 'Instrument Serif', Georgia, serif);
     --font-size-small:   0.875rem;
     --font-size-normal:  1rem;
     --font-size-medium:  1.25rem;

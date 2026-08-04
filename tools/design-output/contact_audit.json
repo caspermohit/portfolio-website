@@ -1,0 +1,141 @@
+{
+  "section": "contact",
+  "summary": {
+    "score": 94,
+    "critical": 0,
+    "warn": 1,
+    "ok": 18,
+    "verdict": "convincing"
+  },
+  "findings": [
+    {
+      "severity": "ok",
+      "code": "headline",
+      "message": "Headline block present.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "field_name",
+      "message": "name field present.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "field_email",
+      "message": "email field present.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "field_message",
+      "message": "message field present.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "single_cta",
+      "message": "Single primary Send CTA.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "underline_inputs",
+      "message": "Underline inputs configured.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "split_layout",
+      "message": "Split grid present.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "headline_scale",
+      "message": "Headline scale OK (clamp(3rem, 9.5vw, 6.75rem)).",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "lede",
+      "message": "Supporting lede under headline.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "atmosphere",
+      "message": "Background atmosphere present.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "mono_inputs",
+      "message": "Mono input type matches UI chrome.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "spidey_hide",
+      "message": "SpiderMan fades near contact.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "sharp_button",
+      "message": "Sharp rectangular submit button.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "label_type",
+      "message": "Mono uppercase field labels.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "emailjs",
+      "message": "EmailJS submit path present.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "baseline_align",
+      "message": "Headline/form bottom-aligned.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "spidey_overlap",
+      "message": "SpiderMan z-index below contact.",
+      "fix": ""
+    },
+    {
+      "severity": "warn",
+      "code": "ssr_shell",
+      "message": "HTML shell has no #contact (expected for CRA). Will rely on source CSS/JS files.",
+      "fix": ""
+    },
+    {
+      "severity": "ok",
+      "code": "live_server",
+      "message": "Reached http://localhost:3000",
+      "fix": ""
+    }
+  ],
+  "reference": {
+    "layout": "left oversized headline + right underline form",
+    "cta": "one sharp blue SEND MESSAGE \u2192",
+    "fields": [
+      "NAME",
+      "EMAIL",
+      "MESSAGE"
+    ],
+    "no": [
+      "cards",
+      "pill buttons",
+      "dual CTAs",
+      "boxed inputs"
+    ]
+  }
+}
