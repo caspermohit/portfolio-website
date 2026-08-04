@@ -14,7 +14,7 @@
     --light-font-color: #ffffff; // White for text on dark backgrounds
 
     /*===== Fuente y tipografia =====*/
-    --body-font: 'Avenir', 'Nunito', 'arial', sans-serif;
+    --body-font: 'Instrument Serif', Georgia, serif;
 
     --big-font-size: 2rem;
     --h2-font-size: 1.25rem;
@@ -47,7 +47,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    margin: var(--header-height) 0 0 0;
+    margin: 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--second-color);
@@ -525,22 +525,5 @@ img{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.header {
-    background: #1a1a1a; // Or any color you prefer
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-
-.header__overlay {
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    padding: 20px;
-    border-radius: 10px;
 }
 

@@ -56,12 +56,36 @@ const ClientGuideHeader = () => {
 
                 <nav className={`client-guide-header__nav ${isMenuOpen ? 'active' : ''}`}>
                     <ul className="client-guide-header__nav-list">
-                        <li><Link to="/" className="client-guide-header__nav-link" data-cursor-text="Home" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-                        <li><Link to="/#services" className="client-guide-header__nav-link" data-cursor-text="Services" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
-                        <li><Link to="/#process" className="client-guide-header__nav-link" data-cursor-text="Process" onClick={() => setIsMenuOpen(false)}>Process</Link></li>
-                        <li><Link to="/#pricing" className="client-guide-header__nav-link" data-cursor-text="Pricing" onClick={() => setIsMenuOpen(false)}>Pricing</Link></li>
-                        <li><Link to="/#faq" className="client-guide-header__nav-link" data-cursor-text="FAQ" onClick={() => setIsMenuOpen(false)}>FAQ</Link></li>
-                        <li><Link to="/#contact" className="client-guide-header__nav-link" data-cursor-text="Get in Touch" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+                        <li>
+                            <Link to="/" className="client-guide-header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="#services" className="client-guide-header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#process" className="client-guide-header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                Process
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pricing" className="client-guide-header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                Pricing
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#faq" className="client-guide-header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#start" className="client-guide-header__nav-link" onClick={() => setIsMenuOpen(false)}>
+                                Start
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

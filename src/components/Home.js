@@ -1,43 +1,77 @@
-// src/components/Home.js
-import React, { useEffect } from 'react';
-import './Home.css'; // Ensure this CSS file contains styles for the home section
-import './Styles/styles.scss';
-import '../index.css'; // Corrected import path
-import ScrollReveal from 'scrollreveal';
+import React, { useEffect, useMemo, useState } from 'react';
+import BinaryField from './BinaryField';
+import './Home.css';
+
+const HERO_LINES = ['DIGITAL', 'DESIGNER', 'DEVELOPER'];
 
 const Home = () => {
-    // Initialize ScrollReveal
+    const [ready, setReady] = useState(false);
+    const [done, setDone] = useState(false);
+
+    const letters = useMemo(
+        () =>
+            HERO_LINES.map((line) =>
+                line.split('').map((ch, i) => ({
+                    ch,
+                    key: `${line}-${i}`,
+                    delay: i * 28,
+                }))
+            ),
+        []
+    );
+
     useEffect(() => {
-        ScrollReveal().reveal('.hero__content', {
-            origin: 'top',
-            distance: '60px',
-            duration: 2500,
-            delay: 400
-        });
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) {
+            setReady(true);
+            setDone(true);
+            return undefined;
+        }
+
+        const start = window.setTimeout(() => setReady(true), 40);
+        // Guarantee final visible state even if CSS animations are paused/disabled
+        const finish = window.setTimeout(() => setDone(true), 1100);
+        return () => {
+            window.clearTimeout(start);
+            window.clearTimeout(finish);
+        };
     }, []);
 
     return (
-        <section className="hero" id="home">
-            <div className="container">
-                <div className="hero__content">
-                    <h1 className="hero__title">
-                        Hi, I'm <span className="hero__name">Mohit Shah</span>
-                    </h1>
-                    <h2 className="hero__subtitle">
-                        Digital Designer & Developer
-                    </h2>
-                    <p className="hero__description">
-                        Crafting innovative digital experiences through design and development. 
-                        Specializing in UI/UX design, web development, and creative solutions.
-                    </p>
-                    <div className="hero__cta">
-                        <a href="#work" className="hero__button">View My Work</a>
-                        <a href="#contact" className="hero__button hero__button--outline">Contact Me</a>
-                    </div>
-                </div>
-            </div>
-            <div className="hero__background">
-                <div className="hero__gradient"></div>
+        <section
+            className={`hero ${ready ? 'hero--ready' : ''} ${done ? 'hero--done' : ''}`}
+            id="home"
+        >
+            <BinaryField density={20} />
+            <div className="hero__glow" aria-hidden="true" />
+
+            <div className="container hero__layout">
+                <p className="hero__brand" data-cursor-text="Home">
+                    Mohit Shah
+                </p>
+
+                <h1 className="hero__title" aria-label="Digital Designer and Developer">
+                    {letters.map((line, lineIndex) => (
+                        <span className="hero__line" key={HERO_LINES[lineIndex]}>
+                            {line.map(({ ch, key, delay }) => (
+                                <span
+                                    className="hero__char"
+                                    key={key}
+                                    style={{ '--d': `${delay + lineIndex * 90}ms` }}
+                                >
+                                    {ch === ' ' ? '\u00A0' : ch}
+                                </span>
+                            ))}
+                        </span>
+                    ))}
+                </h1>
+
+                <p className="hero__status">
+                    Full Stack Developer · Available for freelance &amp; product work
+                    <a href="#contact" className="hero__hire" data-cursor-text="Contact">
+                        → Contact
+                    </a>
+                </p>
             </div>
         </section>
     );

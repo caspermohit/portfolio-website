@@ -1,5 +1,4 @@
-// src/App.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ClientGuideHeader from './components/ClientGuideHeader';
@@ -11,20 +10,27 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 import ClientGuide from './components/ClientGuide';
-import './App.css'; // Main CSS file
+import SpiderMan from './components/SpiderMan';
+import { useLenis, useSectionReveal } from './hooks/useMotion';
+import './App.css';
 import './components/Styles/styles.scss';
 import './components/styles.css';
 
-const MainPage = () => (
-    <>
-        <Header />
-        <Home />
-        <About />
-        <Skills />
-        <Work />
-        <Contact />
-    </>
-);
+const MainPage = () => {
+    useSectionReveal();
+
+    return (
+        <>
+            <Header />
+            <SpiderMan />
+            <Home />
+            <About />
+            <Work />
+            <Skills />
+            <Contact />
+        </>
+    );
+};
 
 const ClientGuidePage = () => (
     <>
@@ -34,10 +40,15 @@ const ClientGuidePage = () => (
 );
 
 const App = () => {
+    useLenis();
+
+    useEffect(() => {
+        document.documentElement.classList.add('is-loaded');
+    }, []);
+
     return (
         <Router>
             <Cursor />
-            
             <main className="l-main">
                 <Routes>
                     <Route path="/" element={<MainPage />} />

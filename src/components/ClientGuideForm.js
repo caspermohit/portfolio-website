@@ -1,50 +1,57 @@
 import React, { useState } from 'react';
 import './ClientGuideForm.css';
 
-const ClientGuideForm = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        company: '',
-        projectType: '',
-        budget: '',
-        timeline: '',
-        description: ''
-    });
+const initial = {
+    name: '',
+    email: '',
+    company: '',
+    projectType: '',
+    budget: '',
+    timeline: '',
+    goals: '',
+    description: '',
+};
 
+const ClientGuideForm = () => {
+    const [formData, setFormData] = useState(initial);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const openMail = () => {
+        const subject = encodeURIComponent(
+            `Project inquiry — ${formData.projectType || 'General'} — ${formData.name}`
+        );
+        const body = encodeURIComponent(
+            [
+                `Name: ${formData.name}`,
+                `Email: ${formData.email}`,
+                `Company: ${formData.company || '—'}`,
+                `Project type: ${formData.projectType}`,
+                `Budget: ${formData.budget}`,
+                `Timeline: ${formData.timeline}`,
+                `Success looks like: ${formData.goals}`,
+                '',
+                'Project notes:',
+                formData.description,
+            ].join('\n')
+        );
+        window.open(`mailto:mohitshah.ms77@gmail.com?subject=${subject}&body=${body}`);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+        setSubmitStatus(null);
         try {
-            // Here you would typically send the form data to your backend
-            console.log('Form submitted:', formData);
-            
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
+            openMail();
             setSubmitStatus('success');
-            setFormData({
-                name: '',
-                email: '',
-                company: '',
-                projectType: '',
-                budget: '',
-                timeline: '',
-                description: ''
-            });
-        } catch (error) {
+            setFormData(initial);
+        } catch {
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
@@ -52,133 +59,128 @@ const ClientGuideForm = () => {
     };
 
     return (
-        <div className="client-guide-form">
-            <h3>Start Your Project</h3>
-            <p>Fill out the form below and I'll get back to you within 24 hours.</p>
-            
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name *</label>
+        <div className="cg-form">
+            <form onSubmit={handleSubmit} noValidate={false}>
+                <div className="cg-form__grid">
+                    <label className="cg-form__field">
+                        <span>Name *</span>
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            autoComplete="name"
+                        />
+                    </label>
+                    <label className="cg-form__field">
+                        <span>Email *</span>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            autoComplete="email"
+                        />
+                    </label>
+                    <label className="cg-form__field">
+                        <span>Company</span>
+                        <input
+                            type="text"
+                            name="company"
+                            value={formData.company}
+                            onChange={handleChange}
+                            autoComplete="organization"
+                        />
+                    </label>
+                    <label className="cg-form__field">
+                        <span>Project type *</span>
+                        <select
+                            name="projectType"
+                            value={formData.projectType}
+                            onChange={handleChange}
+                            required
+                        >
+                            <option value="">Select…</option>
+                            <option value="Marketing / brochure site">Marketing / brochure site</option>
+                            <option value="UI/UX & prototype">UI/UX &amp; prototype</option>
+                            <option value="Web app / dashboard">Web app / dashboard</option>
+                            <option value="E-commerce">E-commerce</option>
+                            <option value="Redesign / rebuild">Redesign / rebuild</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <label className="cg-form__field">
+                        <span>Budget range *</span>
+                        <select name="budget" value={formData.budget} onChange={handleChange} required>
+                            <option value="">Select…</option>
+                            <option value="$2,000 – $4,000">$2,000 – $4,000</option>
+                            <option value="$4,000 – $8,000">$4,000 – $8,000</option>
+                            <option value="$8,000 – $15,000">$8,000 – $15,000</option>
+                            <option value="$15,000+">$15,000+</option>
+                            <option value="Not sure yet">Not sure yet</option>
+                        </select>
+                    </label>
+                    <label className="cg-form__field">
+                        <span>Ideal timeline *</span>
+                        <select
+                            name="timeline"
+                            value={formData.timeline}
+                            onChange={handleChange}
+                            required
+                        >
+                            <option value="">Select…</option>
+                            <option value="ASAP (2–4 weeks)">ASAP (2–4 weeks)</option>
+                            <option value="1–2 months">1–2 months</option>
+                            <option value="2–3 months">2–3 months</option>
+                            <option value="Flexible">Flexible</option>
+                        </select>
+                    </label>
+                </div>
+
+                <label className="cg-form__field">
+                    <span>What does success look like? *</span>
                     <input
                         type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        name="goals"
+                        value={formData.goals}
                         onChange={handleChange}
                         required
-                        placeholder="Your name"
+                        placeholder="e.g. more qualified leads, launch MVP, refresh brand online"
                     />
-                </div>
+                </label>
 
-                <div className="form-group">
-                    <label htmlFor="email">Email *</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="Your email"
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="company">Company</label>
-                    <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        placeholder="Your company (optional)"
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="projectType">Project Type *</label>
-                    <select
-                        id="projectType"
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select project type</option>
-                        <option value="web">Web Development</option>
-                        <option value="ui">UI/UX Design</option>
-                        <option value="mobile">Mobile Development</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="budget">Budget Range *</label>
-                    <select
-                        id="budget"
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select budget range</option>
-                        <option value="1000-3000">$1,000 - $3,000</option>
-                        <option value="3000-5000">$3,000 - $5,000</option>
-                        <option value="5000+">$5,000+</option>
-                    </select>
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="timeline">Project Timeline *</label>
-                    <select
-                        id="timeline"
-                        name="timeline"
-                        value={formData.timeline}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select timeline</option>
-                        <option value="2-4">2-4 weeks</option>
-                        <option value="4-8">4-8 weeks</option>
-                        <option value="8+">8+ weeks</option>
-                    </select>
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="description">Project Description *</label>
+                <label className="cg-form__field">
+                    <span>Project notes *</span>
                     <textarea
-                        id="description"
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
                         required
-                        placeholder="Tell me about your project..."
-                        rows="5"
+                        rows={5}
+                        placeholder="Audience, must-have features, references, constraints…"
                     />
-                </div>
+                </label>
 
-                <button 
-                    type="submit" 
-                    className="submit-btn"
-                    disabled={isSubmitting}
-                >
-                    {isSubmitting ? 'Sending...' : 'Submit Project Request'}
+                <button type="submit" className="cg__btn cg-form__submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Opening mail…' : 'Send project brief →'}
                 </button>
 
                 {submitStatus === 'success' && (
-                    <div className="form-message success">
-                        Thank you! Your project request has been submitted. I'll get back to you soon.
-                    </div>
+                    <p className="cg-form__msg">
+                        Your mail client should open with the brief. If it didn&apos;t, email{' '}
+                        <a href="mailto:mohitshah.ms77@gmail.com">mohitshah.ms77@gmail.com</a>.
+                    </p>
                 )}
-
                 {submitStatus === 'error' && (
-                    <div className="form-message error">
-                        Oops! Something went wrong. Please try again later.
-                    </div>
+                    <p className="cg-form__msg cg-form__msg--err">
+                        Something went wrong — email mohitshah.ms77@gmail.com directly.
+                    </p>
                 )}
             </form>
         </div>
     );
 };
 
-export default ClientGuideForm; 
+export default ClientGuideForm;
