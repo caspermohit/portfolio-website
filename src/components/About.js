@@ -97,6 +97,17 @@ const About = () => {
 
                     <div className="about__github">
                         <a
+                            href="https://www.conestogagigs.ca/mohit-shah/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="about__github-link"
+                        >
+                            Conestoga Gigs profile <FiExternalLink aria-hidden="true" />
+                        </a>
+                    </div>
+
+                    <div className="about__github">
+                        <a
                             href="https://github.com/caspermohit"
                             target="_blank"
                             rel="noopener noreferrer"

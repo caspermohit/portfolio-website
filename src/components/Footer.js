@@ -43,6 +43,7 @@ const Footer = () => {
                             <li><a href="#skills">Skills</a></li>
                             <li><a href="#work">Work</a></li>
                             <li><a href="#contact">Contact</a></li>
+                            <li><a href="https://www.conestogagigs.ca/mohit-shah/" target="_blank" rel="noopener noreferrer">Conestoga Gigs profile</a></li>
                             <li><a href="/style-guide.html" target="_blank">My Style Guide</a></li>
                         </ul>
                     </div>
