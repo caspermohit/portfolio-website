@@ -1,6 +1,10 @@
 import { useEffect, useLayoutEffect } from 'react';
 import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import 'lenis/dist/lenis.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Smooth inertia scroll (wodniack-style). Respects prefers-reduced-motion.
@@ -14,17 +18,12 @@ export function useLenis() {
             duration: 1.1,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: true,
+            autoRaf: true,
         });
 
         document.documentElement.classList.add('lenis', 'lenis-smooth');
         window.__lenis = lenis;
-
-        let frame = 0;
-        const raf = (time) => {
-            lenis.raf(time);
-            frame = requestAnimationFrame(raf);
-        };
-        frame = requestAnimationFrame(raf);
+        lenis.on('scroll', ScrollTrigger.update);
 
         // Anchor links: use Lenis scrollTo when available
         const onClick = (e) => {
@@ -40,7 +39,6 @@ export function useLenis() {
         document.addEventListener('click', onClick);
 
         return () => {
-            cancelAnimationFrame(frame);
             document.removeEventListener('click', onClick);
             lenis.destroy();
             delete window.__lenis;

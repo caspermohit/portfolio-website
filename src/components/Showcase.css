@@ -1,0 +1,89 @@
+.chapter {
+    position: relative;
+    height: 100dvh;
+    background:
+        radial-gradient(60% 50% at 50% 42%, rgba(52, 152, 219, 0.28), transparent 70%),
+        var(--bg-deep);
+}
+
+.chapter__stage {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: calc(var(--header-height) + 1rem) 1.25rem 1.5rem;
+    overflow: hidden;
+}
+
+.chapter__kicker {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-bright);
+}
+
+.chapter h2 {
+    margin: 0;
+    max-width: 100%;
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.92;
+    text-align: center;
+    text-transform: uppercase;
+    transform: scale(0.86);
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.chapter__points {
+    display: grid;
+    gap: 0.35rem;
+    width: min(36rem, 100%);
+    margin: 0.2rem 0 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.chapter__point {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-style: italic;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.86);
+    will-change: transform, opacity;
+}
+
+.chapter__point a {
+    color: var(--brand-bright);
+    border-bottom: 1px solid currentColor;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-style: normal;
+}
+
+.hero__layout {
+    will-change: transform;
+}
+
+@media (max-width: 799px), (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .chapter {
+        height: auto;
+        min-height: 100dvh;
+    }
+
+    .chapter h2 {
+        transform: none;
+    }
+
+    .chapter__point {
+        opacity: 1;
+        transform: none;
+    }
+}

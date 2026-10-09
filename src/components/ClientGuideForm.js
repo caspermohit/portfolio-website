@@ -40,7 +40,7 @@ const ClientGuideForm = () => {
                 formData.description,
             ].join('\n')
         );
-        window.open(`mailto:mohitshah.ms77@gmail.com?subject=${subject}&body=${body}`);
+        window.location.href = `mailto:mohitshah.ms77@gmail.com?subject=${subject}&body=${body}`;
     };
 
     const handleSubmit = async (e) => {
@@ -70,6 +70,7 @@ const ClientGuideForm = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
+                            maxLength={80}
                             autoComplete="name"
                         />
                     </label>
@@ -81,6 +82,7 @@ const ClientGuideForm = () => {
                             value={formData.email}
                             onChange={handleChange}
                             required
+                            maxLength={120}
                             autoComplete="email"
                         />
                     </label>
@@ -91,6 +93,7 @@ const ClientGuideForm = () => {
                             name="company"
                             value={formData.company}
                             onChange={handleChange}
+                            maxLength={80}
                             autoComplete="organization"
                         />
                     </label>
@@ -147,6 +150,7 @@ const ClientGuideForm = () => {
                         value={formData.goals}
                         onChange={handleChange}
                         required
+                        maxLength={240}
                         placeholder="e.g. more qualified leads, launch MVP, refresh brand online"
                     />
                 </label>
@@ -158,6 +162,7 @@ const ClientGuideForm = () => {
                         value={formData.description}
                         onChange={handleChange}
                         required
+                        maxLength={4000}
                         rows={5}
                         placeholder="Audience, must-have features, references, constraints…"
                     />

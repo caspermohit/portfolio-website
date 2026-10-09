@@ -1,7 +1,7 @@
 .cg-form {
     max-width: 760px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(32, 34, 30, 0.1);
+    background: rgba(32, 34, 30, 0.02);
     padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
@@ -28,7 +28,7 @@
     font-size: 0.68rem;
     letter-spacing: var(--tracking-mono);
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(32, 34, 30, 0.45);
 }
 
 .cg-form__field input,
@@ -38,7 +38,7 @@
     padding: 0.85rem 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(32, 34, 30, 0.2);
     border-radius: 0;
     color: var(--ink);
     font-family: var(--font-body);
@@ -86,7 +86,7 @@
 }
 
 .cg-form__msg--err {
-    color: #ff8f8f;
+    color: #ac2727;
 }
 
 @media (max-width: 700px) {

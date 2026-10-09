@@ -157,6 +157,8 @@
 }
 
 .contact__submit {
+    position: relative;
+    overflow: hidden;
     font-family: var(--font-mono);
     font-size: 0.78rem;
     letter-spacing: var(--tracking-mono);
@@ -167,12 +169,31 @@
     border-radius: 0;
     padding: 1rem 1.55rem;
     cursor: pointer;
-    transition: background 0.25s ease, transform 0.25s ease;
+    isolation: isolate;
+    transition: transform 0.25s ease;
+}
+
+.contact__submit::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.45) 48%, transparent 76%);
+    transform: translateX(-120%);
+    z-index: -1;
 }
 
 .contact__submit:hover:not(:disabled) {
-    background: #2980b9;
     transform: translateY(-2px);
+}
+
+.contact__submit:hover:not(:disabled)::after {
+    animation: contactBeam 0.7s ease;
+}
+
+@keyframes contactBeam {
+    to {
+        transform: translateX(120%);
+    }
 }
 
 .contact__submit:disabled {

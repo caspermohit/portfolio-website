@@ -1,76 +1,45 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import BinaryField from './BinaryField';
+import React, { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Home.css';
 
-const HERO_LINES = ['DIGITAL', 'DESIGNER', 'DEVELOPER'];
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-    const [ready, setReady] = useState(false);
-    const [done, setDone] = useState(false);
+    const sectionRef = useRef(null);
 
-    const letters = useMemo(
-        () =>
-            HERO_LINES.map((line) =>
-                line.split('').map((ch, i) => ({
-                    ch,
-                    key: `${line}-${i}`,
-                    delay: i * 28,
-                }))
-            ),
-        []
-    );
+    useLayoutEffect(() => {
+        const root = sectionRef.current;
+        if (!root) return undefined;
 
-    useEffect(() => {
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reduced) {
-            setReady(true);
-            setDone(true);
-            return undefined;
-        }
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 800px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', () => {
+            const layout = root.querySelector('.hero__layout');
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: root,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1,
+                },
+            });
+            tl.to(layout, { y: -72, ease: 'none' }, 0);
+            return () => tl.kill();
+        });
 
-        const start = window.setTimeout(() => setReady(true), 40);
-        // Guarantee final visible state even if CSS animations are paused/disabled
-        const finish = window.setTimeout(() => setDone(true), 1100);
-        return () => {
-            window.clearTimeout(start);
-            window.clearTimeout(finish);
-        };
+        return () => mm.revert();
     }, []);
 
     return (
-        <section
-            className={`hero ${ready ? 'hero--ready' : ''} ${done ? 'hero--done' : ''}`}
-            id="home"
-        >
-            <BinaryField density={20} />
-            <div className="hero__glow" aria-hidden="true" />
-
+        <section className="hero" id="home" ref={sectionRef}>
             <div className="container hero__layout">
-                <p className="hero__brand" data-cursor-text="Home">
-                    Mohit Shah
-                </p>
-
-                <h1 className="hero__title" aria-label="Digital Designer and Developer">
-                    {letters.map((line, lineIndex) => (
-                        <span className="hero__line" key={HERO_LINES[lineIndex]}>
-                            {line.map(({ ch, key, delay }) => (
-                                <span
-                                    className="hero__char"
-                                    key={key}
-                                    style={{ '--d': `${delay + lineIndex * 90}ms` }}
-                                >
-                                    {ch === ' ' ? '\u00A0' : ch}
-                                </span>
-                            ))}
-                        </span>
-                    ))}
-                </h1>
-
+                <p className="hero__index">01 — Full stack</p>
+                <p className="hero__brand">Mohit Shah</p>
+                <h1>Digital designer and developer</h1>
                 <p className="hero__status">
-                    Full Stack Developer · Available for freelance &amp; product work
-                    <a href="#contact" className="hero__hire" data-cursor-text="Contact">
-                        → Contact
-                    </a>
+                    Available for freelance and product work
+                    {' '}
+                    <a href="#contact">Contact</a>
                 </p>
             </div>
         </section>
