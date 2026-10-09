@@ -1,3 +1,4 @@
+async function main() {
 // Render the actual React pages at build time so crawlers need no JavaScript.
 const fs = require('fs');
 const path = require('path');
@@ -19,8 +20,10 @@ for (const extension of ['.png', '.jpg', '.svg', '.webp']) require.extensions[ex
     fs.copyFileSync(filename, path.join(project, 'build', asset));
     module.exports = '/' + asset;
 };
+const lenisModule = await import('lenis');
 const originalLoad = Module._load;
 Module._load = function (request, parent, isMain) {
+    if (request === 'lenis') return lenisModule;
     return originalLoad.call(this, request === 'gsap/ScrollTrigger' ? 'gsap/dist/ScrollTrigger' : request, parent, isMain);
 };
 // Effects run only after the browser mounts; the server must not emit their warnings.
@@ -44,3 +47,6 @@ for (const [route, page] of Object.entries(pages)) {
 }
 fs.writeFileSync(path.join(project, 'build/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${Object.keys(pages).map(route => `<url><loc>${origin}${route}</loc></url>`).join('')}</urlset>\n`);
 require('./check-seo.cjs');
+
+}
+main().catch(error => { console.error(error); process.exitCode = 1; });
