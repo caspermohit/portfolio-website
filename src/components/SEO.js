@@ -5,7 +5,7 @@ import { origin, pages, structuredData } from '../data/seo';
 export default function SEO() {
     const { pathname } = useLocation();
     useEffect(() => {
-        const path = pathname === '/client-guide/' ? '/client-guide' : pathname;
+        const path = pathname === '/client-guide' ? '/client-guide/' : pathname;
         const known = Boolean(pages[path]);
         const canonicalPath = known ? path : '/';
         const page = pages[canonicalPath];
