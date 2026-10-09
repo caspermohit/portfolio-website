@@ -11,7 +11,7 @@ export default function MotionFilm() {
     const playIntent = useRef(true);
     const visible = useRef(false);
     const [playing, setPlaying] = useState(true);
-    const [reduced, setReduced] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    const [reduced, setReduced] = useState(() => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     const [chapter, setChapter] = useState(0);
 
     useLayoutEffect(() => {
