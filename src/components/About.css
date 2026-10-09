@@ -63,6 +63,10 @@
     gap: 1rem 1.5rem;
 }
 
+.about__github-link + .about__github-link {
+    margin-left: 1.25rem;
+}
+
 .about__github-link {
     display: inline-flex;
     align-items: center;
