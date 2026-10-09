@@ -4,7 +4,7 @@ const pages = {
         title: 'Mohit Shah | Freelance Web Developer & Digital Designer',
         description: 'Mohit Shah is an independent digital designer and full stack developer. Explore React websites, web applications, UI design, motion studies, and freelance work.',
     },
-    '/client-guide': {
+    '/client-guide/': {
         title: 'Web Design & Development Services | Mohit Shah',
         description: 'Work with Mohit Shah on responsive websites, UI/UX prototypes, React web apps, and dashboards. Explore freelance services, project process, and starting prices.',
     },
