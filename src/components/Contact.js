@@ -22,14 +22,14 @@ const Contact = () => {
         const body = encodeURIComponent(
             `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage: ${formData.message}`
         );
-        window.open(`mailto:mohitshah.ms77@gmail.com?subject=${subject}&body=${body}`);
+        window.location.href = `mailto:mohitshah.ms77@gmail.com?subject=${subject}&body=${body}`;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!emailjsEnabled) {
             openMailClient();
-            setStatus('success');
+            setStatus('draft');
             return;
         }
         setStatus('sending');
@@ -65,11 +65,7 @@ const Contact = () => {
                 <div className="contact__cta" data-reveal>
                     <span className="section__label">Contact</span>
                     <h2 className="contact__headline">
-                        Let&apos;s
-                        <br />
-                        create
-                        <br />
-                        something
+                        Let&apos;s create something.
                     </h2>
                     <p className="contact__pitch">
                         Full Stack Developer — open for freelance &amp; product work. I reply within
@@ -100,6 +96,7 @@ const Contact = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
+                            maxLength={80}
                             autoComplete="name"
                         />
                     </label>
@@ -111,6 +108,7 @@ const Contact = () => {
                             value={formData.email}
                             onChange={handleChange}
                             required
+                            maxLength={120}
                             autoComplete="email"
                         />
                     </label>
@@ -121,6 +119,7 @@ const Contact = () => {
                             value={formData.message}
                             onChange={handleChange}
                             required
+                            maxLength={2000}
                             rows={4}
                             placeholder="What are you building?"
                         />
@@ -131,10 +130,11 @@ const Contact = () => {
                         </button>
                     </div>
                     {status === 'success' && (
-                        <p className="contact__note">Got it — I&apos;ll reply within 1 business day.</p>
+                        <p className="contact__note" role="status">Got it — I&apos;ll reply within 1 business day.</p>
                     )}
+                    {status === 'draft' && <p className="contact__note" role="status">Your email app has been opened with a draft. Send it there to get in touch.</p>}
                     {status === 'error' && (
-                        <p className="contact__note contact__note--error">
+                        <p className="contact__note contact__note--error" role="status">
                             Couldn&apos;t send via form — mail client opened as fallback.
                         </p>
                     )}

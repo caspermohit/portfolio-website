@@ -1,63 +1,26 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import ClientGuideHeader from './components/ClientGuideHeader';
-import Home from './components/Home';
-import About from './components/About';
-import Skills from './components/Skills';
-import Work from './components/Work';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Cursor from './components/Cursor';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import ClientGuide from './components/ClientGuide';
-import SpiderMan from './components/SpiderMan';
-import { useLenis, useSectionReveal } from './hooks/useMotion';
-import './App.css';
+import Footer from './components/Footer';
+import Portfolio, { Navigation } from './components/Portfolio';
+import { useLenis } from './hooks/useMotion';
 import './components/Styles/styles.scss';
 import './components/styles.css';
 
-const MainPage = () => {
-    useSectionReveal();
+function ClientGuidePage() {
+    return <div className="portfolio portfolio-guide"><Navigation guide /><main><ClientGuide /></main><Footer /></div>;
+}
 
-    return (
-        <>
-            <Header />
-            <SpiderMan />
-            <Home />
-            <About />
-            <Work />
-            <Skills />
-            <Contact />
-        </>
-    );
-};
-
-const ClientGuidePage = () => (
-    <>
-        <ClientGuideHeader />
-        <ClientGuide />
-    </>
-);
-
-const App = () => {
-    useLenis();
-
+function ScrollReset() {
+    const { pathname } = useLocation();
     useEffect(() => {
-        document.documentElement.classList.add('is-loaded');
-    }, []);
+        if (window.__lenis) window.__lenis.scrollTo(0, { immediate: true });
+        else window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+}
 
-    return (
-        <Router>
-            <Cursor />
-            <main className="l-main">
-                <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/client-guide" element={<ClientGuidePage />} />
-                </Routes>
-            </main>
-            <Footer />
-        </Router>
-    );
-};
-
-export default App;
+export default function App() {
+    useLenis();
+    return <Router><ScrollReset /><Routes><Route path="/" element={<Portfolio />} /><Route path="/client-guide" element={<ClientGuidePage />} /><Route path="*" element={<Portfolio />} /></Routes></Router>;
+}

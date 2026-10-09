@@ -186,7 +186,7 @@ const Cursor = () => {
         for (let i = 0; i < 5; i++) {
             const trail = document.createElement('div');
             trail.className = 'cursor-trail';
-            trail.innerHTML = '</>';
+            trail.textContent = '</>';
             container.appendChild(trail);
             trailsRef.current.push(trail);
         }
