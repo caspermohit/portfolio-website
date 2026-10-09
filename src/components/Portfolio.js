@@ -58,7 +58,7 @@ export default function Portfolio() {
         <main>
             <section className="folio-hero" id="home"><div className="hero-topline"><p>Independent designer & full stack developer</p><p className="availability"><span /> Open for collaborations</p></div>
                 <div className="hero-composition"><h1><span>Thoughtfully</span><span>digital<em>.</em></span></h1><Sculpture /></div>
-                <div className="hero-bottom"><a className="hero-scroll" href="#work" aria-label="Scroll to selected work"><ArrowDown size={24} /></a><p>I’m Mohit. I turn complex ideas into<br />distinctive digital experiences.</p><a className="hero-cta" href="#work">Discover my work <ArrowUpRight size={19} /></a></div>
+                <div className="hero-bottom"><a className="hero-scroll" href="#work" aria-label="Scroll to selected work"><ArrowDown size={24} /></a><p>I’m Mohit Shah. I turn complex ideas into<br />distinctive digital experiences.</p><a className="hero-cta" href="#work">Discover my work <ArrowUpRight size={19} /></a></div>
                 <div className="hero-baseline"><span>Design × Development × Motion</span><span>Made with intention</span></div>
             </section>
             <div className="folio-marquee" aria-hidden="true"><div>{Array.from({ length: 4 }, (_, i) => <span key={i}>Creative thinking <b>✳</b> Precise execution <b>✳</b> </span>)}</div></div>
