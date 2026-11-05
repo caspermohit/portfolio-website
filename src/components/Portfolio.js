@@ -5,6 +5,7 @@ import Contact from './Contact';
 import Work from './Work';
 import FeaturedWork from './FeaturedWork';
 import MotionFilm from './MotionFilm';
+import HairlineExperience, { HairlineHero } from './HairlineExperience';
 import FreelanceClients from './FreelanceClients';
 import { creativeProjects } from '../data/projects';
 import portrait from './assets/img/profile.png';
@@ -13,9 +14,6 @@ import './Portfolio.css';
 
 const External = ({ href, children, ...props }) => <a href={href} target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
 
-function Sculpture() {
-    return <div className="sculpture" aria-hidden="true"><div className="sculpture-orbit"><div className="sculpture-core">{Array.from({ length: 24 }, (_, i) => <span key={i} style={{ '--slice': i }} />)}</div></div><div className="sculpture-shadow" /></div>;
-}
 
 export function Navigation({ guide = false }) {
     const [open, setOpen] = useState(false);
@@ -56,13 +54,13 @@ export default function Portfolio() {
     return <div className="portfolio" ref={root}>
         <a href="#work" className="folio-skip">Skip to work</a><div className="folio-progress" aria-hidden="true" /><Navigation />
         <main>
-            <section className="folio-hero" id="home"><div className="hero-topline"><p>Independent designer & full stack developer</p><p className="availability"><span /> Open for collaborations</p></div>
-                <div className="hero-composition"><h1><span>Thoughtfully</span><span>digital<em>.</em></span></h1><Sculpture /></div>
+            <section className="folio-hero" id="home"><div className="hero-topline"><p>Independent designer & full stack developer<span className="hero-location">Based in Kitchener, Ontario</span></p><p className="availability"><span /> Open for collaborations</p></div>
+                <div className="hero-composition"><h1><span>Thoughtfully</span><span>digital<em>.</em></span></h1><HairlineHero /></div>
                 <div className="hero-bottom"><a className="hero-scroll" href="#work" aria-label="Scroll to selected work"><ArrowDown size={24} /></a><p>I’m Mohit Shah. I turn complex ideas into<br />distinctive digital experiences.</p><a className="hero-cta" href="#work">Discover my work <ArrowUpRight size={19} /></a></div>
                 <div className="hero-baseline"><span>Design × Development × Motion</span><span>Made with intention</span></div>
             </section>
             <div className="folio-marquee" aria-hidden="true"><div>{Array.from({ length: 4 }, (_, i) => <span key={i}>Creative thinking <b>✳</b> Precise execution <b>✳</b> </span>)}</div></div>
-            <FreelanceClients /><FeaturedWork /><MotionFilm /><AboutSection />
+            <FreelanceClients /><FeaturedWork /><HairlineExperience /><MotionFilm /><AboutSection />
             <section className="creative-strip folio-section"><p className="eyebrow">A little outside the lines</p><h2>Curiosity is<br />part of the <em>process.</em></h2><div className="creative-grid">{creativeProjects.map(project => <External href={project.links[0].url} key={project.title}><h3>{project.title}</h3><p>{project.description}</p><ArrowUpRight size={22} /></External>)}</div></section>
             <div className="folio-archive" id="archive"><Work /></div>
             <div className="folio-contact"><Contact /></div>
