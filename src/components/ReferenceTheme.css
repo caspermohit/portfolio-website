@@ -105,3 +105,39 @@ body{background:var(--color-secondary);color:var(--color-dominant)}
 .id-badge-name{color:var(--color-dominant)}
 .id-badge-name>span{color:var(--color-accent)!important}
 .id-barcode{background:repeating-linear-gradient(90deg,var(--color-dominant) 0 1px,transparent 1px 3px,var(--color-dominant) 3px 5px,transparent 5px 6px,var(--color-dominant) 6px 7px,transparent 7px 10px)}
+/* Authored CC0 character loop; the same ink-on-paper treatment as the reference. */
+.process-sketch{border-bottom:1px solid var(--color-dominant);padding-top:90px;padding-bottom:70px}
+.portfolio .process-sketch h2{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(42px,5.8vw,88px);font-weight:400;line-height:1.12;letter-spacing:-.035em;margin:40px 0}
+.process-doodle{display:inline-block;width:1.8em;height:1.3em;vertical-align:-.25em;mix-blend-mode:multiply;filter:grayscale(1)}
+.process-doodle img{display:block;width:100%;height:100%;object-fit:contain}
+.process-sketch-bottom{display:flex;justify-content:space-between;gap:24px;align-items:end}.process-sketch-bottom p{font-size:16px;line-height:1.6}
+.bending-artwork>canvas{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}.bending-artwork.is-rendered>img{visibility:hidden}.finale-float.bending-artwork img{box-shadow:none;border:0}.finale-float.bending-artwork{width:240px}.finale-float-two.bending-artwork{width:155px}
+@media(max-width:899px){.process-sketch{padding-top:55px;padding-bottom:45px}.process-sketch-bottom{display:block}.process-sketch-bottom .text-link{margin-top:20px}.finale-float.bending-artwork{width:120px}.finale-float-two.bending-artwork{width:75px}}
+.process-sketch-top{display:flex;justify-content:space-between;align-items:center;gap:20px}.sketch-toggle{font:inherit;font-size:12px;color:var(--color-dominant);background:transparent;border:0;border-bottom:1px solid currentColor;padding:5px 0;cursor:pointer}.sketch-toggle:focus-visible{outline:2px solid var(--color-accent);outline-offset:5px}@media(prefers-reduced-motion:reduce){.sketch-toggle{display:none}}
+
+/* Small editorial illustrations sit beside the ideas they illustrate. */
+.editorial-doodle{display:inline-block;position:relative;flex:none;vertical-align:middle;mix-blend-mode:multiply}
+.editorial-doodle>img{display:block;width:100%;height:auto;filter:grayscale(1)}
+
+
+.process-doodle.editorial-doodle{height:auto;vertical-align:-.3em;filter:none}
+.creative-heading-row{display:flex;justify-content:space-between;align-items:center;gap:35px}.creative-heading-row h2{flex:1}.curiosity-doodle{width:clamp(120px,18vw,230px);margin-right:5%}
+.reference-finale .finale-invitation{display:flex;justify-content:center;align-items:center;gap:16px;position:relative;z-index:3}.invitation-doodle{width:100px}
+@media(max-width:750px){.creative-heading-row{gap:12px}.curiosity-doodle{width:100px;margin:0}.invitation-doodle{width:70px}.reference-finale .finale-invitation{gap:8px}}
+.reference-finale .finale-invitation{mix-blend-mode:multiply}
+
+.hero-doodle{width:105px;margin-left:15px;vertical-align:-.4em}.reference-hero-byline>p{mix-blend-mode:multiply}
+.clients-doodle-note{display:flex;align-items:center;gap:20px}.collaboration-doodle{width:125px}.clients-doodle-note p{margin:0}
+@media(max-width:750px){.hero-doodle{width:65px;margin-left:8px}.clients-doodle-note{gap:12px;margin-top:24px}.collaboration-doodle{width:90px}}
+/* Motion tokens stay inside each fixed drawing, preserving the surrounding layout. */
+.ink-doodle{--doodle-period:5s;--doodle-ease:cubic-bezier(.77,0,.175,1);display:block;width:100%;height:auto;fill:none;stroke:var(--color-dominant);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.section-ink-doodle{width:120px}.doodle-section-note{display:flex;align-items:center;gap:20px}.doodle-section-note>p{margin:0}
+.ink-doodle .doodle-cursor{transform-origin:120px 85px;animation:doodle-point var(--doodle-period) var(--doodle-ease) infinite;animation-play-state:paused}
+.ink-doodle .doodle-pencil{transform-origin:91px 83px;animation:doodle-sketch 4.8s var(--doodle-ease) infinite;animation-play-state:paused}
+.ink-doodle .doodle-clapper{transform-origin:30px 45px;animation:doodle-action 6.4s var(--doodle-ease) infinite;animation-play-state:paused}
+.editorial-doodle.is-live .ink-doodle g{animation-play-state:running}
+@keyframes doodle-point{0%,100%{transform:translate(0,0)}35%,60%{transform:translate(-9px,-6px) rotate(-3deg)}}
+@keyframes doodle-sketch{0%,100%{transform:rotate(0deg)}30%{transform:rotate(-6deg)}65%{transform:rotate(3deg)}}
+@keyframes doodle-action{0%,12%,80%,100%{transform:rotate(0deg)}35%,55%{transform:rotate(-16deg)}}
+@media(max-width:750px){.doodle-section-note{gap:14px;margin-top:20px}.section-ink-doodle{width:85px}}
+@media(prefers-reduced-motion:reduce){.ink-doodle g{animation:none!important}}

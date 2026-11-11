@@ -1,4 +1,6 @@
 import ScrollInk from './ScrollInk';
+import Doodle from './Doodle';
+import BendingArtwork from './BendingArtwork';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowUpRight as ArrowUpRight, FiArrowDown as ArrowDown, FiPlus as Plus, FiMinus as Minus } from 'react-icons/fi';
@@ -64,7 +66,7 @@ export default function Portfolio() {
                     <h1 className="reference-hero-title"><span className="scroll-ink">MOHIT<span className="scroll-ink-fill" aria-hidden="true">MOHIT</span></span><span className="scroll-ink">SHAH<span className="scroll-ink-fill" aria-hidden="true">SHAH</span></span></h1>
                     <div className="reference-collage" aria-hidden="true"><div className="reference-print reference-print-back"><img src="/design/relyup/Flyer_Front.svg" alt="" width="500" height="700" /></div><div className="reference-print reference-print-main"><span>Selected work / Exhibera</span><img src="/design/exhibera/home.png" alt="" width="1440" height="1000" /></div><div className="reference-print reference-print-small"><img src="/projects/shade.jpg" alt="" width="1440" height="1000" /></div></div>
                     <span className="reference-note reference-note-left" aria-hidden="true">design meets code ↗</span><span className="reference-note reference-note-right" aria-hidden="true">from Kitchener,<br />with curiosity.</span>
-                    <div className="reference-hero-byline"><p>Websites. Interfaces. Visual stories.</p><a href="#work">Explore my work <ArrowDown size={18} /></a></div>
+                    <div className="reference-hero-byline"><p>Websites. Interfaces. Visual stories. <Doodle name="sprinting" className="hero-doodle" /></p><a href="#work">Explore my work <ArrowDown size={18} /></a></div>
                 </div>
                 <nav className="hero-work-grid" aria-label="Discover my work by discipline">
                     <a className="hero-work-tile hero-work-web" href="#featured-project-0"><div className="hero-work-image"><img src="/projects/shade.jpg" alt="Shade and Shine website with automotive brand design" width="1440" height="1000" fetchpriority="high" /></div><div className="hero-work-caption"><span><small>01 / Websites & products</small><strong>Shade &amp; Shine</strong><span className="hero-work-description">Brand presence · Web development</span></span><ArrowUpRight /></div></a>
@@ -73,12 +75,18 @@ export default function Portfolio() {
                 </nav>
                 <div className="hero-baseline"><span>Design × Development × Motion</span><span>Available for selected projects</span></div>
             </section>
-            <FreelanceClients /><FeaturedWork /><DesignShowcase /><HairlineExperience /><MotionFilm /><AboutSection />
-            <section className="creative-strip folio-section"><p className="eyebrow">A little outside the lines</p><h2><ScrollInk>Curiosity is<br />part of the <em>process.</em></ScrollInk></h2><div className="creative-grid">{creativeProjects.filter(project => !project.designId).map(project => <External href={project.links[0].url} key={project.title}><h3>{project.title}</h3><p>{project.description}</p><ArrowUpRight size={22} /></External>)}</div></section>
+            <FreelanceClients />
+            <section className="process-sketch folio-section" aria-labelledby="process-sketch-title">
+                <p className="eyebrow">From the first thought to the final detail</p>
+                <h2 id="process-sketch-title">A little curiosity. <Doodle name="coffee" label="creative process" className="process-doodle" /><br />A considered interface.<br />Code that brings it to life.</h2>
+                <div className="process-sketch-bottom"><p>UX / UI, web development, and visual storytelling.<br />Different disciplines. One connected experience.</p><a className="text-link" href="#design">Explore the design work <ArrowUpRight size={18} /></a></div>
+            </section>
+            <FeaturedWork /><DesignShowcase /><HairlineExperience /><MotionFilm /><AboutSection />
+            <section className="creative-strip folio-section"><p className="eyebrow">A little outside the lines</p><div className="creative-heading-row"><h2><ScrollInk>Curiosity is<br />part of the <em>process.</em></ScrollInk></h2><Doodle name="levitate" label="curiosity" className="curiosity-doodle" /></div><div className="creative-grid">{creativeProjects.filter(project => !project.designId).map(project => <External href={project.links[0].url} key={project.title}><h3>{project.title}</h3><p>{project.description}</p><ArrowUpRight size={22} /></External>)}</div></section>
             <div className="folio-archive" id="archive"><Work /></div>
             <div className="folio-contact"><Contact /></div>
         </main>
-        <section className="reference-finale" aria-labelledby="finale-title"><p>Have something in mind?</p><h2 id="finale-title"><span className="scroll-ink">LET’S MAKE<span className="scroll-ink-fill" aria-hidden="true">LET’S MAKE</span></span><em className="scroll-ink">IT WORK.<span className="scroll-ink-fill" aria-hidden="true">IT WORK.</span></em></h2><div className="finale-float finale-float-one" aria-hidden="true"><img src="/design/relyup/Flyer_Front.svg" alt="" width="300" height="400" loading="lazy" /></div><div className="finale-float finale-float-two" aria-hidden="true"><img src="/design/exhibera/mobile.png" alt="" width="390" height="844" loading="lazy" /></div><a className="finale-email" href="mailto:mohitshah.ms77@gmail.com">mohitshah.ms77@gmail.com <ArrowUpRight size={20} /></a></section>
+        <section className="reference-finale" aria-labelledby="finale-title"><p className="finale-invitation">Have something in mind? <Doodle name="sprinting" label="getting started" className="invitation-doodle" /></p><h2 id="finale-title"><span className="scroll-ink">LET’S MAKE<span className="scroll-ink-fill" aria-hidden="true">LET’S MAKE</span></span><em className="scroll-ink">IT WORK.<span className="scroll-ink-fill" aria-hidden="true">IT WORK.</span></em></h2><BendingArtwork className="finale-float finale-float-one" src="/design/relyup/Flyer_Front.svg" width={300} height={400} /><BendingArtwork className="finale-float finale-float-two" src="/design/exhibera/mobile.png" width={390} height={844} /><a className="finale-email" href="mailto:mohitshah.ms77@gmail.com">mohitshah.ms77@gmail.com <ArrowUpRight size={20} /></a></section>
         <footer className="folio-footer"><a href="#home">mohit shah.</a><p>© {new Date().getFullYear()} · Kitchener, Ontario</p><div><External href="https://github.com/caspermohit">GitHub <ArrowUpRight size={14} /></External><External href="https://www.linkedin.com/in/mohitshah7/">LinkedIn <ArrowUpRight size={14} /></External><a href="#home">Back to top ↑</a></div></footer>
     </div>;
 }
