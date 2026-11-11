@@ -1,0 +1,46 @@
+export const designWork = [
+    {
+        id: 'exhibera', title: 'Exhibera', category: 'UX / UI', kind: 'ux', year: '2026', status: 'Design prototype',
+        summary: 'A place for art. A clearer path for artists.',
+        description: 'An art-opportunity platform explored through responsive interfaces for artists, organizations, and invited jurors.',
+        scope: ['Responsive UI', 'User flows', 'Product interfaces'],
+        context: 'Artists discover opportunities and prepare applications. Organizations manage calls, while invited jurors review submissions. Each journey needs its own clear next step.',
+        approach: 'The design separates public discovery from task-focused workspaces. A shared visual language connects expressive art-led pages with structured application and review screens.',
+        boundary: 'Selected design-prototype screens. This presentation describes the design work, without claiming production results or completed user testing.',
+        links: [{ label: 'View design in Figma', url: 'https://www.figma.com/design/Dsfu9yYndXkJnOk9lsSDt0?node-id=110-2914' }],
+        media: [
+            { label: 'Discovery', src: '/design/exhibera/home.png', alt: 'Exhibera desktop discovery interface with art-led typography', caption: 'An expressive entry point that introduces the platform and directs visitors toward opportunities.' },
+            { label: 'Mobile', src: '/design/exhibera/mobile.png', alt: 'Exhibera responsive mobile interface', caption: 'The experience considered at a smaller screen size.' },
+            { label: 'Opportunity filters', src: '/design/exhibera/filters.png', alt: 'Exhibera opportunity filtering interface', caption: 'A focused view of the opportunity search and filtering design.' },
+            { label: 'Artist workspace', src: '/design/exhibera/artist.png', alt: 'Exhibera artist workspace design', caption: 'A task-focused workspace for the artist journey.' },
+            { label: 'Organization', src: '/design/exhibera/organization.png', alt: 'Exhibera organization workspace design', caption: 'A separate workspace for organizations and their calls.' },
+            { label: 'Jury review', src: '/design/exhibera/jury.png', alt: 'Exhibera invited jury review design', caption: 'A structured review interface for invited jurors.' },
+        ],
+    },
+    {
+        id: 'relyup-print', title: 'RelyUp', category: 'Brand & print', kind: 'print', year: '2026', status: 'Client-approved visual design',
+        summary: 'One visual language. Across every format.',
+        description: 'Flyer, retractable banner, and exhibition backdrop designs for a fleet-maintenance brand.',
+        scope: ['Flyer design', 'Exhibition graphics', 'Visual consistency'],
+        context: 'A single message needs to work at different distances: in a hand, beside a display, and across an exhibition space.',
+        approach: 'The visual direction uses the official brand assets, fleet photography, a dark palette, lime accents, and a clear type hierarchy across the different formats.',
+        boundary: 'Client-approved visual designs shown from the editable prepress source files. This gallery is a design presentation, not a production print download.', links: [],
+        media: [
+            { label: 'Flyer · front', src: '/design/relyup/Flyer_Front.svg', alt: 'RelyUp flyer front design with fleet photography', caption: 'Flyer front · client-approved visual design' },
+            { label: 'Flyer · back', src: '/design/relyup/Flyer_Back.svg', alt: 'RelyUp flyer back design presenting the fleet data message', caption: 'Flyer reverse · supporting information' },
+            { label: 'Banner', src: '/design/relyup/Retractable_Banner_33x80.svg', alt: 'RelyUp retractable banner design', caption: 'Retractable banner · 33 × 80 inch format' },
+            { label: 'Backdrop', src: '/design/relyup/Backdrop_8x8.svg', alt: 'RelyUp exhibition backdrop design', caption: 'Exhibition backdrop · 8 × 8 foot format' },
+        ],
+    },
+    {
+        id: 'relyup-motion', title: 'RelyUp in motion', category: 'Motion graphics', kind: 'motion', year: '2026', status: 'Client-delivered motion',
+        summary: 'The same idea, set in motion.', description: 'Two 15-second motion graphics films created for RelyUp’s trade-show screens.', scope: ['Motion graphics', 'Typography', 'Brand storytelling'],
+        context: 'Translate the visual direction into a short sequence that can be watched on screen.',
+        approach: 'The films combine brand-led typography, fleet imagery, interface storytelling, and animated transitions.',
+        boundary: 'Both films were shared with the client. Figures and calculator values within the films belong to the client narrative; they are not portfolio performance claims.', links: [],
+        media: [
+            { label: 'Launch film', src: '/design/relyup/launch-film.mp4', poster: '/design/relyup/launch-poster.jpg', type: 'video', alt: 'RelyUp 15-second launch film', caption: 'Launch film · 15 seconds · web-sized copy of the delivered film' },
+            { label: 'Trade-show film', src: '/design/relyup/trade-show.mp4', poster: '/design/relyup/trade-show-poster.jpg', type: 'video', alt: 'RelyUp 15-second trade-show film', caption: 'Trade-show film · 15 seconds · 1080p' },
+        ],
+    },
+];

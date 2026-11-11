@@ -25,21 +25,7 @@ export function useLenis() {
         window.__lenis = lenis;
         lenis.on('scroll', ScrollTrigger.update);
 
-        // Anchor links: use Lenis scrollTo when available
-        const onClick = (e) => {
-            const a = e.target.closest('a[href^="#"]');
-            if (!a) return;
-            const id = a.getAttribute('href');
-            if (!id || id === '#') return;
-            const el = document.querySelector(id);
-            if (!el) return;
-            e.preventDefault();
-            lenis.scrollTo(el, { offset: -72 });
-        };
-        document.addEventListener('click', onClick);
-
         return () => {
-            document.removeEventListener('click', onClick);
             lenis.destroy();
             delete window.__lenis;
             document.documentElement.classList.remove('lenis', 'lenis-smooth');

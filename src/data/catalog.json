@@ -1,0 +1,609 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "id": "design-relyup-motion",
+      "designId": "relyup-motion",
+      "title": "RelyUp \u00b7 Motion graphics",
+      "description": "Two 15-second films for RelyUp\u2019s trade-show screens.",
+      "technologies": "Motion graphics, Animation, Typography",
+      "date": "2026-11-09",
+      "group": "Studio",
+      "image": "/design/relyup/launch-poster.jpg",
+      "links": []
+    },
+    {
+      "id": "design-exhibera",
+      "designId": "exhibera",
+      "title": "Exhibera",
+      "description": "Responsive UX and UI design for an art-opportunity platform, with artist, organization, and jury journeys.",
+      "technologies": "UX / UI, Figma, User flows",
+      "date": "2026-11-06",
+      "group": "Studio",
+      "image": "/design/exhibera/home.png",
+      "links": [
+        {
+          "url": "https://www.figma.com/design/Dsfu9yYndXkJnOk9lsSDt0?node-id=110-2914",
+          "text": "Figma design"
+        }
+      ]
+    },
+    {
+      "id": "design-relyup-print",
+      "designId": "relyup-print",
+      "title": "RelyUp \u00b7 Brand & print",
+      "description": "Flyer, retractable banner, and exhibition backdrop design.",
+      "technologies": "Graphic design, Print, Brand design",
+      "date": "2026-10-28",
+      "group": "Studio",
+      "image": "/design/relyup/Backdrop_8x8.svg",
+      "links": []
+    },
+    {
+      "id": "evergreen-transfer",
+      "title": "Evergreen Transfer",
+      "description": "A moving-services website with a service overview, move planner, and estimate enquiry.",
+      "technologies": "Web design, Development",
+      "date": "2026-10-14",
+      "group": "Shipped",
+      "live": "https://evergreentransfer.netlify.app/",
+      "github": "https://github.com/caspermohit/evergreen-transfer",
+      "links": [
+        {
+          "url": "https://evergreentransfer.netlify.app/",
+          "text": "Visit website"
+        },
+        {
+          "url": "https://github.com/caspermohit/evergreen-transfer",
+          "text": "Source code"
+        }
+      ],
+      "image": "/projects/evergreen.jpg"
+    },
+    {
+      "id": "star-performance-academy",
+      "title": "Star Performance Academy",
+      "description": "A performing arts website presenting programs, summer camps, pricing, and trial enrolment.",
+      "technologies": "Web design, Development",
+      "date": "2026-08-17",
+      "group": "Shipped",
+      "live": "https://starperformanceacademy.netlify.app/",
+      "github": "https://github.com/caspermohit/starperformanceacademy",
+      "links": [
+        {
+          "url": "https://starperformanceacademy.netlify.app/",
+          "text": "Visit website"
+        },
+        {
+          "url": "https://github.com/caspermohit/starperformanceacademy",
+          "text": "Source code"
+        }
+      ],
+      "image": "/projects/star-performance.jpg"
+    },
+    {
+      "title": "Shade & Shine",
+      "description": "Detailing & tinting business site \u2014 booking-ready marketing presence.",
+      "technologies": "TypeScript, React, Netlify",
+      "live": "https://carppf.netlify.app/",
+      "github": "https://github.com/caspermohit/shadeandshine.ca",
+      "date": "2026-07-30",
+      "links": [
+        {
+          "url": "https://carppf.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/shadeandshine.ca",
+          "text": "GitHub"
+        }
+      ],
+      "id": "shade-shine",
+      "group": "Shipped",
+      "image": "/projects/shade.jpg"
+    },
+    {
+      "title": "Expense Tracker",
+      "description": "Expense & income workbook \u2014 live on Cloudflare Workers.",
+      "technologies": "React, TypeScript, Cloudflare Workers",
+      "live": "https://expense-tracker.mohitshah-ms77.workers.dev/",
+      "github": "https://github.com/caspermohit/expense-tracker",
+      "githubExtra": "https://github.com/caspermohit/expense-tracker-backend",
+      "date": "2026-07-08",
+      "links": [
+        {
+          "url": "https://expense-tracker.mohitshah-ms77.workers.dev/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/expense-tracker",
+          "text": "GitHub"
+        },
+        {
+          "url": "https://github.com/caspermohit/expense-tracker-backend",
+          "text": "API repo"
+        }
+      ],
+      "id": "expense-tracker",
+      "group": "Shipped",
+      "image": "/projects/expense.jpg"
+    },
+    {
+      "title": "Talk Chat",
+      "description": "Group chat around topics \u2014 Laravel backend + React client.",
+      "github": "https://github.com/caspermohit/talk-chat-frontend",
+      "technologies": "React, PHP, Laravel",
+      "date": "2025-11-11",
+      "id": "talk-chat",
+      "group": "Repository",
+      "links": [
+        {
+          "url": "https://github.com/caspermohit/talk-chat-frontend",
+          "text": "Source code"
+        }
+      ]
+    },
+    {
+      "title": "Entertainment Review",
+      "description": "Movie, TV, and anime discovery \u2014 React + TypeScript product UI.",
+      "technologies": "React, TypeScript, Vite",
+      "live": "https://entertainment-review.netlify.app/",
+      "github": "https://github.com/caspermohit/Movie-review",
+      "date": "2025-08-13",
+      "links": [
+        {
+          "url": "https://entertainment-review.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/Movie-review",
+          "text": "GitHub"
+        }
+      ],
+      "id": "entertainment-review",
+      "group": "Shipped",
+      "image": "/projects/entertainment.jpg"
+    },
+    {
+      "title": "Blog App",
+      "description": "Personal blogging front-end deployed on Netlify.",
+      "technologies": "PHP, Web App",
+      "live": "https://blog-app-app.netlify.app/",
+      "github": "https://github.com/caspermohit/blog-app",
+      "date": "2025-07-31",
+      "links": [
+        {
+          "url": "https://blog-app-app.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/blog-app",
+          "text": "GitHub"
+        }
+      ],
+      "id": "blog-app",
+      "group": "Shipped"
+    },
+    {
+      "title": "Secure Notes",
+      "description": "Private note-taking app with a focus on secure personal writing.",
+      "technologies": "PHP, Web App",
+      "live": "https://secure-notes-app.netlify.app/",
+      "github": "https://github.com/caspermohit/Secure-Notes-App",
+      "date": "2025-07-15",
+      "links": [
+        {
+          "url": "https://secure-notes-app.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/Secure-Notes-App",
+          "text": "GitHub"
+        }
+      ],
+      "id": "secure-notes",
+      "group": "Shipped"
+    },
+    {
+      "title": "Currency Converter",
+      "description": "Convert currencies with a simple React interface.",
+      "technologies": "PHP, React",
+      "live": "https://currency-converter-app.netlify.app/",
+      "github": "https://github.com/caspermohit/Currency_Converter-App",
+      "date": "2025-07-10",
+      "links": [
+        {
+          "url": "https://currency-converter-app.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/Currency_Converter-App",
+          "text": "GitHub"
+        }
+      ],
+      "id": "currency-converter",
+      "group": "Shipped"
+    },
+    {
+      "title": "Quiz Quest",
+      "description": "Interactive quiz app \u2014 questions, scoring, and snappy feedback.",
+      "technologies": "React, Node.js",
+      "live": "https://quiz-quest.netlify.app/",
+      "github": "https://github.com/caspermohit/quiz-quest",
+      "date": "2025-04-11",
+      "links": [
+        {
+          "url": "https://quiz-quest.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/quiz-quest",
+          "text": "GitHub"
+        }
+      ],
+      "id": "quiz-quest",
+      "group": "Shipped"
+    },
+    {
+      "title": "Weather News",
+      "description": "React weather + news dashboard with live conditions and headlines.",
+      "technologies": "React, JavaScript, APIs",
+      "live": "https://weather-news7-app.netlify.app/",
+      "github": "https://github.com/caspermohit/weather-news-app",
+      "date": "2025-04-09",
+      "links": [
+        {
+          "url": "https://weather-news7-app.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/weather-news-app",
+          "text": "GitHub"
+        }
+      ],
+      "id": "weather-news",
+      "group": "Shipped"
+    },
+    {
+      "title": "Multi Converter",
+      "description": "Handy unit & format conversion tools in a clean React UI.",
+      "technologies": "React, JavaScript",
+      "live": "https://multi-converter-app.netlify.app/",
+      "github": "https://github.com/caspermohit/conversion-app",
+      "date": "2025-04-08",
+      "links": [
+        {
+          "url": "https://multi-converter-app.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/conversion-app",
+          "text": "GitHub"
+        }
+      ],
+      "id": "multi-converter",
+      "group": "Shipped"
+    },
+    {
+      "title": "Chess Game",
+      "description": "Modern chess board with drag-and-drop pieces and polished UI.",
+      "technologies": "React, TypeScript, React DnD",
+      "live": "https://mchessgame.netlify.app/",
+      "github": "https://github.com/caspermohit/chess-game",
+      "date": "2025-03-25",
+      "links": [
+        {
+          "url": "https://mchessgame.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/chess-game",
+          "text": "GitHub"
+        }
+      ],
+      "id": "chess-game",
+      "group": "Shipped"
+    },
+    {
+      "title": "Object Detection",
+      "description": "Computer-vision experiments in Python.",
+      "github": "https://github.com/caspermohit/Object_detection",
+      "technologies": "Python",
+      "date": "2025-03-13",
+      "id": "object-detection",
+      "group": "Repository",
+      "links": [
+        {
+          "url": "https://github.com/caspermohit/Object_detection",
+          "text": "Source code"
+        }
+      ]
+    },
+    {
+      "title": "Sharecare",
+      "description": "UX case study for a care platform \u2014 research, flows, and interface design.",
+      "technologies": "HTML, UX Research, Figma",
+      "live": "https://sharecare-case-study.netlify.app/",
+      "github": "https://github.com/caspermohit/sharecare-ux-case-study",
+      "date": "2025-03-03",
+      "links": [
+        {
+          "url": "https://sharecare-case-study.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/sharecare-ux-case-study",
+          "text": "GitHub"
+        }
+      ],
+      "id": "sharecare",
+      "group": "Shipped"
+    },
+    {
+      "title": "UX / UI",
+      "description": "Case studies and product design beyond the shipped apps.",
+      "technologies": "Figma, Adobe XD, Sketch",
+      "date": "2025-03-03",
+      "links": [
+        {
+          "url": "https://sharecare-case-study.netlify.app/",
+          "text": "Sharecare (live) \u00b7 2025"
+        },
+        {
+          "url": "https://www.behance.net/gallery/216560557/glu-care",
+          "text": "glu care"
+        },
+        {
+          "url": "https://github.com/caspermohit/sharecare-ux-case-study",
+          "text": "Case study repo"
+        }
+      ],
+      "id": "studio-ux",
+      "group": "Studio"
+    },
+    {
+      "title": "Valentine Cards",
+      "description": "Flip-card Valentine experience \u2014 playful micro-interaction UI.",
+      "technologies": "JavaScript",
+      "live": "https://valentine.netlify.app/",
+      "github": "https://github.com/caspermohit/Valentine",
+      "date": "2025-02-11",
+      "links": [
+        {
+          "url": "https://valentine.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/Valentine",
+          "text": "GitHub"
+        }
+      ],
+      "id": "valentine-cards",
+      "group": "Shipped"
+    },
+    {
+      "title": "PaLm AI Chatbot",
+      "description": "AI chat experiment powered by Google PaLM.",
+      "github": "https://github.com/caspermohit/PaLm-AI-chatbot",
+      "technologies": "JavaScript, AI",
+      "date": "2025-01-12",
+      "id": "palm-ai-chatbot",
+      "group": "Repository",
+      "links": [
+        {
+          "url": "https://github.com/caspermohit/PaLm-AI-chatbot",
+          "text": "Source code"
+        }
+      ]
+    },
+    {
+      "title": "Deccani Nawab",
+      "description": "Brand / web project on GitHub.",
+      "github": "https://github.com/caspermohit/deccani-nawab",
+      "technologies": "JavaScript",
+      "date": "2024-11-15",
+      "id": "deccani-nawab",
+      "group": "Repository",
+      "links": [
+        {
+          "url": "https://github.com/caspermohit/deccani-nawab",
+          "text": "Source code"
+        }
+      ]
+    },
+    {
+      "title": "AI Voice Chat",
+      "description": "Voice-driven chat experience built with modern web APIs.",
+      "technologies": "React, JavaScript, Speech APIs",
+      "live": "https://ai-voice-chat.netlify.app/",
+      "github": "https://github.com/caspermohit/ai-voice-chat",
+      "date": "2024-10-28",
+      "links": [
+        {
+          "url": "https://ai-voice-chat.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/ai-voice-chat",
+          "text": "GitHub"
+        }
+      ],
+      "id": "ai-voice-chat",
+      "group": "Shipped"
+    },
+    {
+      "title": "Social Media Assistant",
+      "description": "Chrome extension to assist social workflows.",
+      "github": "https://github.com/caspermohit/social-media-assistant",
+      "technologies": "JavaScript, Extension",
+      "date": "2024-10-28",
+      "id": "social-media-assistant",
+      "group": "Repository",
+      "links": [
+        {
+          "url": "https://github.com/caspermohit/social-media-assistant",
+          "text": "Source code"
+        }
+      ]
+    },
+    {
+      "title": "E-commerce",
+      "description": "E-commerce website connected to the production-project repository. The current live deployment is unavailable.",
+      "technologies": "Web development",
+      "live": "https://ecommerce-web7.netlify.app/",
+      "github": "https://github.com/caspermohit/production-project",
+      "date": "2024-10-26",
+      "links": [
+        {
+          "url": "https://github.com/caspermohit/production-project",
+          "text": "Source code"
+        }
+      ],
+      "id": "e-commerce",
+      "group": "Shipped",
+      "status": "Deployment unavailable"
+    },
+    {
+      "title": "Food Recipe",
+      "description": "Browse and cook from recipes in a React recipe explorer.",
+      "technologies": "React, JavaScript",
+      "live": "https://food-recipe-react.netlify.app/",
+      "github": "https://github.com/caspermohit/food-recipe-react",
+      "date": "2024-10-23",
+      "links": [
+        {
+          "url": "https://food-recipe-react.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/food-recipe-react",
+          "text": "GitHub"
+        }
+      ],
+      "id": "food-recipe",
+      "group": "Shipped"
+    },
+    {
+      "title": "Content Writing",
+      "description": "SEO and tech articles for gadget audiences.",
+      "technologies": "SEO, Copywriting, Blogging",
+      "date": "2024-05-11",
+      "links": [
+        {
+          "url": "https://gogadgets77.wordpress.com/2024/05/11/14-essential-smartphone-accessories-to-elevate-your-tech-game-in-2024/",
+          "text": "Essential Accessories \u00b7 May 2024"
+        },
+        {
+          "url": "https://gogadgets77.wordpress.com/2024/04/19/the-best-fast-chargers-of-2024-a-comprehensive-review/",
+          "text": "Best Fast Charger \u00b7 Apr 2024"
+        }
+      ],
+      "id": "studio-write",
+      "group": "Studio"
+    },
+    {
+      "title": "Level Design",
+      "description": "Environments and VR-ready game builds.",
+      "technologies": "Unity, Unreal, Blender",
+      "date": "2024-01-01",
+      "links": [
+        {
+          "url": "https://www.behance.net/gallery/215923707/Enviroment-design",
+          "text": "Environment Design"
+        },
+        {
+          "url": "https://www.behance.net/gallery/215970037/Game-build-for-VR-devices",
+          "text": "Games Teaser"
+        }
+      ],
+      "id": "studio-game",
+      "group": "Studio"
+    },
+    {
+      "title": "Illustration & Motion",
+      "description": "Brand posters, film, and logo explorations.",
+      "technologies": "Illustrator, After Effects, Photoshop",
+      "date": "2023-01-01",
+      "links": [
+        {
+          "url": "https://www.behance.net/gallery/215922739/client-branding-poster",
+          "text": "Client Branding"
+        },
+        {
+          "url": "https://www.behance.net/gallery/204814325/360-fliming",
+          "text": "360 Film"
+        },
+        {
+          "url": "https://www.behance.net/gallery/202959411/Arbys-promotion",
+          "text": "Arby's Promotion"
+        },
+        {
+          "url": "https://www.behance.net/gallery/215939795/Royal-bank-logo-redesign",
+          "text": "Logo Redesign"
+        }
+      ],
+      "id": "studio-motion",
+      "group": "Studio"
+    },
+    {
+      "title": "Food Menu",
+      "description": "Restaurant-style menu UI built in React.",
+      "technologies": "React, JavaScript",
+      "live": "https://food-menu-react.netlify.app/",
+      "github": "https://github.com/caspermohit/food-menu-react",
+      "date": "2020-10-31",
+      "links": [
+        {
+          "url": "https://food-menu-react.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/food-menu-react",
+          "text": "GitHub"
+        }
+      ],
+      "id": "food-menu",
+      "group": "Shipped"
+    },
+    {
+      "title": "Snake Game",
+      "description": "Classic snake \u2014 pure JavaScript fun in the browser.",
+      "technologies": "HTML, JavaScript",
+      "live": "https://javascript-snakegame.netlify.app/",
+      "github": "https://github.com/caspermohit/javascript-snakegame",
+      "date": "2020-10-28",
+      "links": [
+        {
+          "url": "https://javascript-snakegame.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/javascript-snakegame",
+          "text": "GitHub"
+        }
+      ],
+      "id": "snake-game",
+      "group": "Shipped"
+    },
+    {
+      "title": "Todo List",
+      "description": "Lightweight task list with vanilla JavaScript.",
+      "technologies": "JavaScript, HTML, CSS",
+      "live": "https://todo-list-javascript.netlify.app/",
+      "github": "https://github.com/caspermohit/todo-list-javascript",
+      "date": "2020-10-24",
+      "links": [
+        {
+          "url": "https://todo-list-javascript.netlify.app/",
+          "text": "Live demo"
+        },
+        {
+          "url": "https://github.com/caspermohit/todo-list-javascript",
+          "text": "GitHub"
+        }
+      ],
+      "id": "todo-list",
+      "group": "Shipped"
+    }
+  ]
+}

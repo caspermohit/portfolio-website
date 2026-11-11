@@ -17,10 +17,10 @@
 
 .header--scrolled {
     padding: 0.9rem 0;
-    background: rgba(15, 15, 15, 0.82);
+    background: var(--color-dominant);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom-color: rgba(255, 255, 255, 0.06);
+    border-bottom-color: var(--color-secondary);
 }
 
 .header__container {
@@ -68,13 +68,13 @@
 }
 
 .header__nav-link--quiet {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-secondary);
 }
 
 .header__nav-secondary {
     margin-left: 0.5rem;
     padding-left: 1.5rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 1px solid var(--color-secondary);
 }
 
 .header__menu-btn {
@@ -103,7 +103,7 @@
     .header__nav {
         position: fixed;
         inset: 0;
-        background: rgba(15, 15, 15, 0.97);
+        background: var(--color-dominant);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -129,7 +129,7 @@
         margin: 1rem 0 0;
         padding: 1.5rem 0 0;
         border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        border-top: 1px solid var(--color-secondary);
     }
 
     .header__nav-link {

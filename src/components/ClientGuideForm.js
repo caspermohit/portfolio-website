@@ -12,7 +12,8 @@ const initial = {
     description: '',
 };
 
-const ClientGuideForm = () => {
+const ClientGuideForm = ({ requestedPackage = '' }) => {
+    const [copyStatus, setCopyStatus] = useState('');
     const [formData, setFormData] = useState(initial);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
@@ -22,25 +23,10 @@ const ClientGuideForm = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    const brief = [`Name: ${formData.name}`, `Email: ${formData.email}`, `Company: ${formData.company || '—'}`, `Package: ${requestedPackage || 'To discuss'}`, `Project type: ${formData.projectType}`, `Budget: ${formData.budget}`, `Timeline: ${formData.timeline}`, `Success looks like: ${formData.goals}`, '', 'Project notes:', formData.description].join('\n');
+    const draftUrl = `mailto:mohitshah.ms77@gmail.com?subject=${encodeURIComponent(`Project inquiry — ${requestedPackage || formData.projectType || 'General'} — ${formData.name}`)}&body=${encodeURIComponent(brief)}`;
     const openMail = () => {
-        const subject = encodeURIComponent(
-            `Project inquiry — ${formData.projectType || 'General'} — ${formData.name}`
-        );
-        const body = encodeURIComponent(
-            [
-                `Name: ${formData.name}`,
-                `Email: ${formData.email}`,
-                `Company: ${formData.company || '—'}`,
-                `Project type: ${formData.projectType}`,
-                `Budget: ${formData.budget}`,
-                `Timeline: ${formData.timeline}`,
-                `Success looks like: ${formData.goals}`,
-                '',
-                'Project notes:',
-                formData.description,
-            ].join('\n')
-        );
-        window.location.href = `mailto:mohitshah.ms77@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = draftUrl;
     };
 
     const handleSubmit = async (e) => {
@@ -49,8 +35,7 @@ const ClientGuideForm = () => {
         setSubmitStatus(null);
         try {
             openMail();
-            setSubmitStatus('success');
-            setFormData(initial);
+            setSubmitStatus('draft');
         } catch {
             setSubmitStatus('error');
         } finally {
@@ -61,7 +46,7 @@ const ClientGuideForm = () => {
     return (
         <div className="cg-form">
             <form onSubmit={handleSubmit} noValidate={false}>
-                <div className="cg-form__grid">
+                {requestedPackage && <p className="cg-form__selection" role="status">Selected package: <strong>{requestedPackage}</strong></p>}<div className="cg-form__grid">
                     <label className="cg-form__field">
                         <span>Name *</span>
                         <input
@@ -169,20 +154,13 @@ const ClientGuideForm = () => {
                 </label>
 
                 <button type="submit" className="cg__btn cg-form__submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Opening mail…' : 'Send project brief →'}
+                    {isSubmitting ? 'Opening mail…' : 'Open email draft →'}
                 </button>
 
-                {submitStatus === 'success' && (
-                    <p className="cg-form__msg">
-                        Your mail client should open with the brief. If it didn&apos;t, email{' '}
-                        <a href="mailto:mohitshah.ms77@gmail.com">mohitshah.ms77@gmail.com</a>.
-                    </p>
-                )}
-                {submitStatus === 'error' && (
-                    <p className="cg-form__msg cg-form__msg--err">
-                        Something went wrong — email mohitshah.ms77@gmail.com directly.
-                    </p>
-                )}
+                {submitStatus === 'draft' && <div className="cg-form__msg" role="status"><p>Your brief is ready for your email app. Nothing is sent from this page, and your answers are kept here.</p><a href={draftUrl}>Open the email draft again →</a></div>}
+                {submitStatus === 'error' && <p className="cg-form__msg" role="alert">The email app could not open. Your answers are kept here; copy the brief and email it to mohitshah.ms77@gmail.com.</p>}
+                <button type="button" className="cg__btn cg__btn--ghost" onClick={async () => { try { await navigator.clipboard.writeText(brief); setCopyStatus('Project brief copied.'); } catch { setCopyStatus('Copy is unavailable. Your answers remain in the form so you can select and copy them.'); } }}>Copy project brief</button>
+                <p className="cg-form__msg" role="status">{copyStatus}</p>
             </form>
         </div>
     );

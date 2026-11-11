@@ -122,6 +122,7 @@ const faqs = [
 
 const ClientGuide = () => {
     const [openFaq, setOpenFaq] = useState(0);
+    const [requestedPackage, setRequestedPackage] = useState('');
 
     return (
         <section className="cg">
@@ -259,7 +260,7 @@ const ClientGuide = () => {
                                         <li key={item}>{item}</li>
                                     ))}
                                 </ul>
-                                <a href="#start" className="cg__btn cg__btn--small">
+                                <a href="#start" className="cg__btn cg__btn--small" onClick={() => setRequestedPackage(pkg.name)} aria-label={`Request ${pkg.name} package`}>
                                     Request this →
                                 </a>
                             </article>
@@ -306,7 +307,7 @@ const ClientGuide = () => {
                             a rough range.
                         </p>
                     </div>
-                    <ClientGuideForm />
+                    <ClientGuideForm requestedPackage={requestedPackage} />
                 </div>
             </div>
         </section>
