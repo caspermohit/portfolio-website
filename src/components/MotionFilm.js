@@ -1,4 +1,5 @@
 import ScrollInk from './ScrollInk';
+import Doodle from './Doodle';
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { FiPause, FiPlay, FiRotateCcw, FiArrowUpRight } from 'react-icons/fi';
@@ -69,7 +70,7 @@ export default function MotionFilm() {
     const replay = () => { playIntent.current = true; setPlaying(true); animation.current?.restart(); };
 
     return <section className="motion-film-section folio-section" ref={root} aria-labelledby="motion-film-title">
-        <div className="film-intro"><div><p className="eyebrow">A little motion. A lot of intention.</p><h2 id="motion-film-title"><ScrollInk>Ideas deserve<br />to <em>move.</em></ScrollInk></h2></div><p>Design, code, and a little creative mischief.<br />Here’s how I connect them.</p></div>
+        <div className="film-intro"><div><p className="eyebrow">A little motion. A lot of intention.</p><h2 id="motion-film-title"><ScrollInk>Ideas deserve<br />to <em>move.</em></ScrollInk></h2></div><div className="doodle-section-note"><Doodle name="film" className="section-ink-doodle" /><p>Design, code, and a little creative mischief.<br />Here’s how I connect them.</p></div></div>
         <figure className="motion-film"><div className="film-stage" aria-hidden="true">
             <div className="film-frame frame-spark"><div className="film-type"><div><span className="film-word">It starts</span></div><div><span className="film-word">with an <em>idea.</em></span></div></div><div className="film-object film-asterisk">✳</div><svg className="film-object film-scribble" viewBox="0 0 240 140"><path d="M10 90C30 5 90 10 75 80S155 130 130 40S230 30 210 100" /></svg><span className="film-object film-cursor">↖</span><span className="film-object film-note">what if?</span></div>
             <div className="film-frame frame-shape"><div className="film-type"><div><span className="film-word">Give it</span></div><div><span className="film-word"><em>shape.</em></span></div></div><span className="film-object film-letter">Aa</span><div className="film-object film-grid">{Array.from({ length: 9 }, (_, i) => <span key={i} />)}</div><span className="film-object film-rule">↔</span></div>

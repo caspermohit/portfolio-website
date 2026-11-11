@@ -1,0 +1,9 @@
+Coffee, Levitate, Sprinting, and Doggie animations and static illustrations: Pablo Stanley / Open Doodles.
+Source: https://www.opendoodles.com/
+Files: https://opendoodles.s3-us-west-1.amazonaws.com/{coffee,levitate,sprinting,doggie}.{gif,svg}
+License: CC0 1.0 Universal, https://creativecommons.org/publicdomain/zero/1.0/
+Author's licensing statement: https://www.opendoodles.com/about
+Displayed in grayscale using CSS; original files preserved.
+All project textures are existing Mohit Shah portfolio work. No Money in Check artwork is included.
+
+Doggie static source uses capital D: https://opendoodles.s3-us-west-1.amazonaws.com/Doggie.svg (saved locally as doggie.svg).

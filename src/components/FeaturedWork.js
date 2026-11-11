@@ -1,4 +1,5 @@
 import ScrollInk from './ScrollInk';
+import Doodle from './Doodle';
 import React from 'react';
 import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi';
 import { shippedProjects } from '../data/projects';
@@ -12,7 +13,7 @@ const highlights = [
 
 export default function FeaturedWork() {
     return <section className="work-exhibition folio-section" id="work" aria-labelledby="exhibition-title">
-        <header className="exhibition-intro"><div><p className="eyebrow">Selected projects · Design & development</p><h2 id="exhibition-title"><ScrollInk>Work, in <em>motion.</em></ScrollInk></h2></div><p>Different ideas.<br />The same attention to detail.</p></header>
+        <header className="exhibition-intro"><div><p className="eyebrow">Selected projects · Design & development</p><h2 id="exhibition-title"><ScrollInk>Work, in <em>motion.</em></ScrollInk></h2></div><div className="doodle-section-note"><Doodle name="browser" className="section-ink-doodle" /><p>Different ideas.<br />The same attention to detail.</p></div></header>
         <nav className="work-discipline-nav" aria-label="Explore work by discipline"><a href="#featured-project-0">01 <span>Websites & products</span><FiArrowDown /></a><a href="#design">02 <span>UX / UI design</span><FiArrowDown /></a><a href="#brand-design">03 <span>Brand & motion</span><FiArrowDown /></a><a href="#archive">04 <span>The full collection</span><FiArrowDown /></a></nav><div className="exhibition-rule"><span>Three projects worth a closer look</span><a href="#archive">Browse the full index <FiArrowDown /></a></div>
         <nav className="exhibition-project-nav" aria-label="Jump to featured project">{highlights.map((project, index) => <a href={`#featured-project-${index}`} key={project.title}><span>0{index + 1}</span>{project.title}<FiArrowDown size={15} /></a>)}</nav>
         <div className="spread-stack">{highlights.map((project, index) => <article className="work-spread" id={`featured-project-${index}`} key={project.title} style={{ '--order': index, '--rotation': `${project.rotation}deg` }} aria-labelledby={`spread-title-${index}`}>

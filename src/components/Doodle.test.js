@@ -1,0 +1,30 @@
+import React from 'react';
+import { render, screen, act } from '@testing-library/react';
+import Doodle from './Doodle';
+
+test('doodles animate only in view and respect reduced motion without visible controls', () => {
+    let intersect, preferenceChange;
+    const preference = { matches: false, addEventListener: (_, fn) => { preferenceChange = fn; }, removeEventListener: jest.fn() };
+    window.matchMedia = () => preference;
+    window.IntersectionObserver = class { constructor(fn) { intersect = fn; } observe() {} disconnect() {} };
+    const { container, unmount, rerender } = render(<Doodle name="coffee" label="creative process" />);
+    const image = container.querySelector('img');
+    expect(image.getAttribute('src')).toBe('/motion/coffee.svg');
+    act(() => intersect([{ isIntersecting: true }]));
+    expect(image.getAttribute('src')).toBe('/motion/coffee.gif');
+    expect(screen.queryByRole('button')).toBeNull();
+    act(() => intersect([{ isIntersecting: false }]));
+    expect(image.getAttribute('src')).toBe('/motion/coffee.svg');
+    act(() => { intersect([{ isIntersecting: true }]); preference.matches = true; preferenceChange(); });
+    expect(image.getAttribute('src')).toBe('/motion/coffee.svg');
+    expect(screen.queryByRole('button')).toBeNull();
+    rerender(<Doodle name="film" />);
+    expect(container.querySelector('svg .doodle-clapper')).toBeTruthy();
+    expect(container.querySelector('.is-live')).toBeNull();
+    act(() => { preference.matches = false; preferenceChange(); });
+    expect(container.querySelector('.is-live')).toBeTruthy();
+    act(() => intersect([{ isIntersecting: false }]));
+    expect(container.querySelector('.is-live')).toBeNull();
+    unmount();
+    expect(preference.removeEventListener).toHaveBeenCalled();
+});
