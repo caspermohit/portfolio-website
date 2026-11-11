@@ -1,6 +1,7 @@
 // Freelance relationships supplied by Mohit; kept separate from employment.
 // Add a verified local logo and official website when adding a client.
 export const freelanceClients = [
+    { name: 'Exhibera', project: '#design', shape: 'exhibera', source: 'Exhibera project wordmark: navy lettering with orange dot' },
     { name: 'Two Dudes One Couch', website: 'https://twodudesonecouch.ca/', logo: '/clients/two-dudes-one-couch.png', source: 'https://twodudesonecouch.ca/wp-content/uploads/2025/09/cropped-tdoc-logo.png', shape: 'square' },
     { name: 'RelyUp', website: 'https://relyup.ca/', logo: '/clients/relyup-dark.png', source: 'https://relyup.ca/__l5e/assets-v1/ae54c6a2-70e7-4971-ab8e-cb8af638e872/relyup-lockup-clean-horizontal-dark.png', shape: 'wide' },
     { name: 'LeazeSure', website: 'https://leazesure.com/', logo: '/clients/leazesure.svg', source: 'https://leazesure.com/images/shield-logo.svg', shape: 'shield' },

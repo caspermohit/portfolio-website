@@ -4,15 +4,15 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(15, 15, 15, 0.82);
+    background: var(--color-dominant);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--color-secondary);
     transition: padding 0.3s ease, background 0.3s ease;
 }
 
 .client-guide-header--scrolled {
-    background: rgba(15, 15, 15, 0.94);
+    background: var(--color-dominant);
 }
 
 .client-guide-header__container {
@@ -84,7 +84,7 @@
     .client-guide-header__nav {
         position: fixed;
         inset: 0;
-        background: rgba(15, 15, 15, 0.97);
+        background: var(--color-dominant);
         display: flex;
         align-items: center;
         justify-content: center;

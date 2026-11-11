@@ -1,11 +1,11 @@
 :root {
     /* Colors — aligned with canonical dark + blue system */
-    --primary-color:     #4a90e2;
-    --secondary-color:   #2c2c2c;
-    --secondary-purple:  #a742e6;
-    --accent-color:      #3498db;
-    --text-color:        #ffffff;
-    --background-color:  #1a1a1a;
+    --primary-color:     var(--color-secondary);
+    --secondary-color:   var(--color-dominant);
+    --secondary-purple:  var(--color-dominant);
+    --accent-color:      var(--color-secondary);
+    --text-color:        var(--color-secondary);
+    --background-color:  var(--color-dominant);
     
     /* Typography */
     --font-family:       var(--font-body, 'Instrument Serif', Georgia, serif);

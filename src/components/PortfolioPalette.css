@@ -1,0 +1,67 @@
+/* The sole palette source. Client artwork is intentionally not recolored. */
+:root{
+ --color-dominant:#0D0D0D;
+ --color-secondary:#F5F0E8;
+ --color-accent:#D4A017;
+ --primary-color:var(--color-accent);--accent-color:var(--color-accent);
+ --background-color:var(--color-dominant);--text-color:var(--color-secondary);
+ --first-color:var(--color-accent);--second-color:var(--color-dominant);--third-color:var(--color-secondary);
+ --font-color:var(--color-secondary);--light-font-color:var(--color-secondary);
+}
+body{background:var(--color-dominant);color:var(--color-secondary)}
+.portfolio{
+ --paper:var(--color-dominant);--text:var(--color-secondary);
+ --surface:var(--color-dominant);--soft:var(--color-secondary);--line:var(--color-secondary);
+ --blue:var(--color-accent);--blue-dark:var(--color-accent);--energy:var(--color-accent);--on-blue:var(--color-dominant);
+ --bg-deep:var(--color-dominant);--bg:var(--color-dominant);--ink:var(--color-secondary);--muted:var(--color-secondary);
+ --brand:var(--color-accent);--brand-bright:var(--color-accent);
+ background:var(--color-dominant);color:var(--color-secondary);
+}
+.portfolio .folio-nav,.portfolio .folio-footer,.portfolio .freelance-clients,.portfolio .craft-studio,.portfolio .folio-contact,.portfolio .frame-build,.portfolio .frame-shape{background:var(--color-dominant);color:var(--color-secondary)}
+.portfolio .folio-nav{border-bottom:1px solid var(--color-secondary)}
+.portfolio .hero-editorial h1 em{color:var(--color-accent)}
+.portfolio h2 em,.portfolio h3 em,.portfolio .brand-dot{color:var(--color-secondary)}
+.portfolio .hero-work-caption,.portfolio .spread-card,.portfolio .spotlight-art,.portfolio .study-body,.portfolio .study-topbar,.portfolio .project-file-window,.portfolio .design-study,.portfolio .cg__price,.portfolio .cg__service{background:var(--color-secondary);color:var(--color-dominant);--paper:var(--color-secondary);--text:var(--color-dominant);--soft:var(--color-dominant);--surface:var(--color-secondary);--line:var(--color-dominant);--blue:var(--color-dominant)}
+.portfolio .hero-work-caption small,.portfolio .hero-work-description,.portfolio .hero-work-caption>svg,.portfolio .hero-work-tile:hover .hero-work-caption,.portfolio .spread-headline,.portfolio .spread-bottom,.portfolio .study-facts,.portfolio .study-story p,.portfolio .study-scope span,.portfolio .study-bottom>p,.portfolio .study-media figcaption{color:var(--color-dominant)}
+.portfolio .hero-work-image,.portfolio .exhibera-cover,.portfolio .relyup-cover,.portfolio .study-media,.portfolio .file-window-preview{background:var(--color-secondary)}
+.portfolio .spread-art{background:var(--color-dominant)}
+.portfolio .spread-preview-label,.portfolio .spread-view{background:var(--color-dominant);color:var(--color-secondary)}
+.portfolio .nav-contact,.portfolio .spread-visit,.portfolio .spotlight-explore,.portfolio .contact__submit,.portfolio .cg__btn:not(.cg__btn--ghost){background:var(--color-accent);border-color:var(--color-accent);color:var(--color-dominant)}
+.portfolio .nav-contact:hover,.portfolio .spread-visit:hover,.portfolio .spotlight-explore:hover,.portfolio .contact__submit:hover{background:var(--color-secondary);border-color:var(--color-secondary);color:var(--color-dominant)}
+.portfolio .index-filters button[aria-pressed=true],.portfolio .design-filters button[aria-pressed=true],.portfolio .motion-film-options button[aria-pressed=true],.portfolio .study-screen-options button[aria-pressed=true],.portfolio .file-device-options button[aria-pressed=true]{background:var(--color-accent);color:var(--color-dominant);border-color:var(--color-dominant)}
+.portfolio .spotlight-choice[aria-pressed=true]{background:var(--color-secondary);color:var(--color-dominant);box-shadow:inset 3px 0 var(--color-dominant)}
+.portfolio .spotlight-choice[aria-pressed=true] span,.portfolio .spotlight-choice[aria-pressed=true] svg{color:var(--color-dominant)}
+.portfolio .spotlight-art-foot,.portfolio .spotlight-art-label,.portfolio .spotlight-symbol{background:var(--color-secondary);color:var(--color-dominant)}
+.portfolio .contact__headline,.portfolio .contact__mail,.portfolio .contact__pitch,.portfolio .contact__trust,.portfolio .contact__form-label,.portfolio .contact__field span,.portfolio .contact-copy,.portfolio .contact-copy-status,.portfolio .contact__note,.portfolio .contact-connection p,.portfolio .contact-connection p span{color:var(--color-secondary)}
+.portfolio .contact__field input,.portfolio .contact__field textarea{background:var(--color-dominant);color:var(--color-secondary);border-color:var(--color-secondary)}
+.portfolio .contact__field textarea::placeholder{color:var(--color-secondary)}
+.portfolio .contact__trust a,.portfolio .gallery-intro-link,.portfolio .index-github{color:var(--color-accent)}
+.portfolio .spread-bottom a,.portfolio .study-bottom a,.portfolio .project-file-window a,.portfolio .cg__price a{color:var(--color-dominant);text-decoration:underline;text-underline-offset:4px}
+.portfolio .craft-studio{--studio-ink:var(--color-secondary);--studio-muted:var(--color-secondary);--studio-line:var(--color-secondary)}
+.portfolio .craft-toolbar [role=tab],.portfolio .craft-copy>p,.portfolio .craft-footer button{color:var(--color-secondary)}
+.portfolio .hairline-figure{--hairline-plate:var(--color-dominant);--hairline-hi:var(--color-secondary);--hairline-edge:var(--color-secondary);--hairline-mid:var(--color-secondary);--hairline-lo:var(--color-secondary)}
+.portfolio .film-type em,.portfolio .film-asterisk,.portfolio .film-cursor{color:var(--color-secondary)}
+.portfolio .film-seal{background:var(--color-secondary);color:var(--color-dominant);border-color:var(--color-secondary)}
+.portfolio .frame-shape .film-type em,.portfolio .frame-build .film-type em{color:var(--color-secondary)}
+.portfolio .creative-grid a:hover,.portfolio .work-discipline-nav a:hover{background:var(--color-secondary);color:var(--color-dominant)}
+.portfolio .hero-work-tile:hover .hero-work-caption>svg{background:var(--color-dominant);color:var(--color-secondary)}
+.portfolio :focus-visible{outline:2px solid var(--color-accent);outline-offset:4px}
+.portfolio .hero-work-tile:focus-visible{outline-color:var(--color-secondary)}
+.portfolio .study-body :focus-visible,.portfolio .project-file-window :focus-visible{outline-color:var(--color-dominant)}
+.portfolio .contact-recovery{display:flex;gap:12px;flex-wrap:wrap}.portfolio .contact-recovery button{padding:12px;background:var(--color-dominant);border:1px solid var(--color-secondary);color:var(--color-secondary)}
+.portfolio .cg-form__selection{background:var(--color-secondary);color:var(--color-dominant);padding:16px}
+.portfolio .exhibera-client-wordmark>span{color:var(--color-dominant)}
+.portfolio .client-lockup-name,.portfolio .client-name-fallback{color:var(--color-secondary)}
+.portfolio .client-logo-grid a:hover{background:var(--color-dominant);outline:1px solid var(--color-secondary);outline-offset:-1px}
+.portfolio .motion-film-options button:not([aria-pressed=true]){background:var(--color-dominant);color:var(--color-secondary);border:1px solid var(--color-secondary)}
+.portfolio .cg-form__field span,.portfolio .cg-form__msg,.portfolio .cg__trust,.portfolio .cg__muted,.portfolio .cg__step-label{color:var(--color-secondary)}
+.portfolio .cg-form__field input,.portfolio .cg-form__field textarea,.portfolio .cg-form__field select{background:var(--color-dominant);color:var(--color-secondary);border-color:var(--color-secondary)}
+.portfolio .cg__badge{background:var(--color-dominant);color:var(--color-secondary);border:1px solid var(--color-secondary)}
+.portfolio .cg__price .cg__muted,.portfolio .cg__service p{color:var(--color-dominant)}
+.portfolio .cg-form__selection strong{color:var(--color-dominant)}
+.portfolio .cg__trust li,.portfolio .cg__step-time,.portfolio .cg__prep li,.portfolio .cg__fine{color:var(--color-secondary)}
+.portfolio .cg__service h3,.portfolio .cg__service li,.portfolio .cg__amount,.portfolio .cg__price-blurb,.portfolio .cg__price li,.portfolio .cg__price li::before{color:var(--color-dominant)}
+.portfolio .cg__btn--ghost{background:var(--color-dominant);color:var(--color-secondary);border-color:var(--color-secondary)}
+.portfolio .cg__btn:not(.cg__btn--ghost):hover{background:var(--color-secondary);color:var(--color-dominant)}
+.portfolio .hero-editorial h1{opacity:1!important}
+.portfolio .hero-work-tile,.portfolio .hero-work-image img,.portfolio .screen-surface,.portfolio .spread-phone{box-shadow:none}

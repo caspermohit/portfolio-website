@@ -1,11 +1,28 @@
+import ScrollInk from './ScrollInk';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Contact.css';
 import emailjs from 'emailjs-com';
+import { FiCopy, FiCheck } from 'react-icons/fi';
+import HairlineFigure from './HairlineFigure';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [status, setStatus] = useState('');
+    const [copyStatus, setCopyStatus] = useState('');
+    useEffect(() => {
+        if (!copyStatus) return undefined;
+        const timer = window.setTimeout(() => setCopyStatus(''), 3500);
+        return () => window.clearTimeout(timer);
+    }, [copyStatus]);
+    const copyEmail = async () => {
+        try {
+            await navigator.clipboard.writeText('mohitshah.ms77@gmail.com');
+            setCopyStatus('Email address copied.');
+        } catch {
+            setCopyStatus('Select the email address to copy it.');
+        }
+    };
     const [emailjsEnabled, setEmailjsEnabled] = useState(false);
 
     useEffect(() => {
@@ -28,8 +45,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!emailjsEnabled) {
-            openMailClient();
-            setStatus('draft');
+            setStatus('error');
             return;
         }
         setStatus('sending');
@@ -51,7 +67,6 @@ const Contact = () => {
             })
             .catch(() => {
                 setStatus('error');
-                openMailClient();
             });
     };
 
@@ -64,9 +79,9 @@ const Contact = () => {
             <div className="container contact__layout">
                 <div className="contact__cta" data-reveal>
                     <span className="section__label">Contact</span>
-                    <h2 className="contact__headline">
+                    <h2 className="contact__headline"><ScrollInk>
                         Let&apos;s create something.
-                    </h2>
+                    </ScrollInk></h2>
                     <p className="contact__pitch">
                         Full Stack Developer — open for freelance &amp; product work. I reply within
                         1 business day.
@@ -78,12 +93,15 @@ const Contact = () => {
                     >
                         mohitshah.ms77@gmail.com
                     </a>
+                    <button type="button" className="contact-copy" onClick={copyEmail}>{copyStatus === 'Email address copied.' ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />} Copy email address</button>
+                    <p className="contact-copy-status" role="status">{copyStatus}</p>
                     <p className="contact__trust">
                         Prefer a scoped brief?{' '}
                         <Link to="/client-guide" data-cursor-text="Guide">
                             Client Guide →
                         </Link>
                     </p>
+                    <div className="contact-connection"><HairlineFigure figure="hub" label="An isometric network of connected tiles that responds to your pointer" /><p><span>Good ideas connect.</span>Based in Kitchener,<br />Ontario, Canada.</p></div>
                 </div>
 
                 <form className="contact__form" onSubmit={handleSubmit} data-reveal>
@@ -135,9 +153,10 @@ const Contact = () => {
                     {status === 'draft' && <p className="contact__note" role="status">Your email app has been opened with a draft. Send it there to get in touch.</p>}
                     {status === 'error' && (
                         <p className="contact__note contact__note--error" role="status">
-                            Couldn&apos;t send via form — mail client opened as fallback.
+                            Couldn’t send the message. Your text is kept here. Open an email draft or copy the message below.
                         </p>
                     )}
+                    {status === 'error' && <div className="contact-recovery"><button type="button" onClick={openMailClient}>Open email draft →</button><button type="button" onClick={async () => { try { await navigator.clipboard.writeText(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`); setCopyStatus('Message copied.'); } catch { setCopyStatus('Select your message above to copy it.'); } }}>Copy message</button></div>}
                 </form>
             </div>
         </section>

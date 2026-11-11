@@ -14,7 +14,7 @@
     font-family: var(--font-body);
     font-size: clamp(1.15rem, 2vw, 1.4rem);
     line-height: 1.55;
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--color-secondary);
     margin-bottom: 1.35rem;
     max-width: 38rem;
 }
@@ -24,7 +24,7 @@
     gap: 1.75rem;
     margin: 2.5rem 0 2rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--color-secondary);
 }
 
 .about__meta-label {
@@ -82,7 +82,7 @@
 .about__github-stat {
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-secondary);
     letter-spacing: 0.04em;
 }
 
@@ -96,7 +96,7 @@
     aspect-ratio: 3 / 4;
     overflow: hidden;
     background: var(--surface);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--color-secondary);
 }
 
 .about__photo {

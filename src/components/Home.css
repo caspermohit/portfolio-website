@@ -32,7 +32,7 @@
     font-family: var(--font-body);
     font-size: 1.35rem;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--color-secondary);
 }
 
 .hero__status a {
