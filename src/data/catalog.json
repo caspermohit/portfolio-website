@@ -2,6 +2,17 @@
   "version": 1,
   "projects": [
     {
+      "id": "design-relyup-logo",
+      "designId": "relyup-logo",
+      "title": "RelyUp \u00b7 Logo design",
+      "description": "Logo construction, visual identity, and typography in a 16-second presentation.",
+      "technologies": "Logo design, Visual identity, Typography",
+      "date": "2026-11-12",
+      "group": "Studio",
+      "image": "/design/relyup/logo-design-poster.jpg",
+      "links": []
+    },
+    {
       "id": "design-relyup-motion",
       "designId": "relyup-motion",
       "title": "RelyUp \u00b7 Motion graphics",
