@@ -43,4 +43,15 @@ export const designWork = [
             { label: 'Trade-show film', src: '/design/relyup/trade-show.mp4', poster: '/design/relyup/trade-show-poster.jpg', type: 'video', alt: 'RelyUp 15-second trade-show film', caption: 'Trade-show film · 15 seconds · 1080p' },
         ],
     },
+    {
+        id: 'relyup-logo', title: 'RelyUp · Logo design', category: 'Logo & identity', kind: 'logo', year: '2026', status: 'Logo design presentation',
+        summary: 'A mark built around forward movement.',
+        description: 'A short presentation of the RelyUp logo, its construction, and the typography behind the identity.',
+        scope: ['Logo design', 'Visual identity', 'Typography'],
+        context: 'Presenting the RelyUp identity from the underlying mark to the supporting typographic system.',
+        approach: 'The presentation moves through the logo construction, dimensional treatments, and Outfit typeface to show how the identity comes together.',
+        boundary: 'Logo design by Mohit Shah. Presentation shown from the supplied screen recording.',
+        links: [],
+        media: [{ label: 'Logo presentation', src: '/design/relyup/logo-design.mp4', poster: '/design/relyup/logo-design-poster.jpg', type: 'video', alt: 'RelyUp logo design presentation showing the mark construction and typography', caption: 'RelyUp · Logo and visual identity · 16-second presentation' }],
+    },
 ];

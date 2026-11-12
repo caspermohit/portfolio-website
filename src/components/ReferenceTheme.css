@@ -141,3 +141,6 @@ body{background:var(--color-secondary);color:var(--color-dominant)}
 @keyframes doodle-action{0%,12%,80%,100%{transform:rotate(0deg)}35%,55%{transform:rotate(-16deg)}}
 @media(max-width:750px){.doodle-section-note{gap:14px;margin-top:20px}.section-ink-doodle{width:85px}}
 @media(prefers-reduced-motion:reduce){.ink-doodle g{animation:none!important}}
+.logo-design-feature{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:45px;align-items:center;margin-top:70px;padding-top:35px;border-top:1px solid var(--color-dominant)}
+.portfolio .logo-design-cover{display:block;position:relative;width:100%;padding:0;border:1px solid var(--color-dominant);overflow:hidden;background:var(--color-secondary);cursor:pointer}.logo-design-cover>img,.logo-design-cover>video{display:block;width:100%;height:auto}.logo-watch{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;font:14px/1.4 Arial,sans-serif;background:var(--color-secondary);color:var(--color-dominant);border-top:1px solid var(--color-dominant)}.logo-design-cover:focus-visible{outline:2px solid var(--color-accent);outline-offset:5px}.study-media-logo video{display:block;width:100%;max-height:75vh}
+@media(max-width:750px){.logo-design-feature{grid-template-columns:1fr;gap:15px;margin-top:45px}.logo-watch{font-size:12px}}
