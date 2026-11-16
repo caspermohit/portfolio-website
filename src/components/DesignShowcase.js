@@ -94,8 +94,8 @@ export default function DesignShowcase() {
             <div className="design-card-info"><p className="eyebrow">Logo design · Visual identity</p><h3>RelyUp. A mark in motion.</h3><p>From the first lines to a complete identity.<br />Logo construction, form, and typography.</p><button onClick={event => open(event, logo)} aria-haspopup="dialog">Explore the logo design <FiArrowUpRight /></button></div>
         </article>}
         {(filter === 'all' || filter === 'logo') && <section className="logo-concepts" aria-labelledby="logo-concepts-title">
-            <header><p className="eyebrow">Fictional brands · AI-assisted concept studies</p><h3 id="logo-concepts-title">Five studies in identity.</h3><p>Sample logo directions, palettes, and applications. Self-initiated concepts, presented separately from client work.</p></header>
-            <div className="logo-concept-grid">{concepts.media.map((item, index) => <button key={item.src} onClick={event => open(event, concepts, index)} aria-haspopup="dialog" aria-label={`Explore ${item.label} logo concept`}><img src={item.src} alt={item.alt} width="1536" height="1024" loading="lazy" /><span><strong>{item.label}</strong><FiArrowUpRight aria-hidden="true" /></span><small>Fictional brand / AI-assisted concept</small></button>)}</div>
+            <header><p className="eyebrow">Logo & visual identity</p><h3 id="logo-concepts-title">Identity explorations.</h3><p>Five self-initiated studies in marks, colour, typography, and application.</p></header>
+            <div className="logo-concept-grid">{concepts.media.map((item, index) => <button key={item.src} onClick={event => open(event, concepts, index)} aria-haspopup="dialog" aria-label={`Explore ${item.label} logo concept`}><img src={item.src} alt={item.alt} width="1536" height="1024" loading="lazy" /><span><strong>{item.label}</strong><FiArrowUpRight aria-hidden="true" /></span><small>Logo & identity study</small></button>)}</div>
         </section>}
         {selected && <DesignStudy key={selected.id} project={selected} initialView={initialView} opener={opener.current} onClose={() => setSelected(null)} />}
     </section>;
