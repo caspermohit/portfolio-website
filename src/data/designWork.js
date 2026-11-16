@@ -54,4 +54,55 @@ export const designWork = [
         links: [],
         media: [{ label: 'Logo presentation', src: '/design/relyup/logo-design.mp4', poster: '/design/relyup/logo-design-poster.jpg', type: 'video', alt: 'RelyUp logo design presentation showing the mark construction and typography', caption: 'RelyUp · Logo and visual identity · 16-second presentation' }],
     },
+    {
+    "id": "fictional-logo-studies",
+    "title": "Five fictional identities",
+    "category": "Logo concept samples",
+    "kind": "logo",
+    "year": "2026",
+    "status": "Fictional brands \u00b7 AI-assisted concept studies",
+    "summary": "Five different directions. A study in identity.",
+    "description": "Sample concept boards exploring logos, palettes, typography, and applications for five fictional brands.",
+    "scope": [
+        "Logo concepts",
+        "Identity exploration",
+        "AI-assisted visualization"
+    ],
+    "context": "Self-initiated samples exploring identities across bakery, landscape, cycling, botanical products, and digital-product themes.",
+    "approach": "Each supplied board presents exploratory sketches, a proposed mark and palette, and an illustrative application. These are concept visualizations, not documentation of client commissions or a verified manual design process.",
+    "boundary": "Fictional brands / AI-assisted concept studies. These samples are not paid client projects, real brand launches, or trademark-cleared identities.",
+    "links": [],
+    "media": [
+        {
+            "label": "Morrowick",
+            "src": "/design/concepts/01-morrowick.jpg",
+            "alt": "Morrowick fictional logo concept board with exploration, refinement, and application",
+            "caption": "Morrowick \u00b7 Bakery-inspired identity \u00b7 Fictional brand / AI-assisted concept study"
+        },
+        {
+            "label": "Rillform",
+            "src": "/design/concepts/02-rillform.jpg",
+            "alt": "Rillform fictional logo concept board with exploration, refinement, and application",
+            "caption": "Rillform \u00b7 Landscape-inspired identity \u00b7 Fictional brand / AI-assisted concept study"
+        },
+        {
+            "label": "Tandrel",
+            "src": "/design/concepts/03-tandrel.jpg",
+            "alt": "Tandrel fictional logo concept board with exploration, refinement, and application",
+            "caption": "Tandrel \u00b7 Urban bicycle repair & accessories \u00b7 Fictional brand / AI-assisted concept study"
+        },
+        {
+            "label": "Serein Vale",
+            "src": "/design/concepts/04-serein-vale.jpg",
+            "alt": "Serein Vale fictional logo concept board with exploration, refinement, and application",
+            "caption": "Serein Vale \u00b7 Botanical soap identity \u00b7 Fictional brand / AI-assisted concept study"
+        },
+        {
+            "label": "Pivora",
+            "src": "/design/concepts/05-pivora.jpg",
+            "alt": "Pivora fictional logo concept board with exploration, refinement, and application",
+            "caption": "Pivora \u00b7 Scheduling-product identity \u00b7 Fictional brand / AI-assisted concept study"
+        }
+    ]
+},
 ];
