@@ -1,0 +1,25 @@
+import { renderHook, act } from '@testing-library/react';
+import Lenis from 'lenis';
+import { useLenis } from './useMotion';
+jest.mock('lenis', () => jest.fn().mockImplementation(() => ({ destroy: jest.fn(), on: jest.fn() })));
+jest.mock('gsap', () => ({ registerPlugin: jest.fn() }));
+jest.mock('gsap/ScrollTrigger', () => ({ ScrollTrigger: { update: jest.fn() } }));
+test('changing motion preference stops scrolling immediately and cleans up on unmount', () => {
+ Lenis.mockImplementation(() => ({ destroy: jest.fn(), on: jest.fn() }));
+ let changed;
+ const preference = { matches: false, addEventListener: jest.fn((_, fn) => { changed = fn; }), removeEventListener: jest.fn() };
+ window.matchMedia = () => preference;
+ const { unmount } = renderHook(useLenis);
+ const first = window.__lenis;
+ expect(first).toBeTruthy();
+ act(() => { preference.matches = true; changed(); });
+ expect(first.destroy).toHaveBeenCalledTimes(1);
+ expect(window.__lenis).toBeUndefined();
+ act(() => { preference.matches = false; changed(); });
+ const second = window.__lenis;
+ expect(second).toBeTruthy();
+ expect(Lenis).toHaveBeenCalledTimes(2);
+ unmount();
+ expect(second.destroy).toHaveBeenCalledTimes(1);
+ expect(preference.removeEventListener).toHaveBeenCalledWith('change', changed);
+});

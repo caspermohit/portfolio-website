@@ -27,10 +27,18 @@ export function usePortfolioMotion(root) {
             gsap.fromTo('.reference-finale h2', { y: 65 }, { y: 0, ease: 'none', scrollTrigger: { trigger: '.reference-finale', start: 'top 90%', end: 'top 25%', scrub: 1 } });
             gsap.utils.toArray('.creative-grid a').forEach(card => gsap.from(card, { y: 50, opacity: 0, scrollTrigger: { trigger: card, start: 'top 95%', end: 'top 75%', scrub: 1 } }));
         }, root);
-        const refresh = () => ScrollTrigger.refresh();
+        let disposed = false;
+        let refreshFrame;
+        const refresh = () => {
+            if (disposed) return;
+            cancelAnimationFrame(refreshFrame);
+            refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+        };
         document.fonts.ready.then(refresh);
-        const images = root.current.querySelectorAll('img');
+        // Doodles swap GIF/poster sources in a fixed-size stage on every viewport entry.
+        // Those swaps do not change layout and must not recalculate pinned sections.
+        const images = [...root.current.querySelectorAll('img')].filter(image => !image.closest('.editorial-doodle'));
         images.forEach(image => image.addEventListener('load', refresh));
-        return () => { images.forEach(image => image.removeEventListener('load', refresh)); media.revert(); };
+        return () => { disposed = true; cancelAnimationFrame(refreshFrame); images.forEach(image => image.removeEventListener('load', refresh)); media.revert(); };
     }, [root]);
 }

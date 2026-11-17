@@ -11,24 +11,32 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export function useLenis() {
     useEffect(() => {
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reduced) return undefined;
-
-        const lenis = new Lenis({
-            duration: 1.1,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
-            autoRaf: true,
-        });
-
-        document.documentElement.classList.add('lenis', 'lenis-smooth');
-        window.__lenis = lenis;
-        lenis.on('scroll', ScrollTrigger.update);
-
-        return () => {
+        const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let lenis;
+        const stop = () => {
+            if (!lenis) return;
             lenis.destroy();
-            delete window.__lenis;
+            if (window.__lenis === lenis) delete window.__lenis;
+            lenis = undefined;
             document.documentElement.classList.remove('lenis', 'lenis-smooth');
+        };
+        const sync = () => {
+            if (preference.matches) { stop(); return; }
+            if (lenis) return;
+            lenis = new Lenis({
+                duration: 1.1,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true,
+                autoRaf: true,
+            });
+            window.__lenis = lenis;
+            lenis.on('scroll', ScrollTrigger.update);
+        };
+        sync();
+        preference.addEventListener('change', sync);
+        return () => {
+            preference.removeEventListener('change', sync);
+            stop();
         };
     }, []);
 }
